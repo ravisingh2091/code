@@ -1,0 +1,740 @@
+// account create
+
+// body: {
+//     id: '51b784fe3a5f559de74fa891e9bf0d6d',
+//     email: 'inshad.anshardi@mobulous.com',
+//     name: { first: 'Inshad', middle: null, last: '', preferred: 'inshad' },
+//     mobile: { country_code: '91', number: '7011152925' },
+//     status: { is_active: true, text: 'active' },
+//     date: { registration: '2020-02-21T17:34:42+05:30' }
+//   }
+// }
+
+
+// account error
+
+
+
+// body: {
+//     code: 400,
+//     description: '`email` domain is not valid',
+//     link: 'http://vcard-dev1.s3-website-ap-southeast-1.amazonaws.com/docs.html#`email` domain is not valid; more_info: http://vcard-dev1.s3-website-ap-southeast-1.amazonaws.com/docs.html#resource_user_email_domain'
+//   }
+// }
+
+
+
+
+// wallet create response 
+
+{
+    "id": "38a3c0ca782064eec5d045897ab47339",
+    "number": "6377021420040915",
+    "holder": {
+      "name": "Anas Khan"
+    },
+    "funds": {
+      "available": {
+        "currency": "SGD",
+        "amount": "0.00"
+      },
+      "withholding": {
+        "currency": "SGD",
+        "amount": "0.00"
+      }
+    },
+    "date": {
+      "expiry": "2025-02",
+      "issued": "2020-02-24",
+      "closed": null
+    },
+    "image": {
+      "small": "https://assets.mmvpay.com/global/products/sgzippwal/card-small.png",
+      "medium": "https://assets.mmvpay.com/global/products/sgzippwal/card-medium.png",
+      "large": "https://assets.mmvpay.com/global/products/sgzippwal/card-large.png"
+    },
+    "status": {
+      "is_active": true,
+      "text": "active"
+    },
+    "details": {
+      "min_load_limit": 1,
+      "max_load_limit": 1000,
+      "network_type": "mastercard",
+      "fee": 0,
+      "topup_limits": {
+        "pre_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 500,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": 500,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 500,
+          "unit_transaction_limit": 500,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 500
+        },
+        "post_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 1000,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": null,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 3000,
+          "unit_transaction_limit": 1000,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 1000
+        },
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      },
+      "deduct_limits": {
+        "pre_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 500,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": 500,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 500,
+          "unit_transaction_limit": 500,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 500
+        },
+        "post_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 1000,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": null,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 3000,
+          "unit_transaction_limit": 1000,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 1000
+        },
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      },
+      "transfer_in_limits": {
+        "pre_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 500,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": 500,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 500,
+          "unit_transaction_limit": 500,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 500
+        },
+        "post_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 1000,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": null,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 3000,
+          "unit_transaction_limit": 1000,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 1000
+        },
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      },
+      "transfer_out_limits": {
+        "pre_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 500,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": 500,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 500,
+          "unit_transaction_limit": 500,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 500
+        },
+        "post_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 1000,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": null,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 3000,
+          "unit_transaction_limit": 1000,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 1000
+        },
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      },
+      "load_limits": {
+        "pre_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 500,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": 500,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 500,
+          "unit_transaction_limit": 500,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 500
+        },
+        "post_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 1000,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": null,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 3000,
+          "unit_transaction_limit": 1000,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 1000
+        },
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      },
+      "unload_limits": {
+        "pre_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 500,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": 500,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 500,
+          "unit_transaction_limit": 500,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 500
+        },
+        "post_kyc": {
+          "allowed": 0,
+          "daily_count_limit": null,
+          "daily_transactional_limit": 1000,
+          "lifetime_count_limit": null,
+          "lifetime_transactional_limit": null,
+          "monthly_count_limit": null,
+          "monthly_transactional_limit": 3000,
+          "unit_transaction_limit": 1000,
+          "weekly_count_limit": null,
+          "weekly_transactional_limit": 1000
+        },
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      },
+      "remittance_limits": {
+        "pre_kyc": {
+          "allowed": 0,
+          "daily_count_limit": 0,
+          "daily_transactional_limit": 0,
+          "lifetime_count_limit": 0,
+          "lifetime_transactional_limit": 0,
+          "monthly_count_limit": 0,
+          "monthly_transactional_limit": 0,
+          "unit_transaction_limit": 0,
+          "weekly_count_limit": 0,
+          "weekly_transactional_limit": 0
+        },
+        "post_kyc": {
+          "allowed": 1,
+          "daily_count_limit": 0,
+          "daily_transactional_limit": 0,
+          "lifetime_count_limit": 0,
+          "lifetime_transactional_limit": 0,
+          "monthly_count_limit": 0,
+          "monthly_transactional_limit": 0,
+          "unit_transaction_limit": 0,
+          "weekly_count_limit": 0,
+          "weekly_transactional_limit": 0
+        },
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      },
+      "reversal_limits": {
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      },
+      "refund_limits": {
+        "current": {
+          "lifetime_count": 0,
+          "lifetime_transactional": 0,
+          "daily_count": 0,
+          "daily_transactional": 0,
+          "weekly_count": 0,
+          "weekly_transactional": 0,
+          "monthly_count": 0,
+          "monthly_transactional": 0
+        }
+      }
+    }
+  }
+
+
+  //stripe
+
+  { token:
+   { id: 'tok_1GGQeOLr8xu6HSU0c38X1NoJ',
+     object: 'token',
+     card:
+      { id: 'card_1GGQeOLr8xu6HSU0ZSnZwT73',
+        object: 'card',
+        address_city: null,
+        address_country: null,
+        address_line1: null,
+        address_line1_check: null,
+        address_line2: null,
+        address_state: null,
+        address_zip: null,
+        address_zip_check: null,
+        brand: 'Visa',
+        country: 'US',
+        cvc_check: 'unchecked',
+        dynamic_last4: null,
+        exp_month: 1,
+        exp_year: 2021,
+        fingerprint: 'hGiALSWUTtVSlG4A',
+        funding: 'credit',
+        last4: '4242',
+        metadata: {},
+        name: null,
+        tokenization_method: null },
+     client_ip: '182.77.123.116',
+     created: 1582726452,
+     livemode: false,
+     type: 'card',
+     used: false } }
+
+// wallet balance 
+
+{
+    "response": false,
+    "data": {
+        "funds": {
+            "available": {
+                "currency": "SGD",
+                "amount": "0.00"
+            },
+            "withholding": {
+                "currency": "SGD",
+                "amount": "0.00"
+            },
+            "categories": {
+                "DEFAULT": {
+                    "available": {
+                        "currency": "SGD",
+                        "amount": "0.00"
+                    },
+                    "withholding": {
+                        "currency": "SGD",
+                        "amount": "0.00"
+                    }
+                }
+            }
+        },
+        "id": "bde41a23fabb4f5a1b31271bab343866",
+        "number": "6377021420056457",
+        "holder": {
+            "name": "Ravi Create account"
+        },
+        "date": {
+            "expiry": "2025-03",
+            "issued": "2020-03-13",
+            "closed": null
+        },
+        "image": {
+            "small": "https://assets.mmvpay.com/global/products/sgzippwal/card-small.png",
+            "medium": "https://assets.mmvpay.com/global/products/sgzippwal/card-medium.png",
+            "large": "https://assets.mmvpay.com/global/products/sgzippwal/card-large.png"
+        },
+        "status": {
+            "is_active": true,
+            "text": "active"
+        },
+        "details": {
+            "min_load_limit": 1,
+            "max_load_limit": 1000,
+            "network_type": "mastercard",
+            "fee": 0,
+            "topup_limits": {
+                "pre_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 500,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": 500,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 500,
+                    "unit_transaction_limit": 500,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 500
+                },
+                "post_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 1000,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": null,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 3000,
+                    "unit_transaction_limit": 1000,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 1000
+                },
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            },
+            "deduct_limits": {
+                "pre_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 500,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": 500,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 500,
+                    "unit_transaction_limit": 500,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 500
+                },
+                "post_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 1000,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": null,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 3000,
+                    "unit_transaction_limit": 1000,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 1000
+                },
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            },
+            "transfer_in_limits": {
+                "pre_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 500,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": 500,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 500,
+                    "unit_transaction_limit": 500,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 500
+                },
+                "post_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 1000,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": null,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 3000,
+                    "unit_transaction_limit": 1000,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 1000
+                },
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            },
+            "transfer_out_limits": {
+                "pre_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 500,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": 500,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 500,
+                    "unit_transaction_limit": 500,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 500
+                },
+                "post_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 1000,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": null,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 3000,
+                    "unit_transaction_limit": 1000,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 1000
+                },
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            },
+            "load_limits": {
+                "pre_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 500,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": 500,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 500,
+                    "unit_transaction_limit": 500,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 500
+                },
+                "post_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 1000,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": null,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 3000,
+                    "unit_transaction_limit": 1000,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 1000
+                },
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            },
+            "unload_limits": {
+                "pre_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 500,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": 500,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 500,
+                    "unit_transaction_limit": 500,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 500
+                },
+                "post_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": null,
+                    "daily_transactional_limit": 1000,
+                    "lifetime_count_limit": null,
+                    "lifetime_transactional_limit": null,
+                    "monthly_count_limit": null,
+                    "monthly_transactional_limit": 3000,
+                    "unit_transaction_limit": 1000,
+                    "weekly_count_limit": null,
+                    "weekly_transactional_limit": 1000
+                },
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            },
+            "remittance_limits": {
+                "pre_kyc": {
+                    "allowed": 0,
+                    "daily_count_limit": 0,
+                    "daily_transactional_limit": 0,
+                    "lifetime_count_limit": 0,
+                    "lifetime_transactional_limit": 0,
+                    "monthly_count_limit": 0,
+                    "monthly_transactional_limit": 0,
+                    "unit_transaction_limit": 0,
+                    "weekly_count_limit": 0,
+                    "weekly_transactional_limit": 0
+                },
+                "post_kyc": {
+                    "allowed": 1,
+                    "daily_count_limit": 0,
+                    "daily_transactional_limit": 0,
+                    "lifetime_count_limit": 0,
+                    "lifetime_transactional_limit": 0,
+                    "monthly_count_limit": 0,
+                    "monthly_transactional_limit": 0,
+                    "unit_transaction_limit": 0,
+                    "weekly_count_limit": 0,
+                    "weekly_transactional_limit": 0
+                },
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            },
+            "reversal_limits": {
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            },
+            "refund_limits": {
+                "current": {
+                    "lifetime_count": 0,
+                    "lifetime_transactional": 0,
+                    "daily_count": 0,
+                    "daily_transactional": 0,
+                    "weekly_count": 0,
+                    "weekly_transactional": 0,
+                    "monthly_count": 0,
+                    "monthly_transactional": 0
+                }
+            }
+        }
+    }
+}
+
+
+// create payment 
+{ id: 'card_1GGfVNLr8xu6HSU0D0sPfXhP',
+        object: 'card',
+        address_city: null,
+        address_country: null,
+        address_line1: null,
+        address_line1_check: null,
+        address_line2: null,
+        address_state: null,
+        address_zip: null,
+        address_zip_check: null,
+        brand: 'Visa',
+        country: 'US',
+        customer: null,
+        cvc_check: null,
+        dynamic_last4: null,
+        exp_month: 12,
+        exp_year: 2023,
+        fingerprint: 'hGiALSWUTtVSlG4A',
+        funding: 'credit',
+        last4: '4242',
+        metadata: {},
+        name: 'Inshad',
+        tokenization_method: null },
+     source_transfer: null,
+     statement_descriptor: null,
+     statement_descriptor_suffix: null,
+     status: 'succeeded',
+     transfer_data: null,
+     transfer_group: null } }

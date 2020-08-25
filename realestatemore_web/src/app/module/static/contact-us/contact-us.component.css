@@ -1,0 +1,6 @@
+.content-sidebar img {
+    max-height: 23px;
+    width: 26px;
+}
+
+.south-contact-area .contact-form .form-control{ height: auto; }

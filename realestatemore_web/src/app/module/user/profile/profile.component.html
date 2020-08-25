@@ -1,0 +1,126 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title"><a [routerLink]="''">
+                            {{'Home' | translate}}
+                            <i class="fa fa-angle-right"></i></a> {{'Profile' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="UserArea">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <app-side-menu></app-side-menu>
+                </div>
+
+                <div class="col-sm-9">
+
+                    <div class="ProfileArea">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="Profileinfo">
+                                    <figure>
+                                        <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                        <img src="{{userData?.profileImage}}">
+                                    </figure>
+                                    <figcaption>
+                                        <h4>
+                                            <span>{{'Name' | translate}} :</span>
+                                            {{userData?.fullName}}
+                                        </h4>
+                                        <h4>
+                                            <span>{{'Email' | translate}} :</span>
+                                            {{userData?.email}}
+                                        </h4>
+                                        <h4>
+                                            <span>{{'Contact Number' | translate}} :</span>
+                                            {{userData?.countryCode}}
+                                            {{userData?.mobileNumber}}</h4>
+                                        <h4>
+                                            <span>{{'Address' | translate}} :</span>
+                                            {{userData?.profile?.address}}
+                                        </h4>
+                                    </figcaption>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <form [formGroup]="profileForm" (ngSubmit)="profileSubmit()">
+                                    <h3>{{'Personal Infomation' | translate}}</h3>
+                                    <p style="color: forestgreen">{{updateMessage}}</p>
+                                    <p style="color: #FF0000">{{errorMessage}}</p>
+                                    <div class="form-group">
+                                        <label>{{'User Name' | translate}}</label>
+                                        <input type="text" class="form-control" formControlName="fullName">
+                                        <p style="color: #FF0000" *ngIf="profileForm.controls['fullName'].invalid && 
+                                            (formSubmited || profileForm.controls['fullName'].dirty)">
+                                            Please provide valid name </p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>{{'Email' | translate}}</label>
+                                        <input type="email" class="form-control" formControlName="email">
+                                        <p style="color: #FF0000" *ngIf="profileForm.controls['email'].invalid && 
+                                            (formSubmited || profileForm.controls['email'].dirty)">
+                                            Please provide valid email </p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>{{'Profile Image' | translate}}</label>
+                                        <input type="file" class="form-control" formControlName="image"
+                                            (change)="fileUpload($event)">
+                                        <p style="color: #FF0000" *ngIf="profileForm.controls['image'].invalid && 
+                                        (formSubmited || profileForm.controls['image'].dirty)">
+                                            Please provide valid Image </p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>{{'State' | translate}}</label>
+                                        <input type="email" class="form-control" formControlName="state">
+                                        <p style="color: #FF0000" *ngIf="profileForm.controls['state'].invalid && 
+                                        (formSubmited || profileForm.controls['state'].dirty)">
+                                            Please provide valid state </p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{'Country' | translate}}</label>
+                                        <input type="text" class="form-control" formControlName="country">
+                                        <p style="color: #FF0000" *ngIf="profileForm.controls['country'].invalid && 
+                                            (formSubmited || profileForm.controls['country'].dirty)">
+                                            Please provide valid country </p>
+                                    </div>
+
+                                    <div class="Numbers">
+                                        <div class="form-group">
+                                            <label>{{'Contact Number' | translate}}</label>
+                                            <div class="dropdown">
+                                                <span>{{selectedCountory}}</span>
+                                                <div class="dropdown-content">
+                                                    <p *ngFor="let item of CountryProvider.countryList()"
+                                                        (click)="onSelectCode(item.dial_code)">{{item.name}}
+                                                        ({{item.dial_code}})</p>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control" formControlName="mobileNumber">
+                                            <p style="color: #FF0000" *ngIf="profileForm.controls['mobileNumber'].invalid && 
+                                                (formSubmited || profileForm.controls['mobileNumber'].dirty)">
+                                                Please provide valid mobile number </p>
+                                        </div>
+                                    </div>
+                                    <button>{{'Save Changes' | translate}}</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

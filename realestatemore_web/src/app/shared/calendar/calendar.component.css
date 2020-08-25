@@ -1,0 +1,110 @@
+
+.CalendarBox{
+    margin: 0 0 40px;
+}
+
+.CalendarBox h5{
+    margin: 0;
+    background-color: #ec5702;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.CalendarBox h5 .fa-angle-left{
+    float: left;
+    padding: 0 0 0 20px;
+    cursor: pointer;
+}
+
+.CalendarBox h5 .fa-angle-right{
+    float: right;
+    padding: 0 20px 0 0;
+    cursor: pointer;
+}
+
+.CalendarBox table{
+    width: 100%;
+    margin: 0 0;
+}
+
+.CalendarBox table tr th{
+    background-color: #dedede;
+    color: #000;
+}
+
+.CalendarBox table tr th,
+.CalendarBox table tr td{
+    padding: 10px 5px;
+}
+.CalendarBox table tr td a{
+    float: right;
+    color:#000
+}
+
+.CalendarBox table tr td{
+    background-color: #f5f5f5;
+    color: #000;
+    height: 85px;
+    width: 60px;
+    border: 1px solid #ccc;
+}
+
+.CalendarBox table tr td .fa-times{
+    display: block;
+    color: red;
+}
+
+.CalendarBox table tr td .fa-star-o{
+    display: block;
+    color: green;
+}
+
+.CalendarBox table tr td.active{
+    color: #ed5702;
+}
+
+.CalendarBox table tr td{
+    height: auto;
+    padding: 0;
+}
+
+.CalendarBox table tr td .EventDate{
+    height: 78px;
+    padding: 3px 7px 5px 5px;
+    text-align: right;
+}
+
+.CalendarBox table tr td .EventDate span{
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.CalendarBox table tr td .EventDate div{
+    margin: 3px 0 0 0;
+    background-color: green;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+}
+
+.CalendarBox table tr td .EventDate div.Selected{
+    background-color: #fe7003;
+}
+
+
+
+
+
+
+
+

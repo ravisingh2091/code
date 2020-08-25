@@ -1,0 +1,162 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''">
+                            {{'Home' | translate}}
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                        {{'Manage Venue Booking' | translate}}
+
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="UserArea">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1">
+                    <div class="CalendarArea">
+                        <div class="CalendarBox">
+                            <rps-calendar *ngIf="eventData.length>0" [eventData]="eventData"
+                                (availableClick)="avlClick($event)">
+                            </rps-calendar>
+                        </div>
+
+                        <div class="CalendarEvent">
+                            <h1> {{'Your Events' | translate}} </h1>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#Upcoming">
+                                        {{'Upcoming' | translate}}
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#Past">{{'Past' | translate}} </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="Upcoming">
+                                    <div class="CalendarEventList">
+                                        <div class="row">
+                                            <div class="col-sm-6" *ngFor="let item of bookingData?.upcomingBooking">
+                                                <div class="VenueBox">
+                                                    <div class="Title">
+                                                        <h4>{{item.title}}</h4>
+                                                    </div>
+                                                    <div class="Type">
+                                                        <h5>
+                                                            {{'Type Of Booking' | translate}}
+                                                            <span>
+                                                                {{'Rent For Event' | translate}}
+                                                            </span>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="Date">
+                                                        <h5>{{'Booking Date' | translate}}</h5>
+                                                        <ol>
+                                                            <li *ngFor="let date of item.selectDate">{{date}}</li>
+                                                            <li *ngFor="let date of item.selectDate">{{date}}</li>
+                                                        </ol>
+                                                    </div>
+                                                    <div class="Date">
+                                                        <h5>{{'Time' | translate}}</h5>
+
+                                                        <p>
+                                                            {{'Check In Time' | translate}} : {{item.startTime}}
+                                                            <span>
+                                                                {{'Check Out Time' | translate}}: {{item.endTime}}
+                                                            </span>
+                                                        </p>
+
+                                                    </div>
+                                                    <div class="Price">
+                                                        <h5> {{'Price' | translate}}
+                                                            <span>
+                                                                {{'SAR' | translate}} {{item.totalPrice}}
+                                                            </span>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="Contact">
+                                                        <a href="javascript:void(0)"
+                                                            (click)="sendMessage(item?.userId?._id,item?.propertyId,item?.Type)">
+                                                            <i class=" fa fa-comments" aria-hidden="true"></i>
+                                                            {{'Messages' | translate}}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="Past">
+                                    <div class="CalendarEventList">
+                                        <div class="row">
+
+                                            <div class="col-sm-6" *ngFor="let item of bookingData?.pastBooking">
+                                                <div class="VenueBox">
+                                                    <div class="Title">
+                                                        <h4>{{item.title}}</h4>
+                                                    </div>
+                                                    <div class="Type">
+                                                        <h5>
+                                                            {{'Type of Booking' | translate}}
+                                                            <span>
+                                                                {{'Rent For Event' | translate}}
+                                                            </span>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="Date">
+                                                        <h5>{{'Booking Date' | translate}}</h5>
+                                                        <ol>
+                                                            <li *ngFor="let date of item.selectDate">{{date}}</li>
+                                                            <li *ngFor="let date of item.selectDate">{{date}}</li>
+                                                        </ol>
+                                                    </div>
+                                                    <div class="Date">
+                                                        <h5>{{'Time' | translate}}</h5>
+
+                                                        <p>
+                                                            {{'Check In Time' | translate}}: {{item.startTime}}
+                                                            <span>{{'Check Out Time' | translate}}:
+                                                                {{item.endTime}}</span>
+                                                        </p>
+
+                                                    </div>
+                                                    <div class="Price">
+                                                        <h5>
+                                                            {{'Price' | translate}}
+                                                            <span>
+                                                                {{'SAR' | translate}} {{item.totalPrice}}
+                                                            </span>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="Contact">
+                                                        <a href="javascript:void(0)"
+                                                            (click)="sendMessage(item?.userId?._id,item?.propertyId,item?.Type)">
+                                                            <i class=" fa fa-comments" aria-hidden="true"></i>
+                                                            {{'Messages' | translate}}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

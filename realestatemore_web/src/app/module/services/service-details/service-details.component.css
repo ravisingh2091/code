@@ -1,0 +1,81 @@
+.carousel-item {
+    max-height: 300px;
+}
+
+.ServiceDetails .Service_Head h2 {
+    font-size: 28px;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    padding: 0 80px 0 0;
+    line-height: 24px;
+}
+
+.ServiceDetails .Service_Head h2 span{
+    position: absolute;
+    right: 0;
+    line-height: 20px;
+}
+
+.ServiceDetails .Service_Head h2 span a{
+    font-size: 16px;
+    margin: 0 0px 0 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #dcdcdc;
+    color: #000000;
+    border-radius: 50%;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.ServiceDetails .Service_Head h2 span a:hover{
+    color: #fe7003
+}
+
+.ServiceDetails .Service_Head h2 span a.Faviorites.active {
+    background-color: #ed5702;
+    color: #fff;
+}
+
+.Sevicetitle{}
+.Sevicetitle h2{
+    display: inline-block;
+    padding: 0px;
+}
+
+.Sevicetitle .serviceRight{
+    float: right;
+    display: flex;
+}
+
+.Sevicetitle .serviceRight a{
+    font-size: 16px;
+    margin: 0 0px 0 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #dcdcdc;
+    color: #000000;
+    border-radius: 50%;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.Like{
+    text-align: center;
+}
+
+.Like.active a{
+    background-color: #3b5998 !important;
+    color: #ffffff !important;
+}
+
+.Like strong{
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+

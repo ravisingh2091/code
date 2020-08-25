@@ -1,0 +1,49 @@
+.PostProperty h2 span a.Faviorites.active{
+    background-color: #ed5702;
+    color: #fff;
+}
+
+.carousel-item {
+    height: 400px;
+    overflow: hidden;
+}
+
+.carousel-item img{
+    height: 100%;
+}
+
+.PostProperty ul.Share li share-button{
+    background-color: #ec5a35;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+
+.PostDeails ul.Specfi li span.Specficate{
+    color: #000;
+    font-weight: 600;
+    width: 250px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.PostProperty ul.Share {
+    margin: 20px 0 20px 0;
+}
+.PostDeails h4 {
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 15px;
+    font-size: 26px;
+}
+.PostDeails ul {
+    padding: 0px 0 0px 40px;
+}

@@ -1,0 +1,91 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''">
+                            {{'Home' | translate}}
+                            <i class="fa fa-angle-right"></i>
+                        </a> {{'Owner Property' | translate}}
+
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="OwnerpropertyArea">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-9">
+                    <div class="OwnerpropertyList">
+
+                        <div class="single-featured-property" *ngFor="let item of ownerProperty">
+                            <div class="property-thumb">
+                                <img src="{{item?.imagesFile[0]?.image}}" alt="">
+                                <div class="tag">
+                                    <span *ngIf="item.Type =='buy'">
+                                        {{'For Buy' | translate}}
+                                    </span>
+                                    <span *ngIf="item.Type =='rent'">
+                                        {{'For Rent' | translate}}
+                                    </span>
+                                    <span *ngIf="item.Type =='rentevent'">
+                                        {{'Rent Event' | translate}}
+                                    </span>
+                                </div>
+                                <div class="list-price">
+                                    <p>{{'SAR' | translate}} {{item?.totalPrice}}</p>
+                                </div>
+                            </div>
+                            <div class="property-content">
+                                <h5>{{item?.title}}</h5>
+                                <p class="location">
+                                    <img src="assets/img/icons/location.png" alt="">
+                                    {{item?.address}}
+                                </p>
+                                <p>{{item?.description}}</p>
+                                <div class="property-meta-data d-flex align-items-end justify-content-between">
+
+                                    <div class="bathroom">
+                                        <img src="assets/img/icons/bathtub.png" alt="">
+                                        <span>{{item?.bathrooms}}</span>
+                                    </div>
+                                    <div class="garage">
+                                        <img src="assets/img/icons/garage.png" alt="">
+                                        <span>{{item?.bedrooms}}</span>
+                                    </div>
+                                    <div class="space">
+                                        <img src="assets/img/icons/space.png" alt="">
+                                        <span>{{item?.plotSize}} {{item?.plotSizeUnit}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="OwnerProfile">
+                        <figure><img src="{{ownerData?.profileImage}}" alt=""></figure>
+                        <figcaption>
+                            <h2>{{ownerData?.fullName}}</h2>
+                            <h5>{{ownerData?.state}}</h5>
+                            <!-- <h5><a [routerLink]="['/properties', 'owner-property']">Other Services</a></h5> -->
+                            <h5><a [routerLink]="'/chat'">{{'Send Messages' | translate}}</a></h5>
+                            <h6><img src="assets/img/icons/phone-call.png" alt="">{{ownerData?.countryCode}}
+                                {{ownerData?.mobileNumber}}</h6>
+                            <h6><img src="assets/img/icons/envelope.png" alt="">{{ownerData?.email}}</h6>
+                        </figcaption>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,650 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''"> {{'Home' | translate}} <i class="fa fa-angle-right"></i></a>
+                        {{'Post Services' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="AddpropertyArea">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h1>{{'Create a Service Profile' | translate}} </h1>
+
+                    <div class="AddpropertyBody">
+                        <div class="AddpropertyForm">
+                            <p *ngIf="succMessage" style="color: forestgreen">{{succMessage}}</p>
+                            <p *ngIf="errorMessage" style="color: #FF0000">{{errorMessage}}</p>
+                            <form [formGroup]="postServiceForm" (ngSubmit)="postService()">
+                                <div class="Basic_infomation">
+                                    <h4>{{'1. Basic Information' | translate}} :</h4>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3">{{'Status' | translate}} :</label>
+                                            <div class="col-12 col-sm-9 col-xl-9">
+                                                <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                                <select class="form-control" formControlName="accountStatus">
+                                                    <option value="">{{'Select Status' | translate}}</option>
+                                                    <option value="active">{{'Active' | translate}}</option>
+                                                    <option value="inactive">{{'In Active' | translate}}</option>
+                                                </select>
+
+                                                <p style="color: #FF0000" *ngIf="postServiceForm.controls['company_name'].invalid && 
+                                                    (formSubmited || postServiceForm.controls['company_name'].dirty)">
+                                                    Please provide valid status </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3">{{'Company Name' | translate}} :</label>
+                                            <div class="col-12 col-sm-9 col-xl-9">
+                                                <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                                <input type="text" class="form-control"
+                                                    placeholder="{{'Company Name' | translate}}"
+                                                    formControlName="company_name">
+                                                <p style="color: #FF0000" *ngIf="postServiceForm.controls['company_name'].invalid && 
+                                                    (formSubmited || postServiceForm.controls['company_name'].dirty)">
+                                                    Please provide valid company name </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3">{{'Select Categories' | translate}} :</label>
+                                            <div class="col-12 col-sm-9 col-xl-9">
+                                                <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                                <select class="form-control" (change)="getSubCategory($event)"
+                                                    formControlName="category_name">
+                                                    <option value="">{{'Select Categories' | translate}}</option>
+                                                    <option value="archInterior">
+                                                        {{'Architecture & Interior' | translate}}</option>
+                                                    <option value="afterSales">{{'After Sales' | translate}}</option>
+
+                                                </select>
+                                                <p style="color: #FF0000" *ngIf="postServiceForm.controls['category_name'].invalid && 
+                                                (formSubmited || postServiceForm.controls['category_name'].dirty)">
+                                                    Please provide valid Categories</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3">{{'Select Sub Categories' | translate}} :</label>
+                                            <div class="col-12 col-sm-9 col-xl-9">
+                                                <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                                <select class="form-control" formControlName="sub_category_name">
+                                                    <option value="">{{'Select Sub Categories' | translate}}</option>
+                                                    <option *ngFor="let item of subCategoriesLists"
+                                                        value="{{item.name}}">
+                                                        {{ language =='en' ? item.name :item.arabicName }}
+                                                    </option>
+                                                </select>
+                                                <p style="color: #FF0000" *ngIf="postServiceForm.controls['sub_category_name'].invalid && 
+                                                (formSubmited || postServiceForm.controls['sub_category_name'].dirty)">
+                                                    Please provide valid Sub Categories </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3">{{'Email Address' | translate}} :</label>
+                                            <div class="col-12 col-sm-9 col-xl-9">
+                                                <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                                <input type="text" class="form-control"
+                                                    placeholder="{{'Email Address' | translate}}"
+                                                    formControlName="email">
+                                                <p style="color: #FF0000" *ngIf="postServiceForm.controls['email'].invalid && 
+                                                (formSubmited || postServiceForm.controls['email'].dirty)">
+                                                    Please provide valid email </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group" *ngIf="specialOffer">
+                                        <div class="row">
+                                            <label class="col-sm-3">{{'Special Offer' | translate}} :</label>
+                                            <div class="col-12 col-sm-9 col-xl-9">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <label class="Radio">{{'Available' | translate}}
+                                                            <input type="radio" formControlName="specialOffer"
+                                                                value="true">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <label class="Radio">{{'Not Available' | translate}}
+                                                            <input type="radio" formControlName="specialOffer"
+                                                                value="false">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                    <p style="color: #FF0000" *ngIf="postServiceForm.controls['specialOffer'].invalid && 
+                                (formSubmited || postServiceForm.controls['specialOffer'].dirty)">
+                                                        Please provide valid Special Offer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-3">{{'Phone Number' | translate}} :</label>
+                                            <div class="col-12 col-sm-9 col-xl-9">
+                                                <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                                <input type="text" class="form-control"
+                                                    placeholder="{{'Phone Number' | translate}}"
+                                                    formControlName="phone">
+                                                <p style="color: #FF0000" *ngIf="postServiceForm.controls['phone'].invalid && 
+                                                    (formSubmited || postServiceForm.controls['phone'].dirty)">
+                                                    Please provide valid phone </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div *ngIf="fullForm">
+                                        <h4>{{'2. Business Location' | translate}}</h4>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'State' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+
+
+                                                    <input type="text" class="form-control" formControlName="state"
+                                                        placeholder="State" readonly>
+                                                    <p style="color: #FF0000" *ngIf="postServiceForm.controls['state'].invalid && 
+                                                        (formSubmited || postServiceForm.controls['state'].dirty)">
+                                                        Please provide valid State </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'City' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+
+                                                    <input type="text" class="form-control" formControlName="city"
+                                                        placeholder="{{'City' | translate}}" readonly>
+                                                    <p style="color: #FF0000" *ngIf="postServiceForm.controls['city'].invalid && 
+                                                        (formSubmited || postServiceForm.controls['city'].dirty)">
+                                                        Please provide valid City </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'ZIP Code' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                                    <input type="text" class="form-control" formControlName="zipcode"
+                                                        placeholder="{{'ZIP Code' | translate}}" readonly>
+                                                    <p style="color: #FF0000" *ngIf="postServiceForm.controls['zipcode'].invalid && 
+                                                        (formSubmited || postServiceForm.controls['zipcode'].dirty)">
+                                                        Please provide valid Zipcode </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Area' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                                    <input type="text" class="form-control" formControlName="area"
+                                                        placeholder="{{'Area' | translate}}">
+                                                    <p style="color: #FF0000" *ngIf="postServiceForm.controls['area'].invalid && 
+                                                        (formSubmited || postServiceForm.controls['area'].dirty)">
+                                                        Please provide valid Area </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Location On Map' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <agm-map [latitude]="latitude" [longitude]="longitude"
+                                                        [zoom]="zoom">
+                                                        <agm-marker [latitude]="latitude" [longitude]="longitude"
+                                                            [markerDraggable]="true" (dragEnd)="mapClickCheck($event)">
+                                                        </agm-marker>
+                                                    </agm-map>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Upload Images' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <div class="row">
+                                                        <div class="identfiy">
+                                                            <div class="uploadfile" style="margin: 0">
+                                                                <span class="Title-icon"><i
+                                                                        class="fa fa-info-circle"></i></span>
+                                                                <span class="upload"><i class="fa fa-upload"
+                                                                        aria-hidden="true"></i>{{'Upload Images' | translate}}</span>
+                                                                <input type="file" class="form-control"
+                                                                    placeholder="Phone Number"
+                                                                    formControlName="upload_file"
+                                                                    (change)="selectImages($event)" accept="image/*">
+                                                            </div>
+
+                                                            <ul class="propertyimages">
+                                                                <li
+                                                                    *ngFor="let item of previousUploadImage;let i =index">
+                                                                    <a href="javascript:void(0)"
+                                                                        (click)="removeUploadFile('previous',i)"></a>
+                                                                    <img src="{{item.image}}">
+                                                                </li>
+                                                                <li *ngFor="let item of uploadFileUrls;let i =index">
+                                                                    <a href="javascript:void(0)"
+                                                                        (click)="removeUploadFile('add',i)"></a>
+                                                                    <img src="{{item}}">
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Working Hours' | translate}}:</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="working_day_sunday">
+                                                                <option value="Sunday">{{'Sunday' | translate}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="start_time_sunday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="end_time_sunday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Working Hours' | translate}}:</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="working_day_monday">
+                                                                <option value="Monday">{{'Monday' | translate}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="start_time_monday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="end_time_monday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Working Hours' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="working_day_tuesday">
+                                                                <option value="Tuesday">{{'Tuesday' | translate}}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="start_time_tuesday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="end_time_tuesday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Working Hours' | translate}}:</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="working_day_wednesday">
+                                                                <option value="Wednesday">{{'Wednesday' | translate}}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="start_time_wednesday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="end_time_wednesday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Working Hours' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="working_day_thursday">
+                                                                <option value="Thursday">{{'Thursday' | translate}}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="start_time_thursday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="end_time_thursday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Working Hours' | translate}}:</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="working_day_friday">
+                                                                <option value="Friday">{{'Friday' | translate}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="start_time_friday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="end_time_friday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Working Hours' | translate}}:</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="working_day_saturday">
+                                                                <option value="Saturday">{{'Saturday' | translate}}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="start_time_saturday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <span class="Title-icon"><i
+                                                                    class="fa fa-info-circle"></i></span>
+                                                            <select class="form-control"
+                                                                formControlName="end_time_saturday">
+                                                                <option value="">{{'Time' | translate}}</option>
+                                                                <option
+                                                                    *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                                                    value="{{item}}:00">
+                                                                    {{item}}:00
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Description' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9">
+
+
+                                                    <div class="ServiceList">
+                                                        <span class="Title-icon"><i
+                                                                class="fa fa-info-circle"></i></span>
+                                                        <textarea type="text" class="form-control"
+                                                            placeholder="{{'Description' | translate}}"
+                                                            formControlName="description"></textarea>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label class="col-sm-3">{{'Service Listing' | translate}} :</label>
+                                                <div class="col-12 col-sm-9 col-xl-9" formArrayName="serviceNameArray">
+                                                    <div class="ServiceList" [formGroupName]="i"
+                                                        *ngFor="let arrayItem of postServiceForm.get('serviceNameArray')['controls']; let i=index">
+
+                                                        <span class="Title-icon"><i
+                                                                class="fa fa-info-circle"></i></span>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Add Service Name {{i+1}}"
+                                                            formControlName="service_name">
+                                                    </div>
+
+
+
+                                                    <button type="button" (click)="addItem()" class="AddMore">
+                                                        +
+                                                        {{'Add More Services' | translate}}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="Buttonnext">
+                                        <span class="Next" *ngIf="!fullForm" (click)="fullForm = true">
+                                            {{'Next' | translate}}</span>
+                                        <button *ngIf="fullForm">{{'Publish' | translate}}</button>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="PropertyAlert">
+                        <p>
+                            {{'Need a proper description about the property. So that client can easily understand about the property.' | translate}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

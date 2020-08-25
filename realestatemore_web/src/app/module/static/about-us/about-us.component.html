@@ -1,0 +1,141 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title"><a [routerLink]="''">{{'Home' | translate}} <i
+                                class="fa fa-angle-right"></i></a>{{'About Us' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-content-wrapper section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="section-heading text-left wow fadeInUp" data-wow-delay="250ms">
+                    <h2>{{aboutData?.title}}</h2>
+                    <p>Suspendisse dictum enim sit amet libero</p>
+                </div>
+                <div class="about-content">
+                    <img class="wow fadeInUp" data-wow-delay="350ms" src="assets/img/bg-img/about.jpg" alt="">
+                    <p class="wow fadeInUp" data-wow-delay="450ms">{{aboutData?.description}}</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <div class="section-heading text-left wow fadeInUp" data-wow-delay="250ms">
+                    <h2>Featured Properties</h2>
+                    <p>Suspendisse dictum enim sit amet libero</p>
+                </div>
+
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+
+
+                        <div class="carousel-item {{i==0 ?'active' :''}}"
+                            *ngFor="let featuredList of featuredLists;let i =index">
+                            <div class="single-featured-property">
+                                <div class="property-thumb">
+                                    <img src="{{featuredList.imagesFile.length >0 ? featuredList.imagesFile[0].image  : 'assets/img/Real-Estate.png'}}"
+                                        alt="">
+
+                                    <div class="tag">
+                                        <span *ngIf="featuredList.Type=='buy'">{{'Buy' | translate}}</span>
+                                        <span
+                                            *ngIf="featuredList.Type=='rentevent'">{{'Rent For Event' | translate}}</span>
+                                        <span *ngIf="featuredList.Type=='rent'">{{'Rent' | translate}}</span>
+                                        <span
+                                            *ngIf="featuredList.Type=='archInterior'">{{'Architecture & Interior' | translate}}</span>
+                                        <span
+                                            *ngIf="featuredList.Type=='afterSales'">{{'After Sales Services' | translate}}</span>
+                                    </div>
+                                    <div class="list-price">
+                                        <p>{{'SAR' | translate}} {{featuredList.totalPrice}}</p>
+                                    </div>
+                                </div>
+                                <div class="property-content">
+                                    <h5>{{featuredList.title}}</h5>
+                                    <p class="location">
+                                        <img src="assets/img/icons/location.png" alt="">{{featuredList.address}}
+                                    </p>
+                                    <!-- <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.
+                                    </p> -->
+                                    <div class="property-meta-data d-flex align-items-end justify-content-between">
+                                        <div class="new-tag">
+                                            <img src="assets/img/icons/new.png" alt="">
+                                        </div>
+                                        <div class="bathroom">
+                                            <img src="assets/img/icons/bathtub.png" alt="">
+                                            <span>{{featuredList.bathrooms}}</span>
+                                        </div>
+                                        <div class="garage">
+                                            <img src="assets/img/icons/garage.png" alt="">
+                                            <span>{{featuredList.bedrooms}}</span>
+                                        </div>
+                                        <div class="space">
+                                            <img src="assets/img/icons/space.png" alt="">
+                                            <span>{{featuredList.plotSize}} {{featuredList.plotSizeUnit}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="meet-the-team-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h2>{{aboutData?.teamTitle}}</h2>
+                    <p>{{aboutData?.teamDescription}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-sm-6 col-lg-4" *ngFor="let item of aboutData?.team">
+                <div class="single-team-member mb-100 wow fadeInUp" data-wow-delay="250ms">
+
+                    <div class="team-member-thumb">
+                        <img src="{{item.image}}" alt="">
+                    </div>
+
+                    <div class="team-member-info">
+                        <div class="section-heading">
+                            <img src="assets/img/icons/prize.png" alt="">
+                            <h2>{{item.name}}</h2>
+                            <p>{{item.designation}}</p>
+                        </div>
+                        <div class="address">
+                            <h6><img src="assets/img/icons/phone-call.png" alt=""> {{item.mobileNo}}</h6>
+                            <h6><img src="assets/img/icons/envelope.png" alt=""> {{item.email}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>

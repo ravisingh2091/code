@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Zimble - Dipute Completion </title>
+
+    <style type="text/css">
+        html,
+        body,
+        div,
+        span,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        abbr,
+        address,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        samp,
+        small,
+        strong,
+        sub,
+        sup,
+        var,
+        b,
+        i,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        body {
+            line-height: 1;
+            font-family: 'Lato', sans-serif !important;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+
+        a {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+
+        #outlook a {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+            line-height: 100%;
+            vertical-align: middle;
+        }
+
+        .col {
+            font-size: 16px;
+            line-height: 26px;
+            vertical-align: top;
+        }
+
+        @media only screen and (max-width: 730px) {
+            .wrapper img {
+                max-width: 100%;
+            }
+
+            u~div .wrapper {
+                min-width: 100vw;
+            }
+
+            .container {
+                width: 100% !important;
+                -webkit-text-size-adjust: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 699px) {
+            .col {
+                box-sizing: border-box;
+                display: inline-block !important;
+                line-height: 23px;
+                width: 100% !important;
+            }
+
+            .col-sm-1 {
+                max-width: 8.33333%;
+            }
+
+            .col-sm-2 {
+                max-width: 16.66667%;
+            }
+
+            .col-sm-3 {
+                max-width: 25%;
+            }
+
+            .col-sm-4 {
+                max-width: 33.33333%;
+            }
+
+            .col-sm-5 {
+                max-width: 41.66667%;
+            }
+
+            .col-sm-6 {
+                max-width: 50%;
+            }
+
+            .col-sm-7 {
+                max-width: 58.33333%;
+            }
+
+            .col-sm-8 {
+                max-width: 66.66667%;
+            }
+
+            .col-sm-9 {
+                max-width: 75%;
+            }
+
+            .col-sm-8 {
+                max-width: 83.33333%;
+            }
+
+            .col-sm-11 {
+                max-width: 91.66667%;
+            }
+
+            .col-sm-push-1 {
+                margin-left: 8.33333%;
+            }
+
+            .col-sm-push-2 {
+                margin-left: 16.66667%;
+            }
+
+            .col-sm-push-3 {
+                margin-left: 25%;
+            }
+
+            .col-sm-push-4 {
+                margin-left: 33.33333%;
+            }
+
+            .col-sm-push-5 {
+                margin-left: 41.66667%;
+            }
+
+            .col-sm-push-6 {
+                margin-left: 50%;
+            }
+
+            .col-sm-push-7 {
+                margin-left: 58.33333%;
+            }
+
+            .col-sm-push-8 {
+                margin-left: 66.66667%;
+            }
+
+            .col-sm-push-9 {
+                margin-left: 75%;
+            }
+
+            .col-sm-push-10 {
+                margin-left: 83.33333%;
+            }
+
+            .col-sm-push-11 {
+                margin-left: 91.66667%;
+            }
+
+            .full-width-sm {
+                display: table !important;
+                width: 100% !important;
+            }
+
+            .stack-sm-first {
+                display: table-header-group !important;
+            }
+
+            .stack-sm-last {
+                display: table-footer-group !important;
+            }
+
+            .stack-sm-top {
+                display: table-caption !important;
+                max-width: 100%;
+                padding-left: 0 !important;
+            }
+
+            .toggle-content {
+                max-height: 0;
+                overflow: auto;
+                transition: max-height .4s linear;
+                -webkit-transition: max-height .4s linear;
+            }
+
+            .toggle-trigger:hover+.toggle-content,
+            .toggle-content:hover {
+                max-height: 999px !important;
+            }
+
+            .show-sm {
+                display: inherit !important;
+                font-size: inherit !important;
+                line-height: inherit !important;
+                max-height: none !important;
+            }
+
+            .hide-sm {
+                display: none !important;
+            }
+
+            .align-sm-center {
+                display: table !important;
+                float: none;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .align-sm-left {
+                float: left;
+            }
+
+            .align-sm-right {
+                float: right;
+            }
+
+            .text-sm-center {
+                text-align: center !important;
+            }
+
+            .text-sm-left {
+                text-align: left !important;
+            }
+
+            .text-sm-right {
+                text-align: right !important;
+            }
+
+            .borderless-sm {
+                border: none !important;
+            }
+
+            .nav-sm-vertical .nav-item {
+                display: block;
+            }
+
+            .nav-sm-vertical .nav-item a {
+                display: inline-block;
+                padding: 4px 0 !important;
+            }
+
+            .spacer {
+                height: 0;
+            }
+
+            .p-sm-0 {
+                padding: 0 !important;
+            }
+
+            .p-sm-8 {
+                padding: 8px !important;
+            }
+
+            .p-sm-16 {
+                padding: 16px !important;
+            }
+
+            .p-sm-24 {
+                padding: 24px !important;
+            }
+
+            .p-sm-32 {
+                padding: 32px !important;
+            }
+
+            .pt-sm-0 {
+                padding-top: 0 !important;
+            }
+
+            .pt-sm-8 {
+                padding-top: 8px !important;
+            }
+
+            .pt-sm-16 {
+                padding-top: 16px !important;
+            }
+
+            .pt-sm-24 {
+                padding-top: 24px !important;
+            }
+
+            .pt-sm-32 {
+                padding-top: 32px !important;
+            }
+
+            .pr-sm-0 {
+                padding-right: 0 !important;
+            }
+
+            .pr-sm-8 {
+                padding-right: 8px !important;
+            }
+
+            .pr-sm-16 {
+                padding-right: 16px !important;
+            }
+
+            .pr-sm-24 {
+                padding-right: 24px !important;
+            }
+
+            .pr-sm-32 {
+                padding-right: 32px !important;
+            }
+
+            .pb-sm-0 {
+                padding-bottom: 0 !important;
+            }
+
+            .pb-sm-8 {
+                padding-bottom: 8px !important;
+            }
+
+            .pb-sm-16 {
+                padding-bottom: 16px !important;
+            }
+
+            .pb-sm-24 {
+                padding-bottom: 24px !important;
+            }
+
+            .pb-sm-32 {
+                padding-bottom: 32px !important;
+            }
+
+            .pl-sm-0 {
+                padding-left: 0 !important;
+            }
+
+            .pl-sm-8 {
+                padding-left: 8px !important;
+            }
+
+            .pl-sm-16 {
+                padding-left: 16px !important;
+            }
+
+            .pl-sm-24 {
+                padding-left: 24px !important;
+            }
+
+            .pl-sm-32 {
+                padding-left: 32px !important;
+            }
+
+            .px-sm-0 {
+                padding-right: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            .px-sm-8 {
+                padding-right: 8px !important;
+                padding-left: 8px !important;
+            }
+
+            .px-sm-16 {
+                padding-right: 16px !important;
+                padding-left: 16px !important;
+            }
+
+            .px-sm-24 {
+                padding-right: 24px !important;
+                padding-left: 24px !important;
+            }
+
+            .px-sm-32 {
+                padding-right: 32px !important;
+                padding-left: 32px !important;
+            }
+
+            .py-sm-0 {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .py-sm-8 {
+                padding-top: 8px !important;
+                padding-bottom: 8px !important;
+            }
+
+            .py-sm-16 {
+                padding-top: 16px !important;
+                padding-bottom: 16px !important;
+            }
+
+            .py-sm-24 {
+                padding-top: 24px !important;
+                padding-bottom: 24px !important;
+            }
+
+            .py-sm-32 {
+                padding-top: 32px !important;
+                padding-bottom: 32px !important;
+            }
+
+            .chrink {
+                font-size: 90px !important;
+                line-height: 90px;
+            }
+        }
+    </style>
+
+</head>
+
+<body
+    style="box-sizing: border-box; margin: 0; padding: 0; width: 100%; word-break: break-word; -webkit-font-smoothing: antialiased;">
+
+    <div style="display: none; font-size: 0; line-height: 0;"> </div>
+
+    <table class="wrapper" cellpadding="15" cellspacing="0" role="presentation" width="100%">
+        <tr>
+            <td align="center" bgcolor="#F7FAFC">
+                <table class="container" cellpadding="0" cellspacing="0" role="presentation" width="400">
+                    <tr>
+                        <td align="left" class="px-sm-16 py-sm-24" style="padding: 24px 0;">
+
+                            <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                <tr>
+                                    <td style="padding: 0px;">
+                                        <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                            <tr>
+                                                <td class="col px-sm-16" align="center" width="352"
+                                                    style="padding: 25px 25px;">
+                                                    <img src="https://zimble-dev.s3-ap-southeast-1.amazonaws.com/email/logo.png"
+                                                        alt="Logo" width="120px"
+                                                        style="width: 120px; max-width: 120px;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                <tr>
+                                    <td style="padding: 0px;">
+                                        <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                            <tr>
+                                                <td class="col px-sm-16" bgcolor="#FFFFFF" align="left" width="352"
+                                                    style="padding: 24px 24px 32px 24px;">
+
+                                                    <h1 class="quicksand"
+                                                        style="color: #1a202c; font-size: 24px; font-weight: 700; line-height: 30px; ">
+                                                        Your reported Dispute is resolved
+                                                    </h1>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                <tr>
+                                    <td style="padding: 0px;">
+                                        <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                            <tr>
+                                                <td class="col" align="center" width="400">
+                                                    <img class="full-width-sm"
+                                                        src="https://zimble-dev.s3-ap-southeast-1.amazonaws.com/email/dispute.png"
+                                                        alt="Banner 1" width="100%"
+                                                        style="width: 100%; max-width: 100%;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                <tr>
+                                    <td style="padding: 0px;">
+                                        <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                            <tr>
+                                                <td class="col px-sm-16" bgcolor="#FFFFFF" align="left" width="352"
+                                                    style="padding: 48px 24px 32px 24px;">
+
+                                                    <p class="source"
+                                                        style="color: #718096; font-size: 16px; font-weight: 500; line-height: 25px; margin-bottom: 10px;">
+                                                        Your Dispute id is : <%= disputeId%> , is resolved by Zimble
+                                                        Team.
+                                                    </p>
+
+                                                    <p class="source"
+                                                        style="color: #718096; font-size: 16px; font-weight: 500; line-height: 25px; margin-bottom: 10px;">
+                                                        Please get in touch on <a
+                                                            href="mailto:support@zimble.sg">support@zimble.sg</a> in
+                                                        case you have more queries related to your closed dispute.
+                                                    </p>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                <tr>
+                                    <td class="px-sm-16" style="padding: 0 24px;" bgcolor="#FFFFFF">
+                                        <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                            <tr>
+                                                <td class="col col-sm-6" bgcolor="#FFFFFF" align="left" width="352"
+                                                    style="padding: 5px 0px 37px 0px; border-top: 2px solid #edf2f7; line-height: 12px !important;">
+
+                                                    <p class="source"
+                                                        style="color: #718096; font-size: 12px; font-weight: 400; line-height: 12px;">
+                                                        Sent by</p>
+
+                                                    <a href="www.zimble.sg" class="source"
+                                                        style="color: #12beff; font-size: 12px; font-weight: 400; line-height: 12px !important; text-decoration: none;">
+                                                        www.zimble.sg
+                                                    </a>
+
+                                                </td>
+
+                                                <td class="col col-sm-6" bgcolor="#FFFFFF" align="right" width="352"
+                                                    style="padding: 5px 0px 37px 0px; border-top: 2px solid #edf2f7; line-height: 12px !important;">
+                                                    <p class="source"
+                                                        style="color: #718096; font-size: 12px; font-weight: 400; line-height: 12px;">
+                                                        Follow us on :</p>
+
+                                                    <a href="#" class="source"
+                                                        style="color: #f8444f; font-size: 12px; font-weight: 400; line-height: 12px !important; text-decoration: none;">
+                                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAXCAYAAADQpsWBAAAABHNCSVQICAgIfAhkiAAAAP9JREFUOE/tks1Nw0AQhd9LjGLfoAJcAh1kkXwOW0I6CB3glEAnsTmyCKcC6IAW4GSIwBNNIsHaXokY5cjcZjTfzJsfImBi7OkmahYCWgAXXkoVu+KSXUaBj7E8gUhDBWNXsAfV2awiOA0BGutBtbEpI3kJAG8CedZ44krT6lRn1hDy2IJEbuOH8tqPdaBZTvDGT5h88ozV6nUQpDN05f7aKQjpHBG/RKs1zWguxNyvPGZjfP/k/m7N9+xqBxxiAlnvtjcEAqSIXWkHQQJZJq7MqR/wLU2Ykjj3paqkH3+UJ25V/W17ftU66x/3eHf677TfwDHuZA3Q/mp9m+4zbwFITYIYBP1I0wAAAABJRU5ErkJggg=="
+                                                            alt="facebook" width="6px"
+                                                            style="width: 6px; max-width: 6px; margin-right: 10px; filter: brightness(0) invert(0.5);" />
+                                                    </a>
+
+                                                    <a href="#" class="source"
+                                                        style="color: #f8444f; font-size: 12px; font-weight: 400; line-height: 12px !important; text-decoration: none;">
+                                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAATCAYAAAB7u5a2AAAABHNCSVQICAgIfAhkiAAAAdFJREFUOE+dlN1V20AQhe9d+4D1FDoIqQBKELFeLYsKEBXEdAAVRKkApwNhP8bOERXE6UAlwJPFOWInZzdISMbWGvZtf+abmbszQ3xgrYPwmsILEMcQPBBID555xSx9MLh1EPneIs1oN8Nw2lMqOfiVrly+iiBMAY7fvBMYcAbAJ/Tl4XKeWngRjMVEIOS58bjLQRGMJoD63hWAiPwk8Ecpdf8Kry0kOSzVTZViE1QMwxXIE1d2ArnxFrPrF1nGOYnPr3zkgCTyrO68LM2rc5uhc+mrwWKemGf/4V9HMZW63WGXAbKCIAdpjTplAc8qaS38aTiKNBiRvHAZu+5lE14EY/PTn1yG+9wPFnc24FqWYhgmIL/tY9ytifwdLGenLbj40dFTT2f7VIID/mOwnE1acLMxDoqeTkhGH5VISn5pVletz9qPjtHXUwpPQBy9VyLTPN5yFjftarg53Nnabk+PUvK0GXX9oZVtQ5p3lSRFn5tZshlDK/Lq0kjEvk62DqgNgmh96f2eT7cl9wZuGkqoTFn6LjW6wFYW253khKCZG06grSzIPUoVb2q8VZaXSokhjFsDrP36UURSUE27xvLOaqnrvY+6y+zjErkrym0S/gML0MXTrzHu3QAAAABJRU5ErkJggg=="
+                                                            alt="twitter" width="12px"
+                                                            style="width: 12px; max-width: 12px; filter: brightness(0) invert(0.5);" />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                <tr>
+                                    <td class="px-sm-16" style="padding: 0px;">
+                                        <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                                            <tr>
+                                                <td class="col" align="center" width="352" style="padding: 24px 24px;">
+                                                    <p class="source"
+                                                        style="color: #718096; font-size: 14px; font-weight: 500; line-height: 22px; margin-bottom: 0px;">
+                                                        Copyright © 2020. Zimble Pte. Ltd (Singapore). All rights
+                                                        reserved. All Trademarks Are The Property of Their Respective
+                                                        Owner.
+                                                    </p>
+
+                                                    <p class="source"
+                                                        style="color: #718096; font-size: 14px; font-weight: 500; line-height: 22px; margin-bottom: 0px;">
+                                                        The Zimble card is issued by MatchMove Pay Ltd pursuant to
+                                                        license by Mastercard Asia/Pacific Ltd.
+                                                    </p>
+
+                                                    <p class="source"
+                                                        style="color: #718096; font-size: 14px; font-weight: 500; line-height: 22px; margin-bottom: 0px;">
+                                                        Use of the Zimble card is governed by the Terms of Use and
+                                                        Privacy Policies.
+                                                    </p>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

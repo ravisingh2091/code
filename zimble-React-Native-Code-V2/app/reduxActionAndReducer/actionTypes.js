@@ -1,0 +1,8 @@
+export const LOGGED_IN_USER_SET_AUTH_TOKEN = "LOGGED_IN_USER_SET_AUTH_TOKEN";
+export const USER_FCM_TOKEN = "USER_FCM_TOKEN";
+export const USER_DETAILS = "USER_DETAILS";
+export const LOGIN_STATUS=  "LOGIN_STATUS";
+export const USER_TYPE=  "USER_TYPE";
+export const INTRO_STATUS=  "INTRO_STATUS";
+export const PARENT_CHAT_REQ=  "PARENT_CHAT_REQ";
+export const CHILD_CHAT_REQ=  "CHILD_CHAT_REQ";

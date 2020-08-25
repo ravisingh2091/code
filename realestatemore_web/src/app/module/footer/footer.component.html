@@ -1,0 +1,62 @@
+<footer class="footer-area section-padding-100-0 bg-img gradient-background-overlay"
+    style="background-image: url(assets/img/bg-img/cta.jpg);">
+    <div class="main-footer-area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="footer-widget-area mb-100">
+                        <div class="widget-title">
+                            <h6>{{'About Us' | translate}}</h6>
+                        </div>
+                        <div class="footer-logo">
+                            <a [routerLink]="''" style="margin: 0 0 0 -50px;"><img src="assets/img/Real-Estate-logo.png"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="footer-widget-area mb-100">
+                        <div class="widget-title">
+                            <h6>{{'Hours' | translate}}</h6>
+                        </div>
+                        <div class="weekly-office-hours">
+                            <div class="address">
+                                <h6><img src="assets/img/icons/phone-call.png" alt=""> +99-XX-XX-XX-XX</h6>
+                                <h6><img src="assets/img/icons/envelope.png" alt=""> Info@gmail.com</h6>
+                                <h6><img src="assets/img/icons/location.png" alt=""> California no 05-06, b3, Los
+                                    Angeles, CA</h6>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                    <div class="footer-widget-area mb-100">
+                        <div class="widget-title">
+                            <h6>{{'Useful Links' | translate}}</h6>
+                        </div>
+                        <ul class="useful-links-nav d-flex align-items-center">
+                            <li><a [routerLink]="['/user' , 'profile']">{{'Profile' | translate}}</a></li>
+                            <li><a [routerLink]="['/static' , 'about-us']">{{'About Us' | translate}}</a></li>
+                            <li><a [routerLink]="['/static' , 'contact-us']">{{'Contact' | translate}}</a></li>
+                            <li><a [routerLink]="['/static' , 'faq']">{{'FAQ' | translate}}</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="copywrite-text d-flex align-items-center justify-content-center">
+
+                    {{'Copyright' | translate}} &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> {{'All rights reserved' | translate}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

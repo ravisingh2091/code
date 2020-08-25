@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"pyca.rooms"}],"uuid":"32af7326d8fa42d79ddd7e33c22687d8"}

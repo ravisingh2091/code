@@ -1,0 +1,108 @@
+<section class="breadcumb-area bg-img"
+    style="background-image: url(assets/img/bg-img/hero1.jpg); height: 400px; padding: 0;">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title"><a [routerLink]="''"> {{'Home' | translate}} <i
+                                class="fa fa-angle-right"></i></a> {{'Service Listing' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="FilterArea">
+    <div class="container">
+        <div class="FilterTabs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#tab5" (click)="selectFilter('archInterior')">
+                        {{'Architecture & Interior' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab6" (click)="selectFilter('afterSales')">
+                        {{'After Sales Services' | translate}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="FilterBar">
+            <app-search [filterBy]="filterBy" (formSubmit)="searchSubmit($event)"></app-search>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<section class="listings-content-wrapper section-padding-100 Service-Listing">
+    <div class="container">
+
+
+        <div class="tab-content mb-100" id="myTabContent">
+
+            <div class="tab-pane fade show active" id="tab2" role="tabpanel" aria-labelledby="tab--2">
+                <div class="south-tab-content">
+                    <!-- Tab Text -->
+                    <div class="south-tab-text">
+                        <div class="south-search-area">
+
+                            <div class="row">
+
+                                <div class="col-12 col-md-6 col-xl-12" *ngFor="let servicesList of servicesLists">
+                                    <div class="single-featured-property mb-50">
+                                        <!-- Property Thumbnail -->
+                                        <div class="property-thumb">
+                                            <a [routerLink]="['/services' , 'services-details',servicesList._id]">
+                                                <img src="{{servicesList.imagesFile.length >0 ? servicesList.imagesFile[0].image  : 'assets/img/Real-Estate.png'}}"
+                                                    alt="">
+                                            </a>
+                                            <a class="Faviorites {{servicesList.likedStatus =='yes' ? 'active' :''}}"
+                                                href="javascript:void(0);" #fab (click)=faviorite(servicesList,fab)>
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                            <div class="tag">
+
+                                            </div>
+                                            <div class="list-price">
+
+                                            </div>
+                                        </div>
+                                        <!-- Property Content -->
+                                        <div class="property-content">
+                                            <h5>{{servicesList.cmpName}}</h5>
+                                            <p class="location"><img src="assets/img/icons/location.png"
+                                                    alt="">{{servicesList.address}}</p>
+                                            <p>
+                                                {{servicesList.description}}
+                                            </p>
+
+                                            <h6><span>{{'Posted Date' | translate}} :
+                                                </span>{{servicesList.createdAt | date:'dd/MM/yyyy'}}</h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="south-pagination d-flex justify-content-end">
+                        <app-pagination [totalCount]="totalCount" [disableNext]="disableNext"
+                            [disablePrevious]="disablePrevious" (selectedIndex)="selectedIndex($event)">
+                        </app-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

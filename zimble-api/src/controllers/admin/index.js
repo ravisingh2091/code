@@ -1,0 +1,7 @@
+export * from './auth.controller'
+export * from './category.controller'
+export * from './user.controller'
+export * from './tasks.controller'
+export * from './event.controller'
+export * from './transaction.controller'
+export * from './education.controller'

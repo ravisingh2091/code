@@ -1,0 +1,118 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+
+                    <h3 class="breadcumb-title"> <a [routerLink]="''"> {{'Home' | translate}} <i
+                                class="fa fa-angle-right"></i></a> {{'Sign Up' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="south-contact-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="contact-heading">
+                    <h6>{{'Sign Up' | translate}}</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-5">
+                <div class="content-sidebar">
+                    <img src="assets/img/bg-img/hero1.jpg">
+                </div>
+            </div>
+
+            <!-- Contact Form Area -->
+            <div class="col-12 col-lg-7">
+                <div class="contact-form">
+                    <p style="color: #FF0000;text-align: center">{{errorMessage}}</p>
+                    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" class="form-control" name="text" placeholder="Your Name"
+                                formControlName="name">
+                            <p style="color: #FF0000" *ngIf="signUpForm.controls['name'].invalid && 
+                            (formSubmited || signUpForm.controls['name'].dirty)">
+                                Please provide valid name </p>
+                        </div>
+                        <div class="form-group">
+
+                            <i class="fa fa-phone"></i>
+                            <div class="PhoneNuber">
+                                <div class="dropdown">
+                                    <span>{{selectedCountory}}</span>
+                                    <div class="dropdown-content">
+                                        <p *ngFor="let item of CountryProvider.countryList()"
+                                            (click)="onSelectCode(item.dial_code)">{{item.name}} ({{item.dial_code}})
+                                        </p>
+                                    </div>
+                                </div>
+                                <input id="phone" name="phone" type="tel" maxlength="10" placeholder="Phone No."
+                                    formControlName="phone_no">
+                                <div class="clear"></div>
+                            </div>
+
+                            <p style="color: #FF0000" *ngIf="signUpForm.controls['phone_no'].invalid && 
+                            (formSubmited || signUpForm.controls['phone_no'].dirty)">
+                                Please provide valid Phone Number </p>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-key"></i>
+                            <input type="password" class="form-control" name="password" placeholder="Your password"
+                                formControlName="password">
+                            <p style="color: #FF0000" *ngIf="signUpForm.controls['password'].invalid && 
+                            (formSubmited || signUpForm.controls['password'].dirty)">
+                                Please provide valid Password </p>
+                        </div>
+
+                        <div class="form-group">
+                            <i class="fa fa-key"></i>
+                            <input type="password" class="form-control" name="password"
+                                placeholder="Confirm Your password" formControlName="confirm-password">
+                            <p style="color: #FF0000" *ngIf="signUpForm.controls['confirm-password'].hasError('notEquivalent') && 
+                          (formSubmited || signUpForm.controls['confirm-password'].dirty)">
+                                Password and Confirm Password does not match</p>
+                        </div>
+                        <div id="recaptcha-container"></div>
+                        <a [routerLink]="['/user', 'sign-in']">{{'Login' | translate}}</a>
+                        <button type="submit" class="btn south-btn">{{'Sign Up' | translate}}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{'Enter Your OTP' | translate}}</h5>
+                <a href="javascript:void(0)" class="ModalClose" data-dismiss="modal">&times;</a>
+                <p style="color: #FF0000;text-align: center">{{OtpError}}</p>
+            </div>
+            <div class="modal-body Forgotpassword">
+                <div class="form-group">
+                    <i class="fa fa-key"></i>
+                    <input type="text" class="form-control" name="text" [(ngModel)]="verificationCode"
+                        placeholder="Enter Your OTP">
+                </div>
+                <div class="form-group">
+                    <button class="btn south-btn" (click)="verifyLoginCode()">{{'Submit' | translate}}</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>

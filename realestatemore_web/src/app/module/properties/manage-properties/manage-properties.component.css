@@ -1,0 +1,9 @@
+.Managebox figure { 
+    height: 140px;
+    overflow: hidden;
+}
+
+.Managebox figure img{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,1204 @@
+[
+    {
+        "_id": "5ed4ec39dfdfea65e00671c4",
+        "client": "hsbc_india",
+        "sumup_validation": {},
+        "app_validation": {
+            "Flipkart_Application_Id": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "Offer_Id": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "External_Seller_Id": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9]{2,32}$/"
+                }
+            ],
+            "Loan_Amount": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                }
+            ],
+            "Loan_Tenure": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                }
+            ],
+            "Applying_as": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ\\s]{2,}$/"
+                }
+            ],
+            "Seller_Display_Name": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9\\s]{2,}$/"
+                }
+            ],
+            "Name_of_business": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "Office_Building_No": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "Office_Street": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "Office_Locality": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "Office_City": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9]){3,100}$/"
+                }
+            ],
+            "Office_State": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9]){3,100}$/"
+                }
+            ],
+            "Office_Pin_Code": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[0-9]{6}$/"
+                }
+            ],
+            "Office_Contact_No": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([6-9]{1}[0-9]{9})$/"
+                }
+            ],
+            "Email_ID": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\-\\.]{1,})@([a-zA-Z0-9_\\-]{2,})\\.([a-zA-Z]{2,})(\\.([a-zA-Z]){2,})?$/"
+                },
+                {
+                    "name": "minlength",
+                    "validation": "5"
+                },
+                {
+                    "name": "maxlength",
+                    "validation": "150"
+                }
+            ],
+            "PAN": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/"
+                }
+            ],
+            "TAN": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-Z0-9]{10}$/"
+                }
+            ],
+            "VAT/TIN": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-Z0-9]{11}$/"
+                }
+            ],
+            "Date_of_incorporation": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^\\d{4}(-)((((0[13578])|(1[02]))(-)(([0-2][0-9])|(3[01])))|(((0[469])|(11))(-)(([0-2][0-9])|(30)))|(02(-)[0-2][0-9]))$/"
+                }
+            ],
+            "Contact_number": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([6-9]{1}[0-9]{9})$/"
+                }
+            ],
+            "Share holding percentage": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^100$|^\\d{0,2}(\\.\\d{1,2})?\\s*%?$/"
+                }
+            ],
+            "First_Name": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ]){3,50}$/"
+                }
+            ],
+            "Middle_Name": [
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ]){3,50}$/"
+                }
+            ],
+            "Last_Name": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ]){3,50}$/"
+                }
+            ],
+            "Date_of_Birth": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^\\d{4}(-)((((0[13578])|(1[02]))(-)(([0-2][0-9])|(3[01])))|(((0[469])|(11))(-)(([0-2][0-9])|(30)))|(02(-)[0-2][0-9]))$/"
+                }
+            ],
+            "Gender": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ]){3,20}$/"
+                }
+            ],
+            "PARTNER_PAN": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/"
+                }
+            ],
+            "Mobile_number": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([6-9]{1}[0-9]{9})$/"
+                }
+            ],
+            "House/Flat_No": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "Street": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "Locality": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "City": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9]){3,100}$/"
+                }
+            ],
+            "State": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9]){3,100}$/"
+                }
+            ],
+            "Pin_code": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[0-9]{6}$/"
+                }
+            ],
+            "GSTIN":[
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9]){15}$/"
+                }
+            ]
+        },
+        "seller_validation": [
+            {
+                "Flipkart_Application_Id": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                    }
+                ],
+                "External Seller ID": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-ZÀ-ÿ0-9]{2,}$/"
+                    }
+                ],
+                "FA_Seller": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-Z]{2,}$/"
+                    }
+                ],
+                "Registered City": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-ZÀ-ÿ0-9]{2,}$/"
+                    }
+                ],
+                "Date of Enrollment with FK": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^\\d{4}(-)((((0[13578])|(1[02]))(-)(([0-2][0-9])|(3[01])))|(((0[469])|(11))(-)(([0-2][0-9])|(30)))|(02(-)[0-2][0-9]))$/"
+                    }
+                ],
+                "Customer Ratings (in %)": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^((([0-9]|[1-9]\\d)(\\.\\d{1,2})?)|100(\\.0{1,2})?)$/"
+                    }
+                ],
+                "FLIPKART Tier": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                    }
+                ],
+                "Documents link": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:\\/?#[\\]@!\\$&amp;'\\(\\)\\*\\+,;=.]+$/"
+                    }
+                ]
+            },
+            {
+                "Flipkart_Application_Id": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                    }
+                ],
+                "External Seller ID": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-ZÀ-ÿ0-9]{2,32}$/"
+                    }
+                ],
+                "Category": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-ZÀ-ÿ]{2,}$/"
+                    }
+                ],
+                "Month": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^\\d{4}(-)((((0[13578])|(1[02]))(-)(([0-2][0-9])|(3[01])))|(((0[469])|(11))(-)(([0-2][0-9])|(30)))|(02(-)[0-2][0-9]))$/"
+                    }
+                ],
+                "Sales(units)": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                    }
+                ],
+                "Sales(Value)": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                    }
+                ],
+                "Customer Returns(Qty)": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                    }
+                ],
+                "Customer Returns (Value)": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                    }
+                ],
+                "Seller Cancellations (Quantity)": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                    }
+                ],
+                "Seller Cancellations (Value)": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                    }
+                ]
+            },
+            {
+                "Flipkart_Application_Id": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                    }
+                ],
+                "External Seller ID": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^[a-zA-ZÀ-ÿ0-9]{2,32}$/"
+                    }
+                ],
+                "Month": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^\\d{4}(-)((((0[13578])|(1[02]))(-)(([0-2][0-9])|(3[01])))|(((0[469])|(11))(-)(([0-2][0-9])|(30)))|(02(-)[0-2][0-9]))$/"
+                    }
+                ],
+                "Value": [
+                    {
+                        "name": "required",
+                        "validation": "required"
+                    },
+                    {
+                        "name": "pattern",
+                        "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": "5ed4ec34dfdfea69e00632c4",
+        "client": "us_region",
+        "user_validation": {
+            "first_name": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ]){3,50}$/"
+                }
+            ],
+            "last_name": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ]){3,50}$/"
+                }
+            ],
+            "email_address": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\-\\.]{1,})@([a-zA-Z0-9_\\-]{2,})\\.([a-zA-Z]{2,})(\\.([a-zA-Z]){2,})?$/"
+                }
+            ],
+            "phone_number": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([1-9]{1}[0-9]{9})$/"
+                }
+            ],
+            "amount_needed": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                }
+            ],
+            "time_in_business": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                }
+            ],
+            "annual_revenue": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                }
+            ],
+            "credit_score": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                }
+            ]
+        },
+        "app_validation": {
+            "user_id": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-f\\d]{24}$/"
+                }
+            ],
+            "loan_amount": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                }
+            ],
+            "loan_tenure": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                }
+            ],
+            "loan_purpose": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "business_name": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                }
+            ],
+            "business_address": {
+                "type": "group",
+                "fields": {
+                    "business_address": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                        }
+                    ],
+                    "zipcode": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                        }
+                    ],
+                    "state": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                        }
+                    ],
+                    "city": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                        }
+                    ],
+                    "country": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){2,100}$/"
+                        }
+                    ]
+                }
+            },
+            "credit_card": {
+                "type": "multiple-group",
+                "fields": {
+                    "credit_card_processor": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                        }
+                    ],
+                    "credit_card_value": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                        }
+                    ],
+                    "transaction_per_month": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                        }
+                    ]
+                }
+            },
+            "owners": {
+                "type": "multiple-group",
+                "fields": {
+                    "first_name": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ]){3,50}$/"
+                        }
+                    ],
+                    "last_name": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ]){3,50}$/"
+                        }
+                    ],
+                    "email_address": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ0-9_\\-\\.]{1,})@([a-zA-Z0-9_\\-]{2,})\\.([a-zA-Z]{2,})(\\.([a-zA-Z]){2,})?$/"
+                        }
+                    ],
+                    "job_title": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                        }
+                    ],
+                    "home_address": {
+                        "type": "group",
+                        "fields": {
+                            "home_address": [
+                                {
+                                    "name": "required",
+                                    "validation": "required"
+                                },
+                                {
+                                    "name": "pattern",
+                                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                                }
+                            ],
+                            "zipcode": [
+                                {
+                                    "name": "required",
+                                    "validation": "required"
+                                },
+                                {
+                                    "name": "pattern",
+                                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                                }
+                            ],
+                            "state": [
+                                {
+                                    "name": "required",
+                                    "validation": "required"
+                                },
+                                {
+                                    "name": "pattern",
+                                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                                }
+                            ],
+                            "city": [
+                                {
+                                    "name": "required",
+                                    "validation": "required"
+                                },
+                                {
+                                    "name": "pattern",
+                                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){3,100}$/"
+                                }
+                            ],
+                            "country": [
+                                {
+                                    "name": "required",
+                                    "validation": "required"
+                                },
+                                {
+                                    "name": "pattern",
+                                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]){2,100}$/"
+                                }
+                            ]
+                        }
+                    },
+                    "date_of_birth": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        }
+                    ],
+                    "ssn": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        }
+                    ],
+                    "monthly_income": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                        }
+                    ],
+                    "monthly_expense": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^(0|([1-9]\\d*))(\\.\\d{0,2})?$/"
+                        }
+                    ],
+                    "ownership": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^100$|^\\d{0,2}(\\.\\d{1,2})?$/"
+                        }
+                    ],
+                    "applicant_phone": [
+                        {
+                            "name": "required",
+                            "validation": "required"
+                        },
+                        {
+                            "name": "pattern",
+                            "validation": "/^([1-9]{1}[0-9]{9})$/"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "_id": "5f34e7158567e08a05347ea4",
+        "client": "sba",
+        "sumup_validation": {},
+        "app_validation": {
+            "business_name":[
+                {
+                    "name": "required",
+                    "validation": "required"
+                }
+            ],
+            "name":[
+                {
+                    "name": "required",
+                    "validation": "required"
+                }
+            ],
+            "business_email_address": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^([a-zA-ZÀ-ÿ0-9_\\-\\.\\+]{1,})@([a-zA-Z0-9_\\-]{2,})\\.([a-zA-Z]{2,})(\\.([a-zA-Z]){2,})?$/"
+                }
+            ],
+            "business_phone": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                  "name": "pattern",
+                  "validation": "/^(\\d{10})$/"
+                }
+            ]
+
+        }
+    },
+    {
+        "_id": "5f34e7134567e08a05548ea4",
+        "client": "acap",
+        "sumup_validation": {},
+        "app_validation": {
+            "aggregator_reference_number":[
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "ppp_loan_amount":[
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                  "name": "pattern",
+                  "validation": "/^(\\d{1,})$/"
+                }
+            ],
+            "sba_ppp_loan_no":[
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                  "name": "pattern",
+                  "validation": "/^(\\d{1,})$/"
+                }
+            ],
+            "sba_ppp_fundeddt": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                }
+            ],
+            "business_name": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "doing_business_as": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "business_tin_ein_ssn": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "business_address": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "business_state": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                  "name": "pattern",
+                  "validation": "/^[a-zA-Z]{2}$/"
+                }
+            ],
+            "business_city": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "business_zip_code": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                  "name": "pattern",
+                  "validation": "/^(\\d{5,10})$/"
+                }
+            ],
+            "business_phone": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                  "name": "pattern",
+                  "validation": "/^(\\d{10})$/"
+                }
+            ],
+            "business_email_address": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^(?!.{251})([a-zA-ZÀ-ÿ0-9_\\-\\.\\+]{1,})@([a-zA-Z0-9_\\-]{2,})\\.([a-zA-Z]{2,})(\\.([a-zA-Z]){2,})?$/"
+                }
+            ],
+            "website": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                  "name": "pattern",
+                  "validation": "/(https?:\\/\\/)?(www\\.)[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-zA-Z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&\\/\\/=]*)|(https?:\\/\\/)?(www\\.)?(?!ww)[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-zA-Z]{2,4}\\b([-a-zA-Z0-9@:%_\\+.~#?&\\/\\/=]*)/"
+                }
+            ],
+            "business_incorporation_date": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                }
+            ],
+            "business_structure": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "NAICS code": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "auth_signatory_fname": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "auth_signatory_lname": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                    "name": "pattern",
+                    "validation": "/^[a-zA-ZÀ-ÿ0-9_\\,\\.\\s\\(\\)\\-\\!\\@\\#\\$\\%\\&\\*]{2,}$/"
+                }
+            ],
+            "no_of_employees": [
+                {
+                    "name": "required",
+                    "validation": "required"
+                },
+                {
+                  "name": "pattern",
+                  "validation": "/^(\\d{1,})$/"
+                }
+            ]
+        }
+    }
+]

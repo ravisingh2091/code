@@ -1,0 +1,14 @@
+MONGO_URL='db_provider://db_user:db_password@db_host:db_port/database'
+PORT=service_port
+HOST=host
+APP_ENV=app_env
+ACCESSDOMAIN=access_domain
+CLIENT=client
+ORCH_VERSION=orch_version
+CASE_API=http://case_url
+USER_API=http://user_url
+MASTER_API=http://master_url
+ORCH_API=http://orch_url
+TAXES_API=http://taxes_url
+COMMUNICATION_API=http://communication_url
+FRONTEND_URL=http://frontend_url

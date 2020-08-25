@@ -1,0 +1,38 @@
+<div class="CalendarBox">
+    <h5>
+        <i class="fa fa-angle-left fa-2x" aria-hidden="true" (click)="prevMonth()"></i>
+        {{nowDate.format('MMMM YYYY')}}
+        <i class="fa fa-angle-right fa-2x" aria-hidden="true" (click)="nextMonth()"></i>
+    </h5>
+    <table>
+        <tbody>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+
+            <tr *ngFor="let item of daysData">
+                <td *ngFor="let day of item" [attr.data-date]="day?.dates">
+                    <div class="EventDate">
+                        <span>
+                            {{day?.dates?.split("/")[2]}}
+                        </span>
+                        <div *ngIf="day?.event"
+                            (click)="day.event.title == 'Available' && availlableClick($event,day.dates)"
+                            [style.cursor]="day.event.title == 'Available' ? 'pointer' :'auto'"
+                            [class.Selected]="selectedDateArray.includes(day?.dates)">
+                            <span *ngIf="!day?.event?.booked">{{day?.event.title}}</span>
+                            <span *ngIf="day?.event?.booked">Booked</span>
+                            <span *ngIf="day?.event?.specialOffer">*</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

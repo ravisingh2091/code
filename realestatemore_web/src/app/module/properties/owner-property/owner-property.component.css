@@ -1,0 +1,6 @@
+.OwnerpropertyArea .OwnerpropertyList .single-featured-property .property-thumb{
+    height: 250px;
+}
+.OwnerpropertyArea .OwnerpropertyList .single-featured-property .property-thumb img{
+    width: 100%;
+}

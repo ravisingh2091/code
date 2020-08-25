@@ -1,0 +1,178 @@
+<div class="tab-content">
+    <div class="tab-pane active" id="AllFilter">
+        <div class="Searchs">
+            <h2>
+                <span *ngIf="filterBy == 'all'">{{'All' | translate}}</span>
+                <span *ngIf="filterBy == 'buy'">{{'Buy' | translate}} </span>
+                <span *ngIf="filterBy == 'rent'">{{'Rent' | translate}} </span>
+                <span *ngIf="filterBy == 'rentevent'">{{'Rent for Event' | translate}} </span>
+                <span *ngIf="filterBy == 'archInterior'">{{'Architecture & Interior' | translate}} </span>
+                <span *ngIf="filterBy == 'afterSales'">{{'After Sales Services' | translate}}</span>
+                {{'Search' | translate}}
+            </h2>
+            <form [formGroup]="searchForm" (ngSubmit)="searchSubmit()">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+                            placeholder="{{'Search Nearest Location' | translate}}" autocorrect="off"
+                            autocapitalize="off" spellcheck="off" type="text" #search>
+
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <input type="text" formControlName="add_id" class="form-control"
+                            placeholder="{{'AD ID Number' | translate}}">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <select class="form-control" formControlName="category">
+                            <option value="">{{'Select Category' | translate}}</option>
+                            <option *ngFor="let item of categoryLists" value="{{item.name}}">
+                                {{language=='en'?item.name:item.arabicName}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <select class="form-control" formControlName="purpose">
+                            <option value="">{{'Select Purpose' | translate}}</option>
+                            <option value="commercial">{{'Commercial' | translate}}</option>
+                            <option value="residental">{{'Residental' | translate}}</option>
+                            <option value="both">{{'Both' | translate}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <select class="form-control" formControlName="available_for">
+                            <option value="">{{'Available For' | translate}}</option>
+                            <option value="family">{{'Family' | translate}}</option>
+                            <option value="single">{{'Single' | translate}}</option>
+                            <option value="both">{{'Both' | translate}}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" formControlName="min_build_size" class="form-control"
+                                    placeholder="{{'Min Build size' | translate}}">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" formControlName="max_build_size" class="form-control"
+                                    placeholder="{{'Max Build size' | translate}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" formControlName="min_budget_size" class="form-control"
+                                    placeholder="{{'Min Budget size' | translate}}">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" formControlName="max_budget_size" class="form-control"
+                                    placeholder="{{'Max Budget size' | translate}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" formControlName="min_plot_size" class="form-control"
+                                    placeholder="{{'Min Plot size' | translate}}">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" formControlName="max_plot_size" class="form-control"
+                                    placeholder="{{'Max Plot size' | translate}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <select class="form-control" formControlName="bedrooms">
+                            <option value="">{{'Select Bedrooms' | translate}}</option>
+                            <option *ngFor="let number of numberList">
+                                {{number}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <select class="form-control" formControlName="bathrooms">
+                            <option value="">{{'Select Bathrooms' | translate}}</option>
+                            <option *ngFor="let number of numberList">
+                                {{number}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-sm-3">
+                        <select class="form-control" formControlName="year_of_build">
+                            <option value="">{{'Year of Build' | translate}}</option>
+                            <option *ngFor="let number of yearList">
+                                {{number}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-12" *ngIf="more">
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label class="Checkbox">{{'Media ( has Photos )' | translate}}
+                                    <input type="checkbox" formControlName="photos">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                                <h4>{{'Extra' | translate}}</h4>
+                                <label class="Checkbox">{{'Balcony' | translate}}
+                                    <input type="checkbox" formControlName="balcony">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="Checkbox">{{'Garden' | translate}}
+                                    <input type="checkbox" formControlName="garden">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="Checkbox">{{'Parking' | translate}}
+                                    <input type="checkbox" formControlName="parking">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="Checkbox">{{'Modular Kitchen' | translate}}
+                                    <input type="checkbox" formControlName="modular_kitchen">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="Checkbox">{{'Insurance' | translate}}
+                                    <input type="checkbox" formControlName="insurance">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="Checkbox">{{'Wifi' | translate}}
+                                    <input type="checkbox" formControlName="wifi">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="Checkbox">{{'Sound System' | translate}}
+                                    <input type="checkbox" formControlName="soundSystems">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 Buttons">
+                        <button>{{'Submit' | translate}}</button>
+                        <span class="More" *ngIf="!more" (click)="more = !more">{{'Show More' | translate}}</span>
+                        <span class="Hide" *ngIf="more" (click)="more = !more">{{'Hide' | translate}}</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+agm-map {
+    height: 70%;
+  }
+
+.MapView{
+  padding: 0 0 70px;
+}
+
+  .PropertyBox {
+    width: 230px;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    z-index: 99999999;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.PropertyBox figure {
+    border: none;
+    margin: 0;
+    position: relative;
+    width: 37%;
+    float: left;
+}
+
+.PropertyBox figure a img {
+    width: 100%;
+}
+
+.PropertyBox figcaption {
+    padding: 0 5px;
+    float: left;
+    width: 63%;
+}
+
+
+.PropertyBox figcaption h5 {
+    font-size: 13px;
+    color: #000;
+    font-weight: 600;
+    margin: 0 0 3px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -moz-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.PropertyBox figcaption h4 {
+    font-size: 12px;
+    color: #3e3e3e;
+    margin: 0 0 3px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -moz-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.PropertyBox figcaption p {
+    font-size: 13px;
+    line-height: normal;
+    margin: 0 0 5px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -moz-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.PropertyBox ol.Share {
+  margin: 8px 0 0 0;
+  float: left;
+  width: 100%;
+  text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PropertyBox ol.Share li{
+  display: inline-block;
+  margin: 0 5px 0 0;
+} 
+
+.PropertyBox ol.Share li share-button{
+  background-color: #ec5a35;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.PropertyBox ol.Share li a{
+  color: #ed5702;
+  font-size: 13px;
+  width: 30px;
+  height: 30px;
+  display: block;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #dedede;
+  line-height: 30px;
+}
+
+.PropertyBox ol.Share li:nth-child(1) a{
+  background-color: #bd2a2a;
+  color: #fff;
+}
+.PropertyBox ol.Share li:nth-child(1) a.active{
+  background-color: rgb(237, 87, 2);
+    color: rgb(255, 255, 255);
+  }
+
+.PropertyBox ol.Share li:nth-child(2) a{
+  background-color: #3b5998;
+  color: #fff;
+}
+ 
+.PropertyBox ol.Share li:nth-child(3) a{
+  background-color: #19a919;
+  color: #fff;
+}
+
+.PropertyBox ol.Share li:nth-child(4) a{
+  background-color: #c320c3;
+  color: #fff;
+}
+
+.PropertyBox ol.Share li a:hover{
+  color: #000;
+}
+
+.PropertyBox ol.Share li a .fa{
+  font-size: inherit;
+  color: inherit;
+}
+
+
+  
+
+.property-thumb{
+  height: 200px;
+  overflow: hidden;
+}
+
+.single-featured-property .property-content .location{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -moz-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 10px;
+  min-height: 55px;
+}
+
+.property-thumb img{ width:100%
+}

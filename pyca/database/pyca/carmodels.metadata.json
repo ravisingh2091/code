@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"pyca.carmodels"}],"uuid":"e90f5e9d69b54c59892e51b130bddf6f"}

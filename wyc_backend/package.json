@@ -1,0 +1,32 @@
+{
+  "name": "school_management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint . --config=.eslintrc.json",
+    "test": "npm run lint -s"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.18.3",
+    "cors": "2.8.4",
+    "dotenv": "4.0.0",
+    "express": "4.16.0",
+    "fs": "0.0.1-security",
+    "jssha": "^2.3.1",
+    "moment": "2.20.1",
+    "moment-range": "3.1.0",
+    "multer": "^1.3.1",
+    "mysql": "2.15.0",
+    "node-gcm": "^0.14.10",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "sequelize": "3.23.4"
+  },
+  "devDependencies": {
+    "eslint": "4.19.1"
+  },
+  "author": "kratitech",
+  "license": "ISC"
+}

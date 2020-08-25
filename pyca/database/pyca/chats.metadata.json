@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"pyca.chats"}],"uuid":"7c729441caaf473284ad49822e7d3e87"}

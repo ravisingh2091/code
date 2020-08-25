@@ -1,0 +1,64 @@
+<div class="SideNavbar">
+    <ul>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <a [routerLink]="['/user', 'profile']">
+                <i class="fa fa-user"></i> {{'Profile' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="['/properties', 'post-properties']">
+                <i class="fa fa-building-o"></i> {{'Post Properties' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="['/services' , 'post-services']">
+                <i class="fa fa-cog"></i> {{'Create Service Profile' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="['/properties', 'manage-properties']">
+                <i class="fa fa-building-o"></i> {{'Manage Posted Properties' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="'/chat'">
+                <i class="fa fa-comments"></i> {{'Chat' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="'/favorites'">
+                <i class="fa fa-heart-o"></i> {{'Favorites' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="['/properties' , 'manage-vanue-booking']">
+                <i class="fa fa-calendar-check-o"></i> {{'Manage Venue Booking' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="'/notification'">
+                <i class="fa fa-bell"></i> {{'Notifications' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="'/payment'">
+                <i class="fa fa-credit-card-alt"></i> {{'Add Payment' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="'/subscription'">
+                <i class="fa fa-money"></i> {{'Subscription' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a [routerLink]="['/user/change-password']">
+                <i class="fa fa-refresh"></i> {{'Change password' | translate}}
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']">
+            <a href="javascript:void(0)" (click)="logout()">
+                <i class="fa fa-sign-out"></i> {{'Logout' | translate}}
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,450 @@
+[
+    {
+        "_id": "5e43ab3deeed3a3c3092c40c",
+        "client": "hsbc_india",
+        "file_type": "xlsx",
+        "convert_to_json": true,
+        "mapping": {
+            "file": "app.xlsx",
+            "file_path": "/hsbcin-sftp-nonprod",
+            "sheet": 0, 
+            "identifier": "Flipkart_Application_Id",
+            "frontend_user_identifier": "phone_number",
+            "owner_slug": "inbound-owner-info",
+            "application_slug": "inbound-create-application",
+            "business_slug": "inbound-business-info",
+            "seller_slug": "inbound-seller-info",
+            "notify_slug": "inbound-notify-user",
+            "frontend_user_slug": "inbound-register",
+            "slug_api_mapping": {
+                "inbound_get_user": "inbound_get_user",
+                "inbound_get_user_by_identifier": "inbound_get_user_by_identifier",
+                "inbound_save_user": "inbound_save_user",
+                "inbound_get_application": "inbound_get_application",
+                "inbound_create_application": "inbound_create_application",
+                "inbound_save_business_info": "inbound_save_business_info",
+                "inbound_save_owner_info": "inbound_save_owner_info"
+            },
+            "owner": {
+                "owner_first_name": "First_Name",
+                "owner_middle_name": "Middle_Name",
+                "owner_last_name": "Last_Name",
+                "dob": "Date_of_Birth",
+                "gender": "Gender",
+                "pan": "PARTNER_PAN",
+                "owner_phone_number": "Mobile_number",
+                "address_line_1": "House/Flat_No",
+                "address_line_2": "Street",
+                "address_line_3": "Locality",
+                "city": {
+                    "label": "City",
+                    "type": "business_location",
+                    "check_key": "value",
+                    "capitalize": true,
+                    "master": true
+                },
+                "state": "State",
+                "pincode": "Pin_code",
+                "share_holding_pecentage": "Share holding percentage"
+            },
+            "frontend_user": {
+                "name": "Seller_Display_Name",
+                "email_address": "Email_ID",
+                "phone_number": "Contact_number",
+                "aggregator_reference_number": "Flipkart_Application_Id",
+                "seller_id": "External_Seller_Id"
+            },
+            "application": {
+                "legal_name_of_business": "Name_of_business",
+                "loan_amount": "Loan_Amount",
+                "loan_tenure": "Loan_Tenure",
+                "address_line_1": "Office_Building_No",
+                "address_line_2": "Office_Street",
+                "address_line_3": "Office_Locality",
+                "business_city": {
+                    "label": "Office_City",
+                    "type": "business_location",
+                    "check_key": "value",
+                    "capitalize": true,
+                    "master": true
+                },
+                "business_state": "Office_State",
+                "business_pincode": "Office_Pin_Code",
+                "business_contact_number": "Office_Contact_No",
+                "business_pan": "PAN",
+                "business_tan": "TAN",
+                "business_vat_or_tin": "VAT/TIN",
+                "registered_date": "Date_of_incorporation",
+                "offer_id": "Offer_Id",
+                "seller_id": "External_Seller_Id",
+                "aggregator_reference_number": "Flipkart_Application_Id",
+                "company_gstn": "GSTIN",
+                "applying_as": {
+                    "label": "Applying_as",
+                    "type": "business_structure",
+                    "check_key": "value",
+                    "capitalize": true,
+                    "master": true
+                }
+            },
+            "notify": {
+                "email_address": "Email_ID",
+                "phone_number": ["91", "Contact_number"],
+                "flipkart_application_id": "Flipkart_Application_Id",
+                "loan_type": {
+                    "static": true,
+                    "value": "UnSecured"
+                },
+                "link": [
+                    "@envFRONTEND_URL",
+                    "/user/landing-page?token=",
+                    "##Flipkart_Application_Id"
+                ]
+            },
+            "seller": {
+                "file": "seller.xlsx",
+                "file_path": "/hsbcin-sftp-nonprod",
+                "sheet": ["0:personal", "1:sale", "2:payment"],
+                "identifier": "External Seller ID",
+                "identifier_value": "External_Seller_Id",
+                "mapping": {
+                    "personal": {
+                        "externalSellerId": "External Seller ID",
+                        "faSeller": "FA_Seller",
+                        "registeredCity": "Registered City",
+                        "dateOfEnrollment": "Date of Enrollment with FK",
+                        "rating": "Customer Ratings (in %)",
+                        "tier": "FLIPKART Tier",
+                        "documentLink": "Documents link"
+                    },
+                    "sale": {
+                        "externalSellerId": "External Seller ID",
+                        "category": "Category",
+                        "month": "Month",
+                        "salesInUnit": "Sales(units)",
+                        "salesInValue": "Sales(Value)",
+                        "customerReturnsInQuantity": "Customer Returns(Qty)",
+                        "customerReturnsInValue": "Customer Returns (Value)",
+                        "sellerCancellationsInQuantity": "Seller Cancellations (Quantity)",
+                        "sellerCancellationsInValue": "Seller Cancellations (Value)"
+                    },
+                    "payment": {
+                        "externalSellerId": "External Seller ID",
+                        "month": "Month",
+                        "value": "Value"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_id": "5e88428662d3434c48c8a462",
+        "client": "sba",
+        "file_type": "xlsx",
+        "convert_to_json": true,
+        "mapping": {
+            "sheet": 0, 
+            "identifier": "business_email_address",
+            "frontend_user_identifier": "phone_number",
+            "backend_user_identifier": "email_address",
+            "business_slug": "inbound_business_details",
+            "application_slug": "inbound_create_application",
+            "frontend_user_slug": "inbound_signup",
+            "backend_user_slug": "inbound_backend_signup",
+            "slug_api_mapping": {
+                "inbound_get_user": "inbound_get_user",
+                "inbound_save_user": "inbound_create_user",
+                "inbound_get_backend_user": "inbound_get_backend_user",
+                "inbound_save_backend_user": "inbound_create_backend_user",
+                "inbound_get_application": "inbound_get_application_v2",
+                "inbound_create_application": "inbound_create_application_v2",
+                "inbound_save_business_info": "inbound_save_business_info"
+            },
+            "frontend_user": {
+                "email_address": "business_email_address",
+                "phone_number": "business_phone",
+                "name": "name"
+            },
+            "application": {
+                "email_address": "business_email_address",
+                "business_name": "business_name",
+                "business_phone": "business_phone",
+                "backend_user_id": "backend_user_id",
+                "check_master": {
+                    "static": true,
+                    "value": false
+                }
+            }
+        }
+    },
+    {
+        "_id": "5f361a3453db7625ea3688b7",
+        "client": "cpa",
+        "file_type": "xlsx",
+        "convert_to_json": true,
+        "mapping": {
+            "sheet": 0, 
+            "identifier": "business_email_address",
+            "frontend_user_identifier": "phone_number",
+            "backend_user_identifier": "email_address",
+            "business_slug": "inbound_business_details",
+            "application_slug": "inbound_create_application",
+            "frontend_user_slug": "inbound_signup",
+            "backend_user_slug": "inbound_backend_signup",
+            "slug_api_mapping": {
+                "inbound_get_user": "inbound_get_user",
+                "inbound_save_user": "inbound_create_user",
+                "inbound_get_backend_user": "inbound_get_backend_user",
+                "inbound_save_backend_user": "inbound_create_backend_user",
+                "inbound_get_application": "inbound_get_application_v2",
+                "inbound_create_application": "inbound_create_application_v2",
+                "inbound_save_business_info": "inbound_save_business_info"
+            },
+            "frontend_user": {
+                "email_address": "business_email_address",
+                "phone_number": "business_phone",
+                "name": "name"
+            },
+            "application": {
+                "email_address": "business_email_address",
+                "business_name": "business_name",
+                "business_phone": "business_phone",
+                "backend_user_id": "backend_user_id",
+                "check_master": {
+                    "static": true,
+                    "value": false
+                }
+            }
+        }
+    },
+    {
+        "_id": "5e88428662d5464c48c8a432",
+        "client": "customersbank",
+        "file_type": "xlsx",
+        "convert_to_json": true,
+        "mapping": {
+            "sheet": 0, 
+            "identifier": "aggregator_reference_number",
+            "frontend_user_identifier": "phone_number",
+            "backend_user_identifier": "email_address",
+            "owner_slug": "inbound_owner_details",
+            "business_slug": "inbound_business_details",
+            "application_slug": "inbound_create_application",
+            "frontend_user_slug": "inbound_signup",
+            "backend_user_slug": "inbound_backend_signup",
+            "slug_api_mapping": {
+                "inbound_get_user": "inbound_get_user",
+                "inbound_save_user": "inbound_create_user",
+                "inbound_get_backend_user": "inbound_get_backend_user",
+                "inbound_save_backend_user": "inbound_create_backend_user",
+                "inbound_get_application": "inbound_get_application",
+                "inbound_create_application": "inbound_create_application",
+                "inbound_save_business_info": "inbound_save_business_info",
+                "inbound_save_owner_info": "inbound_save_owner_info"
+            },
+            "owner": {
+                "first_name": "owner_first_name",
+                "last_name": "owner_last_name",
+                "ssn": "owner_ssn",
+                "date_of_birth": "owner_date_of_birth",
+                "home_address": {
+                    "home_address": "owner_address",
+                    "zip_code": "owner_zipcode",
+                    "city": "owner_city",
+                    "state": "owner_state"
+                },
+                "applicant_phone": "owner_phone_number",
+                "email_address": "owner_email_address",
+                "ownership": "ownership",
+                "designation": "desigination"
+            },
+            "frontend_user": {
+                "email_address": "business_email_address",
+                "phone_number": "business_phone",
+                "first_name": "business_name",
+                "last_name": "last_name",
+                "aggregator_reference_number": "aggregator_reference_number",
+                "is_new_to_bank": {
+                    "static": true,
+                    "value": false
+                }
+            },
+            "backend_user": {
+                "email_address": "email_address",
+                "phone_number": "phone_number",
+                "name": "name"
+            },
+            "application": {
+                "business_name": "business_name",
+                "another_business_name": "another_business_name",
+                "business_address": {
+                    "business_address": "business_address",
+                    "zip_code": "business_zip_code",
+                    "city": "business_city",
+                    "state": "business_state"
+                },
+                "business_phone": "business_phone",
+                "website": "website",
+                "email_address": "business_email_address",
+                "business_incorporation_date": "business_incorporation_date",
+                "business_structure": "business_structure",
+                "industry": "industry",
+                "sub_industry": "sub_industry",
+                "aggregator_reference_number": "aggregator_reference_number",
+                "ein": "ein",
+                "tin": "tin",
+                "check_master": {
+                    "static": true,
+                    "value": false
+                }
+            }
+        }
+    },
+    {
+        "_id": "5e88428662d8794c28c6a472",
+        "client": "us_region",
+        "mapping": {
+            "identifier": "aggregator_reference_number",
+            "frontend_user_identifier": "phone_number",
+            "owner_slug": "inbound_owner_details",
+            "business_slug": "inbound_business_details",
+            "application_slug": "inbound_create_application",
+            "frontend_user_slug": "inbound_signup",
+            "slug_api_mapping": {
+                "inbound_get_user": "inbound_get_user",
+                "inbound_save_user": "inbound_create_user",
+                "inbound_get_application": "inbound_get_application_v2",
+                "inbound_create_application": "inbound_create_application_v2",
+                "inbound_save_business_info": "inbound_save_business_info",
+                "inbound_save_owner_info": "inbound_save_owner_info_v2"
+            },
+            "owner": {
+                "first_name": "first_name",
+                "last_name": "last_name",
+                "email_address": "email_address",
+                "job_title": "job_title",
+                "home_address": "home_address",
+                "date_of_birth": "date_of_birth",
+                "ssn": "ssn",
+                "monthly_income": "monthly_income",
+                "monthly_expense": "monthly_expense",
+                "ownership": "ownership",
+                "applicant_phone": "applicant_phone"
+            },
+            "frontend_user": {
+                "first_name": "first_name",
+                "last_name": "last_name",
+                "email_address": "email_address",
+                "phone_number": "phone_number",
+                "amount_needed": {
+                    "label": "amount_needed",
+                    "type": "funding_amount",
+                    "check_key": "type",
+                    "master": true
+                },
+                "time_in_business": {
+                    "label": "time_in_business",
+                    "type": "business_time",
+                    "check_key": "type",
+                    "master": true
+                },
+                "annual_revenue": {
+                    "label": "annual_revenue",
+                    "type": "annual_revenue",
+                    "check_key": "type",
+                    "master": true
+                },
+                "credit_score": {
+                    "label": "credit_score",
+                    "type": "credit_score",
+                    "check_key": "type",
+                    "master": true
+                }
+            },
+            "application": {
+                "loan_amount": "loan_amount",
+                "loan_tenure": "loan_tenure",
+                "loan_purpose": "loan_purpose",
+                "business_name": "business_name",
+                "another_business_name": "another_business_name",
+                "business_address": "business_address",
+                "business_number": "business_number",
+                "business_structure": "business_structure",
+                "business_incorporation_date": "business_incorporation_date",
+                "about_to_start_business": "about_to_start_business",
+                "business_industry": "business_industry",
+                "sub_industry": "sub_industry",
+                "business_annual_revenue": "business_annual_revenue",
+                "operational_expenditures": "operational_expenditures",
+                "is_accept_credit_card": "is_accept_credit_card",
+                "credit_card": "credit_card",
+                "is_outstanding_debt": "is_outstanding_debt",
+                "outstanding": "outstanding"
+            }
+        }
+    },
+    {
+        "_id": "5e88428662d5464c44c6a252",
+        "client": "acap",
+        "file_type": "xlsx",
+        "convert_to_json": true,
+        "mapping": {
+            "sheet": 0, 
+            "identifier": "aggregator_reference_number",
+            "frontend_user_identifier": "email_address",
+            "business_slug": "inbound_business_details",
+            "application_slug": "inbound_create_application",
+            "frontend_user_slug": "inbound_signup",
+            "slug_api_mapping": {
+                "inbound_get_user": "inbound_get_user",
+                "inbound_save_user": "inbound_create_user",
+                "inbound_get_application": "inbound_get_application_v2",
+                "inbound_create_application": "inbound_create_application_v2",
+                "inbound_save_business_info": "inbound_save_business_info"
+            },
+            "frontend_user": {
+                "email_address": "business_email_address",
+                "phone_number": "business_phone",
+                "name": "business_name",
+                "aggregate_reference_number": "aggregator_reference_number"
+            },
+            "application": {
+                "aggregator_reference_number": "aggregator_reference_number",
+                "sba_ppp_loan_amount": "ppp_loan_amount",
+                "sba_ppp_loan_number": "sba_ppp_loan_no",
+                "disbursement_date": "sba_ppp_fundeddt",
+                "business_name": "business_name",
+                "another_business_name": "doing_business_as",
+                "tin": "business_tin_ein_ssn",
+                "ssn": "business_tin_ein_ssn",
+                "business_address": {
+                    "business_address": "business_address",
+                    "zip_code": "business_zip_code",
+                    "city": "business_city",
+                    "state": "business_state"
+                },
+                "business_phone": "business_phone",
+                "website": "website",
+                "email_address": "business_email_address",
+                "business_incorporation_date": "business_incorporation_date",
+                "business_type": {
+                    "label": "business_structure",
+                    "type": "business_structure",
+                    "check_key": "value",
+                    "capitalize": true,
+                    "master": true
+                },
+                "naics_code": "NAICS code",
+                "additional_questions": {
+                    "principal_name": ["auth_signatory_fname", " ", "auth_signatory_lname"],
+                    "multiple": true
+                },
+                "no_of_employees": "no_of_employees",
+                "check_master": {
+                    "static": true,
+                    "value": false
+                }
+            }
+        }
+    }
+]

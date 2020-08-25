@@ -1,0 +1,8 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<div id="spinner_img" *ngIf="commonService._showLoader|async">
+    <div id="preloader">
+        <div class="south-load"></div>
+    </div>
+</div>
+<app-footer></app-footer>

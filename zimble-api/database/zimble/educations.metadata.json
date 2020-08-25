@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"zimble.educations"},{"v":{"$numberInt":"2"},"key":{"favoriteBy.childId":{"$numberInt":"1"}},"name":"favoriteBy.childId_1","ns":"zimble.educations","background":true}],"uuid":"fc64bf3250dd4570957b8d3572ec54d3"}

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "329610282399",
+    "firebase_url": "https://zimble-b9f1c.firebaseio.com",
+    "project_id": "zimble-b9f1c",
+    "storage_bucket": "zimble-b9f1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329610282399:android:b4803aeafdb108bce5e9aa",
+        "android_client_info": {
+          "package_name": "com.zimble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329610282399-nngcs5quckmd26g1vhldr4utv5snjslp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDalKn-DCc_5QJ4ZctMHDSU8EZBwDXF_oI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329610282399-nngcs5quckmd26g1vhldr4utv5snjslp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "329610282399-ko2s66j02lfjqf3lkkf765cpns44p0a3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "sg.zippi.appmobdevsec"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

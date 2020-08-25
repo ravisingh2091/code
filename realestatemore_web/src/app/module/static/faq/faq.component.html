@@ -1,0 +1,58 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title"><a [routerLink]="''"> Home <i class="fa fa-angle-right"></i></a>FAQs'
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="south-contact-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="contact-heading">
+                    <h6>FAQs' </h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-6">
+
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel single-accordion" *ngFor="let data of faqLists;let i = index">
+                        <div class="panel-heading" role="tab" [id]="'heading'+i">
+                            <h6>
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" [href]="'#collapse'+i"
+                                    class="collapsed" aria-expanded="false" [attr.aria-controls]="'collapse'+i">
+                                    {{data.question}}
+                                    <span class="accor-open"><i class="fa fa-plus"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus"></i></span>
+                                </a>
+                            </h6>
+                        </div>
+                        <div [id]="'collapse'+i" class="panel-collapse collapse" role="tabpanel"
+                            [attr.aria-labelledby]="'heading'+i">
+                            <div class="panel-body">
+                                {{data.answer}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="content-sidebar">
+                    <img src="assets/img/bg-img/hero1.jpg">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

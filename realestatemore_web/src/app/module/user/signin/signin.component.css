@@ -1,0 +1,124 @@
+.main-header-area .classy-nav-container {
+    background-color: #0000008c;
+}
+
+.contact-form {
+    padding: 50px 0px;
+}
+
+.contact-form a {
+    float: left;
+    border: 1px solid #ec5702;
+    padding: 11px 50px;
+    color: #ec5702;
+    cursor: pointer;
+}
+
+.contact-form a:hover{
+    background-color:  #ec5702;
+    color: #fff;
+}
+
+button.btn.south-btn {
+    float: right;
+    margin-top: 0px!important;
+}
+
+@media only screen and (max-width: 767px) {
+    button.btn.south-btn {
+        width: 100%;
+    }
+    .contact-form a {
+        float: left;
+        border: 1px solid #ec5702;
+        padding: 11px 50px;
+        color: #ec5702;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0px;
+    }
+}
+
+
+.PhoneNuber{
+    width: 100%;
+    height: 43px;
+    background-color: transparent;
+    border: 1px solid #e1dddd;
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 0 !important;
+    padding: 0 0 0 50px;
+}
+
+
+
+.PhoneNuber input{
+    width: 85%;
+    height: 100%;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    padding: 0 15px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    min-width: 50px;
+    border: solid 1px red;
+    justify-content: center;
+    align-content: center;
+    margin-left: 12px;
+  } 
+ 
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 275px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 999;
+    max-height: 300px;
+    overflow-x: scroll
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+.dropdown-content p{
+      cursor: pointer
+}
+
+.dropdown	{
+    min-height: 40px;
+    margin: 0;
+    float: left;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: initial;
+    line-height: 40px;
+    border-right: 1px solid #e8e8e8;
+    cursor: pointer;
+  }
+
+.dropdown .dropdown-content{
+    text-align: left
+}
+
+.ModalClose{
+    color: #000;
+    font-size: 20px;
+    line-height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.ModalClose:hover{
+    color: #ec5702
+}

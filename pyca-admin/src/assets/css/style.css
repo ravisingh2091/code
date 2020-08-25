@@ -1,0 +1,1254 @@
+@charset "utf-8"; 
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px;
+    color: #3a3a3a;
+    font-weight: 400;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clr,
+.clear {
+    clear: both;
+}
+
+header,
+footer,
+aside,
+article,
+section,
+detail,
+nav,
+figure {
+    position: relative;
+    overflow:hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li,
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none !important;
+    outline: none;
+}
+
+img {
+    border: 0;
+    outline: none;
+    max-width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea,
+input[type="button"] {
+    max-width: 100%;
+}
+
+table {  width: 100%; }
+p { margin: 0; padding: 0; }
+.fltL { float: left; }
+.fltR { float: right; }
+.padding_none { padding: 0 !important;}
+.border_none{border:none !important}
+.navbar-toggle {  background-color: #fff !important; }
+.icon-bar { background-color: #000 !important; }
+.p_right0{ padding-right:0px !important }
+.p_left0{ padding-left:0px !important } 
+
+.LoginArea{
+    background-color: #ffffc2;
+    min-height: 100vh;
+    background-size: cover;
+    padding: 1px;
+}
+ 
+.LoginArea .loginBox{
+    background-color: #fff;
+    max-width: 500px;
+    margin: 90px auto 50px;
+    padding: 85px 40px 40px 40px;
+    position: relative;
+}
+
+.LoginArea .loginBox figure{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: -60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 15px;
+    border: 5px solid #f17c9b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginArea .loginBox h1{
+    text-align: center;
+    margin: 0 0 5px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #00a8a8;
+}
+
+.LoginArea .loginBox h2{
+    text-align: center;
+    margin: 0 0 0px;
+    font-size: 15px;
+    color: #565656;
+    font-weight: 500;
+}
+
+.LoginArea .loginBox form{
+    margin: 30px 0 0 0;
+}
+
+.LoginArea .loginBox form .form-group{
+    position: relative;
+    margin: 0 0 20px 0;
+}
+
+.LoginArea .loginBox form .form-group label{
+    font-weight: 400;
+    color: #656d9a;
+    font-size: 14px;
+}
+
+.LoginArea .loginBox form .form-group .form-control{
+    box-shadow: none;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    height: 40px;
+    padding: 0px 50px 0 20px;
+    font-size: 14px;
+}
+
+.LoginArea .loginBox form .form-group .Icon{
+    width: 34px;
+    height: 34px;
+    background-color: #f1f5fa;
+    text-align: center;
+    line-height: 34px;
+    border-radius: 50%;
+    position: absolute;
+    right: 4px;
+    z-index: 100;
+    top: 28px;
+    color: #00a8a8;
+}
+
+.LoginArea .loginBox form .form-group .error{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: red;
+    font-size: 13px;
+    display: none;
+}
+
+.RememberBox{
+    margin: 0 0 15px;
+}
+.switch{position:relative;display:inline-block; cursor: pointer; margin:0;padding:2px 0 3px 50px;font-weight:400;font-size:12px;color:#646467}
+.switch input{opacity:0;width:0;height:0}
+.switch .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#fff;-webkit-transition:.4s;transition:.4s;height:20px;border-radius:50px;width:40px;border:1px solid #00a8a8}
+.switch .slider:before{position:absolute;content:"";height:13px;width:13px;left:3px;bottom:0;top:0;background-color:#00a8a8;-webkit-transition:.4s;transition:.4s;border-radius:50%;margin:auto}
+.switch input:checked + .slider{background-color:#00a8a8}
+.switch input:focus + .slider{box-shadow:0 0 1px #00a8a8}
+.switch input:checked + .slider:before{-webkit-transform:translateX(19px);transform:translateX(19px);background-color:#fff}
+.switch .slider.round{border-radius:34px}
+.switch .slider.round:before{border-radius:50%}
+ 
+.LoginArea .loginBox form button{
+    width: 100%;
+    border: none;
+    outline: 0;
+    background-color: #00a8a8;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 50px;
+    font-size: 15px;
+    transition: 0.5s all ease-in-out;
+}
+
+.LoginArea .loginBox form button .fa{
+    margin: 0 0 0 10px;
+}
+
+.LoginArea .loginBox form button:hover{
+    background-color: #ffffc2;
+    color: #000;
+}
+
+.Header{
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+    z-index: 99;
+}
+
+.Header .Logo{
+    width: 235px;
+    background-color: #00a9a7;
+    text-align: center;
+    padding: 5px 0px 9px;
+    float: left;
+    height: 60px;
+}
+
+.Header .Logo figure{
+    width: 75px;
+    filter: brightness(0) invert(1);
+    margin: auto;
+} 
+
+.Header .Navigation {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    margin-left: 235px;
+    padding: 7px 3.2rem;
+    width: calc(100% - 235px);
+    text-align: right;
+    height: 60px;
+}
+
+.Header .Navigation .Avater {    
+    margin: 5px 0px;
+    position: relative;
+    display: inline-block;
+}
+
+.Header .Navigation .Avater a { 
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 14px;
+    color: #000;
+}
+
+.Header .Navigation .Avater a figure {
+    width: 35px;
+    border-radius: 50%;
+    margin: 0 15px 0 0;
+}
+
+.Header .Navigation .Avater ul {
+    right: 0;
+    left: auto;
+    top: 100px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s all ease-in-out;
+    position: absolute;
+    box-shadow: 0px 1px 4px #ddd;
+    background-color: #fff;
+}
+
+.Header .Navigation .Avater:hover ul{
+    opacity: 1;
+    visibility: visible;
+    top: 115%;
+}
+
+.Header .Navigation .Avater ul li:first-child {
+    background-image: linear-gradient(-90deg, #00a9a7, #afbd21);
+    position: relative;
+    padding: 15px 10px 15px 60px;
+    text-align: left;
+}
+
+.Header .Navigation .Avater ul li:first-child figure {
+    width: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.Header .Navigation .Avater ul li:first-child h4 {
+    color: #fff;
+    font-size: 17px;
+    line-height: 18px;
+}
+
+.Header .Navigation .Avater ul li:first-child h4 span {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.Header .Navigation .Avater ul li a {
+    color: #4e4e4e;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: 0.5s all ease-in-out;
+}
+
+.Header .Navigation .Avater ul li a .fa {
+    margin: 0 10px 0 0;
+}
+
+.Header .Navigation .Avater ul li a:hover {
+    background-color: #e4e4e4;
+    color: #00a9a7;
+}
+
+.SidenavBar{
+    height: calc(100% - 60px);
+    position: fixed;
+    width: 235px;
+    top: 50px;
+    padding: 10px 0 0 0;
+    box-shadow: 0 0px 15px rgba(0,0,0,.1);
+} 
+
+ .SidenavBar ul li{
+    border-bottom: 1px solid #ddd;
+}  
+
+.SidenavBar ul li a{
+    display: block;
+    padding: 13px 20px;
+    -webkit-transition: 0.5s all ease-in-out;
+    transition: 0.5s all ease-in-out;
+    color: #484848;
+    font-family: 'Roboto';
+    font-size: 14px;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.SidenavBar ul li a span{
+    width: 25px;
+    display: inline-block;
+}
+
+.SidenavBar ul li a.active,
+.SidenavBar ul li a:hover{
+    background-color: #da9dae;
+    color: #fff; 
+}
+
+.SidenavBar ul li.dropdown a:after{
+    content: ' \f107';
+    font-family: 'FontAwesome';
+    position: absolute;
+    right: 10px;
+    transition: 0.5s all ease-in-out;
+}
+
+.SidenavBar ul li.dropdown.open a:after,
+.SidenavBar ul li.dropdown.active a:after{
+    transform: rotate(180deg);
+}
+
+.SidenavBar ul li .dropdown-menu{
+    position: relative;
+    width: 100%;
+    top: auto;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    float: none;
+}
+
+.SidenavBar ul li .dropdown-menu li{
+    border-color: #00a9a752;
+}
+
+.SidenavBar ul li .dropdown-menu li:last-child{
+    border: none;
+}
+
+.SidenavBar ul li .dropdown-menu li a{
+    padding: 13px 10px 13px 50px;
+    background-color: #fff;
+    color: #3a3a3a;
+}
+
+.SidenavBar ul li .dropdown-menu li a:after{
+    content: none;
+}
+
+.SidenavBar ul li .dropdown-menu li a:hover{
+    background-color: #fff;
+}
+
+.SidenavBar ul li.open .dropdown-menu li a{
+    background-color: #fff;
+    color: #484848;
+}
+
+.SidenavBar ul li.active .dropdown-menu{
+    display: block;
+}
+
+.SidenavBar ul li.open .dropdown-menu li.active a,
+.SidenavBar ul li .dropdown-menu li.active a,
+.SidenavBar ul li.open .dropdown-menu li a:hover{
+    color: #00a8a6;
+}
+
+.WrapperArea{ 
+    margin-left: 235px;
+    flex: 1 1 auto;
+    width: calc(100% - 235px); 
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; 
+    margin-top: 60px;
+    transition: 0.5s all ease-in-out;
+}
+
+.WrapperArea .WrapperBox{
+    padding: 35px;
+    background-color: #efefef;
+    min-height: calc(100vh - 60px);
+}
+
+.Small-Wrapper{
+    background-color: #fff;
+    padding: 25px;
+    border: 1px solid #dcdcdc;
+}
+
+.Small-Wrapper+.Small-Wrapper{
+    margin: 30px 0 0 0;
+}
+
+.DashboardArea h2{
+    margin: 0 0 15px;
+    color: #000;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.DashboardArea ul {
+    float: left;
+    width: 100%;
+    margin: 5px -10px 0;
+}
+
+.DashboardArea ul li {
+    float: left;
+    width: calc(100% / 3);
+    padding: 0 10px;
+    margin: 0 0 30px;
+}
+
+.DashboardArea ul li .DashboardBox{
+    padding: 25px;
+    border-radius: 5px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.DashboardArea ul li:nth-child(1) .DashboardBox{
+    background-image: linear-gradient(-90deg, #00a9a7, #00a9a782);
+}
+
+.DashboardArea ul li:nth-child(2) .DashboardBox{
+    background-image: linear-gradient(-90deg, #afbd21, #afbd2173);
+}
+
+.DashboardArea ul li:nth-child(3) .DashboardBox{
+    background-image: linear-gradient(-90deg, #d21145, #f3b1c3);
+}
+
+.DashboardArea ul li .DashboardBox:before,
+.DashboardArea ul li .DashboardBox:after{
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: 165px;
+    height: 165px;
+    background-color: #ffffff2e;
+    border-radius: 50%;
+}
+
+.DashboardArea ul li .DashboardBox:after{
+    bottom: -50px;
+    top: auto;
+    right: -20px;
+}
+
+.DashboardArea ul li .DashboardBox span.Icon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff5c;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+
+.DashboardArea ul li .DashboardBox h3 {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 0 2px;
+}
+
+.DashboardArea ul li .DashboardBox h4 {
+    font-size: 50px;
+    font-family: Roboto;
+    font-weight: 600;
+    margin: 0 0 20px;
+}
+
+.DashboardArea ul li .DashboardBox h4 span{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.DashboardArea ul li .DashboardBox h5 {
+    font-size: 16px;
+    margin: 0 0 8px;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #000;
+}
+
+.DashboardArea ul li .DashboardBox h6 {
+    font-family: Roboto;
+    color: #000;
+    font-size: 15px;
+}
+
+h4.Title {
+    margin: 0 0 25px;
+    font-weight: 600;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 22px;
+}
+
+h4.Title a{
+    float: right;
+    background-color: #00a9a7;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 15px;
+    margin: -6px 0;
+}
+
+h4.Title a:hover{
+    background-color: #f17c9b;
+}
+
+.TableList table{
+    border: 1px solid #dcdcdc;
+}
+
+.TableList table tr:nth-child(odd){
+    background-color: #f5f2f2;
+}
+
+.TableList table tr th,
+.TableList table tr td{
+    padding: 10px 10px;
+}
+
+.TableList table tr th{
+    background-color: #dcdcdc;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #000;
+    font-size: 14px;  
+    background-repeat: no-repeat;
+    background-position: 96% 50%;
+} 
+
+.TableList table tr:hover{ 
+    background: #c7c7c7;
+}
+
+.TableList table tr td{ 
+    font-weight: 500;
+    color: #404040;
+}
+
+.TableList table tr td figure{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #00a9a7;
+}
+
+.TableList table tr td figure img{
+    width: 100%;
+    height: 100%;
+}
+
+.TableList table tr td aside{ width: 100px; }
+.TableList table tr td aside img{ width: auto; }
+
+.TableList table tr td a:hover{
+    color: #000;
+ }
+
+.TableList table tr th:last-child,
+.TableList table tr td:last-child{
+    text-align: center;
+    min-width: 105px;
+    padding: 0px;
+    background-image: none;
+}
+
+.TableList table tr td:last-child a{
+    color: #545454;
+    margin: 0 5px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.TableList table tr td:last-child a:hover{
+    color: #000;
+}
+
+.TableList table tr td img{
+    width: 60px;
+}
+
+.TableList table tr td strong,
+.TableList table tr td b{
+    font-weight: 600;
+}
+
+.TableList table tr td span{
+    padding: 4px 10px;
+    color: #fff;
+    border-radius: 5px;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    font-family:'Roboto';
+    min-width: 70px;
+    text-transform: capitalize;
+}
+ 
+.TableList table tr td span.green{ background-color: #37a713 }
+.TableList table tr td span.blue{ background-color: #139bbf } 
+.TableList table tr td span.red{ background-color: #d31145 }
+
+.TableList table tr td a.Green{ color: #37a713; }
+.TableList table tr td a.Red{ color: #d31145; }
+.TableList table tr td a.Blue{ color: #139bbf; }
+.TableList table tr td a.Yellow{ color: #feca05; }
+
+.TableList table tr td span.Green{ color: #37a713; }
+.TableList table tr td span.Red{ color: #d31145; }
+.TableList table tr td span.Blue{ color: #139bbf; }
+.TableList table tr td span.Yellow{ color: #feca05; }
+
+.TableList table tr td a.Route {
+    background-color: #f96332;
+    color: #fff !important;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+.TableList table tr td a.unblock{
+    padding: 4px 10px;
+    color: #fff;
+    border-radius: 5px;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    min-width: 70px;
+    background-color: #bb0f0f;
+}
+
+.TableList table tr td a.unblock:hover{
+    background-color: #37a713;
+    color: #fff;
+}
+
+.UserArea .UserHead{
+    text-align: left;
+    margin: 0 0 20px;
+}
+
+.UserArea .UserHead h4{
+    margin: 0px 0;
+    display: inline-block; 
+} 
+
+.UserArea .UserBody .UserBox{
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 12px 0;
+    margin: 0 0 14px; 
+}
+
+.UserArea .UserBody .UserBox.None{
+    border-bottom:none;
+    padding: 0 0 0px 0;
+    margin: 0 0 0px; 
+}
+
+.UserArea .UserBody .UserBox label{
+    display: block;
+    margin: 0 0 5px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #636363;
+}
+
+.UserArea .UserBody .UserBox p{
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Roboto;
+    color: #000;
+    line-height: 26px;
+}
+
+.UserArea .UserBody .UserBox p img{
+    float: left;
+    width: 47%;
+    border: 2px solid #000;
+    margin: 0 10px 0 0;
+}
+
+.RouteBox{
+    border-top: 1px dotted #ddd;
+    margin: -10px 0 0 0;
+    padding: 15px 0 0 0;
+} 
+
+.RouteBox ul li{
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.RouteBox ul li span{
+    display: inline-block;
+    width: 235px;
+    position: relative;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin: 0 30px 0 0;
+}
+
+.RouteBox ul li span:after{
+    content: ':';
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.RouteBox iframe{
+    width: 100%;
+    height: 450px;
+    border: 5px solid #00a9a7;
+}
+
+.Edit-Ride form .form-group{
+    margin: 0 0 30px;
+}
+
+.Edit-Ride form .form-group label{
+    display: block;
+    font-weight: 500;
+    color: #000;
+    font-size: 15px;
+    font-family: 'Roboto'; 
+}
+
+.Edit-Ride form .form-group label a {
+    display: inline-block;
+    width: 20px;
+    margin: 0 0 0 10px;
+}
+
+.Edit-Ride form .form-group .form-control{
+    box-shadow: none;
+    border: 1px solid #c3c3c3;
+    height: 40px;
+    font-size: 14px;
+    color: #000;
+    line-height: 22px;
+}
+
+.Edit-Ride form .form-group input[type=date]{
+    text-transform: uppercase;
+}
+
+.Edit-Ride form .form-group button{
+    padding: 10px 50px;
+    display: inline-block;
+    background-color: #00a9a7;
+    margin: 0;
+    color: #fff;
+    -webkit-transition: 0.5s all ease-in-out;
+    transition: 0.5s all ease-in-out;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border: none;
+    outline: 0;
+}
+
+.Edit-Ride form .form-group button:hover{
+    background-color: #d31145; 
+}
+
+.PaginationBox{
+    text-align: right;
+    margin: 20px 0 0 0;
+}
+
+.PaginationBox ul.ngx-pagination{
+    margin: 0;
+}
+
+.PaginationBox ul.ngx-pagination li{
+    border: 1px solid #ddd;
+    margin: 0 0 0 10px; 
+}
+
+.PaginationBox ul.ngx-pagination li.current{
+    background-color: #d31145;
+    border-color: #d31145 !important;
+    padding: 6px 15px !important;
+}
+
+.PaginationBox ul.ngx-pagination li.pagination-previous,
+.PaginationBox ul.ngx-pagination li.pagination-next{
+    padding: 0;
+    display: inline-block;
+}
+ 
+.PaginationBox ul.ngx-pagination li a{
+    padding: 6px 15px !important; 
+}
+
+.PaginationBox ul.ngx-pagination li:hover{ 
+    border-color: #d31145; 
+}
+
+.PaginationBox ul.ngx-pagination li a:hover{
+    background-color: #d31145; 
+    color: #fff;
+} 
+
+.PaginationBox ul.ngx-pagination li.disabled{
+    padding: 6px 15px !important;
+    cursor: not-allowed;
+    border: 1px solid #ddd;
+}
+
+.HelpArea ul.nav-tabs{
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.HelpArea ul.nav-tabs li{
+    margin: 0 5px 0 0;
+}
+
+.HelpArea ul.nav-tabs li a{
+    background-color: #e6e6e6;
+    border-radius: 0;
+    padding: 10px 25px;
+    border: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.HelpArea ul.nav-tabs li.active a{
+    background-color: #00a9a7;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.HelpArea .tab-content a.Edit{
+    float: right;
+    background-color: #00a9a7;
+    padding: 6px 30px;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    border-radius: 0px;
+    transition: 0.5s all ease-in-out;
+    margin: -8px 0 0 0;
+}
+
+.HelpArea .tab-content a.Edit:hover{
+    background-color: #d01246;
+    color: #fff;
+}
+
+.HelpArea .tab-content #About h3,
+.HelpArea .tab-content #Service h3 {
+    margin: 0 0 15px;
+    font-weight: 600;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 25px;
+}
+
+.HelpArea .tab-content #About p,
+.HelpArea .tab-content #Service p {
+    font-size: 15px;
+    line-height: 26px;
+    margin: 0 0 15px;
+    color: #464545;
+    font-family: Roboto;
+    font-weight: 400;
+}
+
+.PasswordArea form{
+    border-right: 1px solid #ddd;
+    padding: 0 30px 0 0;
+} 
+
+.PasswordArea form .form-group{
+    margin: 0 0 25px 0;
+}
+
+.PasswordArea form .form-group label{
+    font-size: 14px;
+    color: #3c3c3c;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.PasswordArea form .form-group .form-control{
+    margin: 0 0 0;
+}
+
+.PasswordArea form button{ 
+    padding: 7px 30px;
+    background-color: #00a9a7;
+    outline: 0;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: 0;
+    transition: 0.5s all ease-in-out;
+}
+
+.PasswordArea form button:hover{
+    background-color: #d01246;
+    color: #fff;
+}
+.PasswordArea form button:disabled{
+    cursor:not-allowed;
+}
+
+.CloseModal{
+    position: absolute;
+    top: -13px;
+    right: -13px;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+
+.Decline h3 {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 5px;
+    text-align: left;
+}
+
+.Decline p {
+    font-size: 16px;
+    font-family: 'Roboto';
+    color: #777;
+    text-align: left;
+}
+
+.Decline h4 {
+    margin: 15px 0 0 0;
+    text-align: right;
+}
+
+.Decline a {
+    text-transform: capitalize;
+    margin: 0 0 0 30px;
+    font-size: 17px;
+    color: #49a0d5;
+    font-weight: 400;
+    transition: 0.5s all ease-in-out;
+}
+
+.Decline h4 a:hover {
+    color: #000;
+} 
+
+#EditModal .Category,
+#AddModal .Category{
+    padding: 0px;
+}
+
+.Category{
+    padding: 20px 20px;
+}
+
+.Category h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 15px;
+    font-size: 23px;
+}
+
+.Category .form-group{
+    margin: 0 0 20px;
+}
+.Category .form-group label{
+    display: block;
+    font-weight: 500;
+    color: #000;
+    font-size: 15px;
+    font-family: 'Roboto';
+}
+
+.Category .form-group .form-control{
+    box-shadow: none;
+    border: 1px solid #c3c3c3;
+    height: 40px;
+    font-size: 14px;
+    color: #000;
+    line-height: 22px;
+}
+
+.Category .form-group textarea.form-control{
+    height: auto;
+}
+ 
+.Category button{
+    padding: 10px 40px;
+    display: inline-block;
+    background-color: #f17c9b;
+    margin: 0;
+    color: #fff;
+    -webkit-transition: 0.5s all ease-in-out;
+    transition: 0.5s all ease-in-out;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border: none;
+}
+ 
+.Category button:hover{
+    background-color: #00a9a7; 
+}
+
+
+
+#loaddingLoader {
+    background: #ffffff;
+    color: #666666;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    float: left;
+    text-align: center;
+    padding-top: 25%;
+    opacity: .80;
+  }
+
+  .loaderSpinner {
+      margin: 0 auto;
+      height: 64px;
+      width: 64px;
+      animation: rotate 0.8s infinite linear;
+      border: 5px solid #00a9a7;
+      border-right-color: transparent;
+      border-radius: 50%;
+  }
+  @keyframes rotate {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+  }
+
+  .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+
+
+.ModalBox{
+    z-index: 99;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.Modalwrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.Modalbackdrop{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.ModalBox .Modalcontent {
+    width: 500px;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 25px;
+    position: relative;
+    transition: 10s all ease-in-out;
+    transform: translate(0px, -100%);
+}
+
+.Modalbackdrop+.Modalcontent {
+    transform: translate(0px, 0%);
+}
+
+.CloseModal {
+    position: absolute;
+    top: -13px;
+    right: -13px;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ModalBox .Modalcontent h4 {
+    margin: 15px 0 0 0;
+    text-align: right;
+}
+
+.ModalBox .Modalcontent h4 span {
+    text-transform: capitalize;
+    margin: 0 0 0 30px;
+    font-size: 17px;
+    color: #49a0d5;
+    font-weight: 400;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+}
+
+.ModalBox .Modalcontent h4 span:hover {
+    color: #000;
+} 
+
+.Decline h3 {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 5px;
+    text-align: left;
+}
+
+.Decline p {
+    font-size: 16px;
+    font-family: 'Roboto';
+    color: #777;
+    text-align: left;
+}

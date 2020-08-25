@@ -1,0 +1,74 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''">
+                            {{'Home' | translate}}<i class="fa fa-angle-right"></i>
+                        </a>
+                        {{'Book Event' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="BookingArea">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="BookLeft">
+                        <h2> {{'Book An Event' | translate}}</h2>
+
+                        <article>
+
+                            <rps-calendar *ngIf="apiResponse" [eventData]="eventData"
+                                (availableClick)="avlClick($event)">
+                            </rps-calendar>
+                            <strong> {{'Note' | translate}} :</strong>
+                            <p>* {{'Special Offer Is Available' | translate}}</p>
+                            <form [formGroup]="bookEventForm" (ngSubmit)="eventBook()">
+                                <h3> {{'Booking Date Confirm' | translate}}</h3>
+                                <div class="row">
+                                    <div class="form-group col-sm-12">
+                                        <label>{{'Select Date' | translate}}</label>
+                                        <input type="text" class="form-control" formControlName="selected_date"
+                                            readonly>
+                                        <p style="color: #FF0000" *ngIf="bookEventForm.controls['selected_date'].invalid && 
+                                        (formSubmited || bookEventForm.controls['selected_date'].dirty)">
+                                            Please provide valid Select Date </p>
+                                    </div>
+
+
+                                    <div class="col-sm-12">
+                                        <button type="submit">{{'Submit' | translate}}</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </article>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-4 offset-sm-1">
+                    <div class="BookRight">
+                        <h2>{{'Submit' | translate}}</h2>
+                        <aside>
+                            <figure><img src="{{propertyDetail?.imagesFile[0]?.image}}"> </figure>
+                            <figcaption>
+                                <h3>{{propertyDetail?.title}}</h3>
+                                <h4>{{propertyDetail?.address}}</h4>
+                                <h5><span>{{'Total Price' | translate}} :</span>{{'SAR' | translate}}
+                                    {{propertyDetail?.totalPrice}}</h5>
+                            </figcaption>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+.single-team-member .team-member-info {
+    text-align: center;
+    margin-bottom: 50px;
+    position: absolute;
+    left: 0%;
+    background: #fff;
+    width: 100%;
+    bottom: -15%;
+    padding: 10px 0px;
+    border: 1px solid #a2a2a2;
+    display: none;
+}
+.team-member-thumb:hover + .team-member-info {
+    display: block;
+	
+}
+
+.meet-the-team-area {
+    padding: 0px 0 0;
+}
+
+.meet-the-team-area .section-heading { 
+    margin-bottom: 20px;
+}
+
+.carousel-item .single-featured-property .property-thumb img{
+    height: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    bottom: auto;
+    top: 120px;
+    opacity: 1;
+}
+
+.single-team-member{
+    overflow: hidden;
+    margin: 0 0 50px 0;
+}
+
+.single-team-member .team-member-thumb {
+    margin-bottom: 0;}
+
+.single-team-member .team-member-info {
+    display: block;
+    bottom: 0;
+    margin: 0;
+    transform: translate(0px, 100%);
+    transition: 0.5s all ease-in-out;
+}
+
+.single-team-member:hover .team-member-info {
+    transform: translate(0px, 0%);
+}
+

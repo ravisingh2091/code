@@ -1,0 +1,41 @@
+select{ cursor: pointer; }
+
+.imagescaption{}
+
+.imagescaption figure{
+    height: 270px;
+    overflow: hidden;
+}
+
+.imagescaption figure img{
+    height: 100%;
+    width: 100%;
+}
+
+.imagescaption textarea{
+    height: auto;
+    margin: 0 0 15px;
+}
+
+.imagescaption button{
+    background-color: #ed5702;
+    padding: 8px 0px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 125px;
+    text-align: center;
+    float: right;
+    border: none;
+    outline: 0;
+}
+
+agm-map {
+    height: 300px;
+  }
+ 
+

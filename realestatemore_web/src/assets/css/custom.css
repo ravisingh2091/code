@@ -1,0 +1,2974 @@
+@charset "utf-8";
+/* CSS Document */ 
+
+a.nav-brand {
+    width: 220px;
+}
+
+a.nav-brand img{
+    width: 100%;
+}
+
+.classynav ul li.dropdown {
+    position: relative;
+}
+
+.classynav ul li.dropdown .dropdown-menu{
+    top: 95%;
+    margin: 0px;
+}
+
+.classynav ul li.dropdown:hover .dropdown-menu{
+    display: block
+}
+
+.classynav ul li.dropdown:hover .dropdown-menu a{
+    color: #000;
+}
+
+.classynav ul li.dropdown:hover .dropdown-menu a:hover{
+    color: #fe7103
+}
+
+.main-header-area .classynav ul li a{
+    position: relative;
+}
+
+.main-header-area .classynav ul li a .fa{
+    font-size: 17px; 
+}
+
+.main-header-area .classynav ul li a span{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    line-height: 17px;
+    text-align: center;
+    font-size: 10px;
+    background-color: #f2884b;
+    border-radius: 50%;
+    top: -3px;
+    right: -3px;
+    z-index: 1;
+}
+
+.section-heading {
+    position: initial;
+}
+
+.breadcumb-area{
+    height: 350px
+}
+
+.single-featured-property .property-content .location img {
+    margin-right: 7px;
+    display: inline-block !important;
+    width: auto !important;
+    width: 19px !important;
+}
+
+.MaplistArea {
+    padding: 0px 0px 0;
+}
+
+.MaplistArea .FilterArea{
+    margin: 0 0 70px;
+}
+
+
+
+
+.PropertyBox{
+    z-index: 9
+}
+
+.MaplistArea .MapListing .Mapside{
+    height: 500px;
+}
+
+.MaplistArea .MapListing .Mapside agm-map {
+    height: 100%;
+}
+
+.PropertyBox figcaption ol.Share{
+    margin: 10px 0 0 0;
+}
+
+.PropertyBox figcaption ol.Share li{
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.PropertyBox figcaption ol.Share li:first-child{
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #000;
+}
+
+.PropertyBox figcaption ol.Share li a{
+    color: #ed5702;
+    font-size: 15px;
+}
+ 
+.PropertyBox figcaption ol.Share li a:hover{
+    color: #000;
+}
+
+.PropertyBox figcaption ol.Share li a .fa{
+    font-size: inherit;
+    color: inherit;
+}
+
+.MaplistArea .MapListing .Mapside .Provider{
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+}
+
+.MaplistArea .MapListing .Mapside .Provider .PropertyBox {
+    left: 90px;
+}
+
+.MaplistArea .MapListing .Mapside .Provider .PropertyBox figure{
+    height: 140px;
+    overflow: hidden;
+}
+
+.MaplistArea .MapListing .Mapside .Provider:hover .PropertyBox {
+    opacity: 1;
+    visibility: visible;
+}
+
+.MaplistArea .MapListing .Mapside .Provider .Servpionter{ 
+    background-color: #fff;
+    padding: 8px 20px; 
+    border: 2px solid #ed5702;
+}
+ 
+.MaplistArea .MapListing .Mapside .Provider .Servpionter:after{
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 8px solid #ed5702;
+    position: absolute;
+    bottom: -17px;
+    left: 42%;
+}
+
+.UserArea{
+    padding: 50px 35px;
+}
+
+.UserArea .SideNavbar{}
+
+.UserArea .SideNavbar ul{}
+
+.UserArea .SideNavbar ul li{}
+
+.UserArea .SideNavbar ul li a{
+    display: block;
+    padding: 10px 15px 10px 45px;
+    color: #505050;
+    border: 1px solid #d4d3d3;
+    border-bottom: none;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.UserArea .SideNavbar ul li a .fa{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.UserArea .SideNavbar ul li:last-child a{
+    border-bottom: 1px solid #d4d3d3;
+}
+
+.UserArea .SideNavbar ul li a:hover{
+    background-color: #eaeaea;
+}
+
+.UserArea .SideNavbar ul li.active a{
+    background-color: #ed5702;
+    color: #fff;
+    border-color: #ed5702;
+}
+
+.ChatArea{}
+
+.ChatArea .Chatlist{
+    width: 35%;
+    float: left; 
+}
+
+.ChatArea .Chatlist .ChatProfile{
+    position: relative;
+    padding: 20px 10px 20px 60px;
+    border-bottom: 1px solid #b3b3b3;
+    margin: 0;
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+.ChatArea .Chatlist .ChatProfile figure{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 7px;
+}
+
+.ChatArea .Chatlist .ChatProfile figure span,
+.ChatArea .Chatlist article aside figure span{}
+
+.ChatArea .Chatlist .ChatProfile figure span.green,
+.ChatArea .Chatlist article aside figure span.green{}
+
+.ChatArea .Chatlist .ChatProfile figure span.red,
+.ChatArea .Chatlist article aside figure span.red{}
+
+.ChatArea .Chatlist .ChatProfile h5{
+    font-weight: 500;
+    color: #000;
+    font-size: 16px;
+    margin: 0 0 2px 0;
+    line-height: 20px;
+    position: relative;
+    padding: 0 60px 0 0;
+    font-family: Roboto;
+}
+
+.ChatArea .Chatlist .ChatProfile h5 span{}
+
+
+.ChatArea .Chatlist form{
+    background-color: #efefef;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.ChatArea .Chatlist form input{
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    padding: 8px 15px 8px 40px;
+    font-family: Roboto;
+    border-radius: 50px;
+    outline: 0;
+}
+
+.ChatArea .Chatlist form span{
+    position: absolute;
+    top: 17px;
+    left: 25px;
+    color: #bbb;
+}
+
+.ChatArea .Chatlist article{ 
+    height: 400px;
+    overflow-y: scroll;
+}
+ 
+
+.ChatArea .Chatlist article::-webkit-scrollbar {
+    width: 10px;
+}
+
+.ChatArea .Chatlist article::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.ChatArea .Chatlist article::-webkit-scrollbar-thumb {
+    background: #888;  
+}
+ 
+.ChatArea .Chatlist article::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.ChatArea .Chatlist article aside{
+    position: relative;
+    padding: 15px 10px 15px 65px;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    cursor: pointer;
+}
+
+.ChatArea .Chatlist article aside:hover,
+.ChatArea .Chatlist article aside.active{
+    background-color: #e8e8e8;
+}
+
+.ChatArea .Chatlist article aside:last-child{
+    border: none;
+    margin: 0;
+}
+
+.ChatArea .Chatlist article aside figure{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 7px;
+}
+
+.ChatArea .Chatlist article aside figure img{
+    width: 100%;
+}
+
+.ChatArea .Chatlist article aside h5{
+    font-weight: 500;
+    color: #000;
+    font-size: 16px;
+    margin: 0 0 2px 0;
+    line-height: 20px;
+    position: relative;
+    padding: 0 60px 0 0;
+    font-family: Roboto;
+}
+
+.ChatArea .Chatlist article aside h5 span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    color: #3e3d3d;
+}
+
+.ChatArea .Chatlist article aside p{
+    margin: 0;
+    font-size: 12px;
+    color: #5d5d5d;
+    font-weight: 500;
+    line-height: 17px;
+    font-family: Roboto;
+}
+
+
+
+.ChatArea .ChatBoxx{
+    width: 65%;
+    float: left;
+    padding: 0 15px;
+  
+}
+
+.ChatArea .ChatBoxx .Chatting{
+    height: 400px;
+    overflow-y: scroll;
+    margin: 0 0 20px 0;    
+    padding: 10px 15px 0 15px;
+}
+
+.ChatArea .ChatBoxx .Chatting aside{
+    margin: 0 0 15px;
+    position: relative;
+    padding: 0 0 0 0;
+}
+
+.ChatArea .ChatBoxx .Chatting aside figure{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+}
+
+.ChatArea .ChatBoxx .Chatting aside figure img{width: 100%;}
+
+.ChatArea .ChatBoxx .Chatting aside figcaption{
+    background-color: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 65%;
+}
+
+.ChatArea .ChatBoxx .Chatting aside figcaption p{
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0;
+    font-weight: 400;
+    font-family: Roboto;
+}
+
+.ChatArea .ChatBoxx .Chatting aside.User{
+    padding: 0 0 0 0;
+    text-align: right;
+}
+
+.ChatArea .ChatBoxx .Chatting aside.User figure{
+    right: 0;
+    left: auto;
+}
+
+.ChatArea .ChatBoxx .Chatting aside.User figcaption{
+    text-align: left;
+    background-color: #b9b9b9;
+}
+
+.ChatArea .ChatBoxx .Chatting aside.User figcaption p{
+    color: #000
+}
+
+.ChatArea .ChatBoxx .form{
+    position: relative;
+}
+
+.ChatArea .ChatBoxx .form input{
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    font-family: Roboto;
+    padding: 10px 20px;
+    border-radius: 50px;
+    outline: 0;
+}
+
+.ChatArea .ChatBoxx .form button{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 45px;
+    height: 100%;
+    border: none;
+    background: none;
+    color: #ed5702;
+    outline: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+
+.FavoritesArea{}
+
+.FavoritesArea h3{
+    font-size: 25px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 20px;
+}
+
+.FavoritesArea .FavoritesList{}
+
+.FavoritesArea .FavoritesList table{
+    border: 1px solid #ddd;
+}
+
+.FavoritesArea .FavoritesList table th{
+    padding: 8px 15px;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.FavoritesArea .FavoritesList table td{
+    padding: 15px 10px;
+}
+
+.FavoritesArea .FavoritesList table td.Thumb{
+    width: 25%;
+}
+
+.FavoritesArea .FavoritesList table td.Thumb a{
+    display: block;
+    position: relative;
+}
+
+.FavoritesArea .FavoritesList table td.Thumb a span{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: #ed5702;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3px 17px;
+    border-radius: 5px;
+    font-size: 13.5px;
+}
+
+.FavoritesArea .FavoritesList table td.Details{
+    width: 47%;
+}
+
+.FavoritesArea .FavoritesList table td.Details h4{
+    font-size: 19px;
+    color: #000;
+    margin: 0 0 7px;
+}
+
+.FavoritesArea .FavoritesList table td.Details h5{
+    color: #989898;
+    margin: 0 0 7px 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.FavoritesArea .FavoritesList table td.Details h5 img{
+    width: 15px;
+    margin: 0 6px 0 0;
+}
+
+.FavoritesArea .FavoritesList table td.Details h6{
+    font-weight: 600;
+    font-size: 25px;
+    color: #ed5702;
+    line-height: 24px;
+}
+
+.FavoritesArea .FavoritesList table td.Details p{
+    font-size: 15px;
+    line-height: 22px;
+    margin: 0;
+    font-weight: 400;
+    font-family: Roboto;
+    color: #636363;
+}
+
+.FavoritesArea .FavoritesList table td.Date{
+    vertical-align: middle;
+}
+
+.FavoritesArea .FavoritesList table td.Date span{
+    font-weight: 600;
+    color: #000;
+}
+
+.FavoritesArea .FavoritesList table td.Remove{
+    text-align: center;
+    vertical-align: middle;
+}
+ 
+.FavoritesArea .FavoritesList table td.Remove a{
+    width: 35px;
+    height: 35px;
+    background-color: #ed5702;
+    display: inline-block;
+    line-height: 34px;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ed5702;
+    font-size: 17px;
+}
+
+/*.FavoritesArea .FavoritesList table td.Remove a.active{
+    background-color: #ed5702;
+    color: #fff;
+} */
+
+.PostProperty{
+    margin: 0 0 60px 0;
+}
+
+.PostProperty h2{
+    font-size: 28px;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    padding: 0 200px 0 0;
+    line-height: 24px;
+}
+
+.PostProperty h2 span{
+    position: absolute;
+    right: 0;
+    line-height: 20px;
+}
+
+.PostProperty h2 span a{
+    font-size: 16px;
+    margin: 0 0px 0 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #dcdcdc;
+    color: #000000;
+    border-radius: 50%;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.PostProperty h2 span a:hover{
+    color: #fe7003
+}
+
+.PostProperty h2 span a.Book{
+    display: inline;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fe7003;
+    color: #fff;
+}
+
+.PostProperty h2 span a.Book:hover{
+    background-color: #dcdcdc;
+    color: #000;
+}
+
+.PostProperty h5{
+    font-weight: 700;
+    font-size: 20px;
+    color: #fe7003;
+}
+
+.PostProperty h6{
+    color: #4c4c4c;
+}
+
+.PostProperty h6 span{
+    font-weight: 700;
+    color: #000;
+    font-size: 16px;
+}
+
+.PostProperty h3{
+    font-size: 25px;
+    font-weight: 600;
+    color: #fe7003;
+    margin: 10px 0 10px 0;
+}
+
+.PostProperty h3 span{
+    font-weight: 800;
+}
+
+.PostProperty h4{
+    color: #7d7d7d;
+    font-size: 15px;
+    line-height: 2;
+    font-weight: 600;
+}
+
+.PostProperty h4 img{
+    width: 17px;
+    margin: 0 10px 0 0;
+}
+
+.PostProperty p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #757272;
+    line-height: 26px;
+    margin: 0 0 20px 0;
+}
+
+.PostProperty ul.Room{}
+
+.PostProperty ul.Room li{
+    display: inline-block;
+    margin: 0 20px 0 0; 
+}
+
+.PostProperty ul.Room li img{
+    width: 25px;
+    margin: 0 7px 0 0;
+}
+
+.PostProperty ul.Room li span{
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 5px;
+    color: #ed5702;
+}
+
+.PostProperty ul.Share{
+    margin: 20px 0 0 0;
+}
+
+.PostProperty ul.Share li{
+    display: inline-block;
+    margin: 0 7px 0 0;
+}
+
+.PostProperty ul.Share li:first-child{
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #000;
+}
+
+.PostProperty ul.Share li a{
+    width: 37px;
+    height: 37px;
+    display: block;
+    text-align: center;
+    border: 2px solid #ed5702;
+    border-radius: 50%;
+    background-color: #ed5702;
+    color: #fff;
+    line-height: 32px;
+    font-size: 15px;
+}
+
+.PostProperty ul.Share li a:hover{
+    background-color: #fff;
+    color: #ed5702;
+}
+
+
+.PostDeails{
+    margin: 0 0 15px;
+}
+
+.PostDeails h4{
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    font-size: 26px;
+}
+
+.PostDeails ul{
+    padding: 15px 0 15px 40px;
+}
+
+.PostDeails ul li{margin: 0 0 10px;
+    list-style: disc;
+    text-transform: capitalize;}
+
+.PostDeails ul li span{color: #000;font-weight: 600;width: 250px;display: inline-block;position: relative;}
+ 
+.PostDeails ul li span:after{
+    content: ':';
+    position: absolute;
+    right: 15px;
+ }
+
+ .PostDeails .Available{
+    padding: 0 0 0 30px;
+    margin: 10px 0 0px 0;
+ }
+
+ .PostDeails .Available p{
+    color: #000;
+    width: 250px;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+ }
+ 
+ .PostDeails .Available p:after{
+    content: ':';
+    position: absolute;
+    right: 15px
+ }
+
+ .PostDeails .Available .Checkbox{
+     margin: 0px;
+ }
+
+
+
+.listings-content .Calender{
+    margin: 15px 0 0 0;
+}
+
+.listings-content .Calender h4{
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 15px;
+    font-size: 26px;
+}
+
+
+.listings-content .Calender h5{
+    width: 420px;
+    margin: 0;
+    background-color: #ec5702;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 12px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.listings-content .Calender h5 .fa-angle-left{
+    float: left;
+    padding: 0 0 0 20px;
+}
+
+.listings-content .Calender h5 .fa-angle-right{
+    float: right;
+    padding: 0 20px 0 0;
+}
+
+
+.listings-content .Calender table{}
+
+.listings-content .Calender table tr th,
+.listings-content .Calender table tr td,{}
+
+.listings-content .Calender table tr th{
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    background-color: #d2d2d2;
+    font-weight: 600;
+    color: #000;
+    font-size: 14px;
+}
+
+.listings-content .Calender table tr td{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    color: #000;
+    transition: 0.5s all ease-in-out;
+    vertical-align: top;
+    padding: 6px 0 6px 0;
+}
+
+.listings-content .Calender table tr td span{
+    display: block;
+    font-size: 10px;
+    color: #ec5702;
+}
+.listings-content .Calender table tr td .fa{
+    display: block;
+    font-size: 10px;
+    color: #ec5702;
+}
+
+.listings-content .Calender table tr td:hover span,
+.listings-content .Calender table tr td:hover .fa{
+    color: #fff;
+}
+
+
+.listings-content .Calender table tr td.active,
+.listings-content .Calender table tr td:hover{
+    background-color: #ec5702;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact-realtor-wrapper .realtor---info h2{
+    font-size: 24px;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin: 0 0 15px 0;
+}
+
+.contact-realtor-wrapper .realtor---info h5{
+    font-weight: 600;
+    color: #000;
+    font-size: 18px;
+    line-height: 15px;
+    margin: 0 0 12px;
+}
+
+.contact-realtor-wrapper .realtor---info h5 a{
+    color: #ed5702;
+    margin: 0 0 0px 0;
+    display: inline-block;
+}
+
+.contact-realtor-wrapper .realtor---info h5 a:hover{
+    color: #000000;
+}
+
+/* ************************ All Owner Property ************************* */
+
+.OwnerpropertyArea{
+    padding: 50px 0;
+}
+
+.OwnerpropertyArea .OwnerpropertyList{}
+
+.OwnerpropertyArea .OwnerpropertyList .single-featured-property{
+    border: 1px solid #ddd;
+    margin: 0 0 50px;
+}
+
+.OwnerpropertyArea .OwnerpropertyList .single-featured-property:last-child{
+    margin: 0;
+}
+ 
+.OwnerpropertyArea .OwnerpropertyList .single-featured-property .property-thumb{
+    width: 40%;
+    float: left;
+    margin: -1px;
+    z-index: 1;
+    position: relative;
+}
+
+.OwnerpropertyArea .OwnerpropertyList .single-featured-property .property-content{
+    float: left;
+    width: 60%;
+    padding: 12px 15px;
+    border: none;
+}
+
+.OwnerpropertyArea .OwnerpropertyList .single-featured-property .property-content p.location{
+    margin: 0 0 10px;
+}
+
+.OwnerpropertyArea .OwnerpropertyList .single-featured-property .property-content p{
+    font-size: 14px;
+    margin: 0 0 10px;
+    line-height: 27px;
+}
+
+.OwnerpropertyArea .OwnerProfile{
+    padding: 20px;
+    background-color: #fff8f8;
+    border: 1px solid #ddd;
+}
+
+.OwnerpropertyArea .OwnerProfile h2 {
+    font-size: 24px;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin: 0 0 15px 0;
+}
+
+.OwnerpropertyArea .OwnerProfile h5 {
+    font-weight: 600;
+    color: #000;
+    font-size: 18px;
+    line-height: 15px;
+    margin: 0 0 12px;
+}
+
+.OwnerpropertyArea .OwnerProfile h5 a {
+    color: #ed5702;
+    margin: 0 0 0px 0;
+    display: inline-block;
+}
+
+.OwnerpropertyArea .OwnerProfile h6 {
+    font-size: 14px;
+}
+
+.OwnerpropertyArea .OwnerProfile h6 img {
+    margin-right: 15px;
+}
+
+
+/* ********************************* Calendar Page ****************************** */
+
+.CalendarArea {}
+
+
+.CalendarArea .CalendarEvent{}
+
+.CalendarArea .CalendarEvent h1{
+    color: #000;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+
+.CalendarArea .CalendarEvent ul.nav-tabs{
+    border: none;
+}
+
+.CalendarArea .CalendarEvent ul.nav-tabs li{
+    margin: 0 15px 0 0;
+}
+
+.CalendarArea .CalendarEvent ul.nav-tabs li a{
+    padding: 6px 22px;
+    border: 1px solid #5d5b5b;
+    color: #5d5b5b;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+
+.CalendarArea .CalendarEvent ul.nav-tabs li a:hover{
+    background-color: #dcdcdc;
+    color: #000;
+    border-color: #dcdcdc;
+}
+
+.CalendarArea .CalendarEvent ul.nav-tabs li a.active{
+    background-color: #ed5702;
+    border-color: #ed5702;
+    color: #fff;
+}
+
+.CalendarEventList {
+    padding: 50px 0 0 0;
+}
+
+.VenueBox{
+    box-shadow: 0px 3px 12px #b7b7b7;
+    padding: 20px;
+    margin: 0 0 35px 0;
+    border-radius: 5px;
+}
+
+.VenueBox .Title{
+    margin: 0 0 15px;
+}
+
+.VenueBox .Title h4{
+    color: #ed5702;
+    text-transform: capitalize;
+    font-size: 19px;
+    text-align: center;
+    margin: 0;
+}
+
+.VenueBox .Type{
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+}
+
+.VenueBox .Type h5,
+.VenueBox .Date h5,
+.VenueBox .Price h5{
+    font-size: 14px;
+    color: #000;
+    padding: 0;
+    margin: 0;
+}
+
+.VenueBox .Type h5 span,
+.VenueBox .Price h5 span{
+    float: right;
+    color: #737373;
+    font-size: 13px;
+}
+
+.VenueBox .Date{
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+}
+
+.VenueBox .Date ul{
+    text-align: center;
+    margin: 8px 0 0 0;
+}
+
+.VenueBox .Date ul li{
+    display: inline-block;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.VenueBox .Date ul li:nth-child(1),
+.VenueBox .Date ul li:nth-child(3){
+    font-size: 13px;
+    float: left;
+    line-height: 23px;
+    color: #696868;
+}
+
+.VenueBox .Date ul li:nth-child(3){
+    float: right;
+}
+
+.VenueBox .Price{
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 10px;
+    margin: 0 0 20px;
+}
+
+.VenueBox .Contact{
+    text-align: center;
+}
+
+.VenueBox .Contact a{
+    color: #fff;
+    border: 2px solid #ed5702;
+    padding: 7px 0px;
+    display: inline-block;
+    font-weight: 500;
+    border-radius: 5px;
+    background-color: #ed5702;
+    margin: 0 1px;
+    width: 115px;
+}
+
+.VenueBox .Contact a .fa{
+    margin: 0 5px 0 0;
+}
+
+.VenueBox .Contact a:last-child{
+    background-color: transparent;
+    color: #ed5702;
+}
+
+.VenueBox .Contact a:hover{
+    background-color: transparent;
+    color: #ed5702;
+}
+
+.VenueBox .Contact a:last-child:hover{
+    background-color: #ed5702;
+    color: #fff;
+}
+
+
+.PasswordArea{}
+
+.PasswordArea form{
+    border-right: 1px solid #ddd;
+    padding: 0 30px 0 0;
+}
+
+.PasswordArea form h1{
+    color: #000;
+    font-size: 23px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+
+.PasswordArea form .form-group{
+    margin: 0 0 15px 0 !important;
+}
+
+.PasswordArea form .form-group label{
+    font-size: 14px;
+    color: #3c3c3c;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.PasswordArea form .form-group .form-control{
+    margin: 0 0 0;
+}
+
+.PasswordArea form button{
+    border: 1px solid #ed5702;
+    padding: 7px 30px;
+    background-color: transparent;
+    outline: 0;
+    text-transform: uppercase;
+    color: #ed5702;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.PasswordArea form button:hover{
+    background-color: #ed5702;
+    color: #fff;
+}
+
+.PasswordArea .Description{}
+
+.PasswordArea .Description h1{
+    color: #000;
+    font-size: 23px;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.PasswordArea .Description p{
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 600;
+    color: #696969;
+}
+
+.SubscriptionArea{}
+ 
+.SubscriptionArea ul{
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.SubscriptionArea ul li{
+    width: calc(100% / 3);
+    padding: 0 9px;
+}
+
+.SubscriptionArea ul li .PlanBox{
+    box-shadow: 0px 6px 11px #ddd;
+    padding: 0;
+    text-align: center;
+}
+
+.SubscriptionArea ul li .PlanBox article{
+    background-color: #777777;
+    text-align: center;
+    padding: 15px 0 0 0;
+    margin: 0 0 70px 0px;
+    height: 160px;
+    overflow: inherit;
+}
+
+.SubscriptionArea ul li .PlanBox article p{
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+    margin: 0 0 25px;
+}
+
+.SubscriptionArea ul li .PlanBox article aside{
+    width: 140px;
+    height: 140px;
+    background-color: #6b6a6a;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: auto;
+    color: #fff;
+    padding: 50px 0;
+    position: relative;
+    box-shadow: 0px 0px 8px #9c9595;
+}
+
+.SubscriptionArea ul li .PlanBox article aside h4{
+    margin: 0 0 10px 0;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #fff;
+}
+
+.SubscriptionArea ul li .PlanBox article aside span{
+    font-size: 15px;
+    line-height: 16px;
+    display: block;
+}
+
+.SubscriptionArea ul li .PlanBox figcaption{
+    padding: 20px;
+}
+
+.SubscriptionArea ul li .PlanBox figcaption ol{
+    text-align: center;
+    margin: 0 0 25px;
+}
+
+.SubscriptionArea ul li .PlanBox figcaption ol li{
+    width: 100%;
+    padding: 0;
+    font-weight: 600;
+    color: #656565;
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+
+.SubscriptionArea ul li .PlanBox figcaption ol li span{
+    margin: 0 0 0 10px;
+    color: #000;
+}
+
+.SubscriptionArea ul li .PlanBox figcaption a{
+    display: inline-block;
+    border: 2px solid #ed5702;
+    padding: 10px 30px;
+    color: #ed5702;
+    text-transform: capitalize;
+    border-radius: 50px;
+}
+
+.SubscriptionArea ul li .PlanBox figcaption a:hover{
+    background-color: #ed5702;
+    color: #fff;
+}
+
+/* ************************** Notification ***************************** */
+
+
+.NotificationArea{}
+
+.NotificationArea h1{
+    font-size: 26px;
+    color: #000;
+    margin: 0 0 20px;
+    font-weight: 700;
+}
+
+.NotificationArea .NotificationList{}
+
+.NotificationArea .NotificationList article{
+    position: relative;
+    padding: 0 0 15px 110px;
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 15px;
+}
+
+.NotificationArea .NotificationList article:last-child{
+    border: none;
+    margin: 0px;
+}
+
+.NotificationArea .NotificationList article figure{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    margin: 0;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0px 6px 10px #cecece;
+}
+
+.NotificationArea .NotificationList article figure img{}
+
+.NotificationArea .NotificationList article h3{
+    color: #000;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 7px;
+}
+
+.NotificationArea .NotificationList article h3 span{
+    float: right;
+    font-size: 14px;
+    color: #8e8e8e;
+    font-weight: 600;
+}
+
+.NotificationArea .NotificationList article p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #4a4a4a;
+    margin: 0 0 10px;
+}
+
+.NotificationArea .NotificationList article ol{}
+
+.NotificationArea .NotificationList article ol li{
+    width: 150px;
+    display: inline-block;
+    border: 4px solid #fff;
+    box-shadow: 0px 5px 10px #ddd;
+    margin: 0 10px 0px 0;
+}
+
+.NotificationArea .NotificationList article ol li img{}
+
+
+.PaymentArea{}
+
+.PaymentArea h1{
+    font-size: 26px;
+    color: #000;
+    margin: 0 0 20px;
+    font-weight: 700;
+}
+
+.PaymentArea .PaymentSelect{}
+
+.Radio {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 600;
+    color: #000;
+}
+
+.Radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.Radio .checkmark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #bdbdbd;
+    border-radius: 50%;
+}
+
+.Radio input:checked ~ .checkmark {
+    background-color: #ed5702;
+}
+
+.Radio .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.Radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.Radio .checkmark:after {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    bottom: 0;
+    margin: auto;
+}
+
+.PaymentArea .PaymentSelect .nice-select {
+    line-height: 39px;
+}
+
+.FilterArea{
+    margin: 0;
+}
+
+.FilterArea .FilterTabs{
+    margin: -105px 0 60px;
+    z-index: 9;
+    position: relative;
+}
+
+.FilterArea .FilterTabs ul{
+    border: none;
+    text-align: center;
+    display: block;
+}
+
+.FilterArea .FilterTabs ul li{
+    margin: 0 3px;
+    display: inline-block;
+}
+
+.FilterArea .FilterTabs ul li a{
+    border: 2px solid #a2a2a2;
+    padding: 0 30px;
+    height: 45px;
+    line-height: 41px;
+    color: #000000;
+    margin: 0;
+    border-radius: 0;
+    background: #a1a1a1;
+}
+
+.FilterArea .FilterTabs ul li a.active{
+    background-color: #ed5702;
+    color: #ffffff;
+}
+
+.FilterArea .FilterBar{
+    position: relative;
+    z-index: 1;
+    padding: 30px 50px;
+    border: 1px solid #e1dddd;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+}
+
+.FilterArea .FilterBar .Searchs{}
+
+.FilterArea .FilterBar .Searchs h2{
+    text-transform: capitalize;
+    color: #000;
+    font-weight: 700;
+    font-size: 21px;
+    margin: 0 0 16px;
+}
+
+.FilterArea .FilterBar .Searchs form{}
+
+.FilterArea .FilterBar .Searchs form .form-group{}
+
+.FilterArea .FilterBar .Searchs form .form-group h4{
+}
+
+.FilterArea .FilterBar .Searchs form .form-group h4{
+    font-size: 23px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 15px;
+}
+
+.Checkbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin: 0 0 20px 0;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 24%;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.Checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.Checkbox .checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 20px;
+    width: 22px;
+    background-color: transparent;
+    border: 1px solid #bbbbbb;
+}
+
+.Checkbox:hover input ~ .checkmark {
+    background-color: #a5a4a4;
+}
+
+.Checkbox input:checked ~ .checkmark {
+    background-color: #b3b1b0;
+}
+
+.Checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.Checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.Checkbox .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(53deg);
+}
+.FilterArea .FilterBar .Searchs form .form-group .form-control{
+    margin: 0px;
+    background-color: #f3efef;
+    border: 1px solid #cac5c5;
+}
+
+.SlideToggle{ display: none; }
+
+.FilterArea .FilterBar .Searchs form .Buttons{
+    margin: 20px 0 0 0;
+}
+
+.FilterArea .FilterBar .Searchs form .Buttons span.More,
+.FilterArea .FilterBar .Searchs form .Buttons span.Hide{
+    color: #353535;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.FilterArea .FilterBar .Searchs form .Buttons span.More:hover,
+.FilterArea .FilterBar .Searchs form .Buttons span.Hide:hover{
+    color: #ed5702
+}
+
+
+
+.FilterArea .FilterBar .Searchs form .Buttons button{
+    position: relative;
+    z-index: 1;
+    min-width: 170px;
+    height: 45px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #ed5702;
+    border-radius: 0;
+    line-height: 40px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    border: 2px solid #ed5702;
+    float: right;
+    cursor: pointer;
+}
+
+.FilterArea .FilterBar .Searchs form .Buttons button:hover{
+    background-color: transparent;
+    color: #ed5702;
+}
+
+/* **************************** Add Property ****************************** */
+
+.AddpropertyArea{
+    padding: 50px 0;
+}
+
+.AddpropertyArea h1{
+    color: #000;
+    font-weight: 700;
+    font-size: 25px;
+    text-transform: capitalize;
+    line-height: 27px;
+    padding: 0 0 10px;
+    margin: 0 0 15px;
+    position: relative;
+}
+
+.AddpropertyArea h1:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background-color: #000;
+}
+
+.AddpropertyArea .AddpropertyHead{}
+
+.AddpropertyArea .AddpropertyHead h2{
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #000;
+    display: block;
+    margin: 0 0 16px 0;
+}
+
+.AddpropertyArea .AddpropertyHead ul{
+    border: none;
+    display: block;
+    text-align: center;
+}
+
+.AddpropertyArea .AddpropertyHead ul li{display: inline-block;margin: 0 10px;}
+
+.AddpropertyArea .AddpropertyHead ul li a.nav-link{
+    padding: 6px 30px;
+    position: relative;
+    color: #424141;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+}
+
+/*.AddpropertyArea .AddpropertyHead ul li a.nav-link:before{
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #b1b1b1;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.AddpropertyArea .AddpropertyHead ul li a.nav-link:after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 4px;
+    top: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    bottom: 0;
+    margin: auto;
+}*/
+
+.AddpropertyArea .AddpropertyHead ul li a.nav-link.active{
+    background-color: #ed5702;
+    border-color: #ed5702;
+    color: #fff;
+}
+
+.AddpropertyArea .AddpropertyHead ul li a.nav-link.active:before{
+    border-color: #656565;
+}
+
+.AddpropertyArea .AddpropertyHead ul li a.nav-link.active:after{
+    background-color: #656565;
+}
+
+.AddpropertyArea .AddpropertyBody{}
+
+
+
+.AddpropertyForm{
+    padding: 20px 35px;
+}
+
+.AddpropertyForm form{
+    border: none;
+    box-shadow: none;
+    float: none;
+    width: auto;
+    padding: 0;
+}
+
+.AddpropertyForm form .Basic_infomation{}
+
+.AddpropertyForm form h4{
+    margin: 0 0 20px -20px;
+    font-size: 21px;
+    font-weight: 600;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.AddpropertyForm form .form-group{}
+
+.AddpropertyForm form .form-group label{
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    vertical-align: middle;
+    text-transform: capitalize;
+}
+
+.AddpropertyForm form .form-group span.Title-icon{
+    font-size: 17px;
+    color: #e4c6c7;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    font-weight: 500;
+    border-right: 1px solid #dec6e4 !important;
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    line-height: 37px;
+    z-index: 1;
+    height: 38px;
+}
+
+.AddpropertyForm form .form-group .form-control{
+    margin: 0;
+    padding: 0 0 0 50px;
+    margin: 0px;
+    background-color: #f3efef;
+    border: 1px solid #cac5c5;
+}
+
+.AddpropertyForm form .form-group select.form-control{
+	-webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none; 
+}
+
+.AddpropertyForm form .form-group select.form-control:after{
+	content:'\f107';
+	font-family:'FontAwesome';
+}
+
+.AddpropertyForm form .form-group .Checkbox{
+    width: 100%;
+}
+ 
+
+.AddpropertyForm form .form-group .identfiy{
+    width: 100%;
+    padding: 0 15px;
+    margin: 10px 0px;
+}
+
+.AddpropertyForm form .form-group .identfiy .uploadfile{
+    margin: 30px 0 0 0;
+    position: relative;
+}
+
+.AddpropertyForm form .form-group .identfiy .uploadfile span.Title-icon{
+    left: 0;
+    height: 100%;
+}
+
+.AddpropertyForm form .form-group .identfiy .uploadfile .upload{
+    background-color: transparent;
+    width: 100%;
+    border-radius: 0;
+    color: #504f4f;
+    border: 1px solid #e1dddd;
+    margin: 0;
+    padding: 25px 0 25px 65px;
+    text-align: center;
+    display: block;
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.AddpropertyForm form .form-group .identfiy .uploadfile .upload .fa{
+    display: block;
+}
+
+
+.AddpropertyForm form .form-group .identfiy .uploadfile input[type="file"]{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.AddpropertyForm form .form-group .identfiy ul.propertyimages{
+    margin: 20px 0 0 0;
+}
+
+.AddpropertyForm form .form-group .identfiy ul.propertyimages li{
+    width: 135px;
+    float: left;
+    border: 3px solid #000;
+    margin: 0 6px 0 0;
+    position: relative;
+}
+
+.AddpropertyForm form .form-group .identfiy ul.propertyimages li:last-child{
+    margin: 0px;
+}
+
+.AddpropertyForm form .form-group .identfiy ul.propertyimages li a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    background-color: #000;
+}
+
+.AddpropertyForm form .form-group .identfiy ul.propertyimages li a:before,
+.AddpropertyForm form .form-group .identfiy ul.propertyimages li a:after{
+    content: '';
+    width: 2px;
+    height: 13px;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    right: -4px;
+    margin: auto;
+    bottom: 0;
+    top: -1px;
+    transform: rotate(45deg);
+}
+
+.AddpropertyForm form .form-group .identfiy ul.propertyimages li a:after{
+    transform: rotate(-45deg);
+}
+
+.AddpropertyForm form .form-group .identfiy ul.propertyimages li img{}
+
+.AddpropertyForm form .form-group .ServiceList{
+    position: relative;
+    margin: 0 0 15px;
+}
+
+.AddpropertyForm form .form-group .ServiceList span.Title-icon{
+    left: 0
+}
+
+
+.Propertyimages{}
+
+.Propertyimages .Upload_property{}
+
+.AddpropertyForm form .Propertyimages .Upload_property .identfiy{
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.AddpropertyForm form .Propertyimages .Upload_property .identfiy .uploadfile{
+    margin: 0 0 15px;
+}
+
+.AddpropertyForm form .Propertyimages .Upload_property textarea{
+    height: auto;
+    padding: 10px 20px;
+    height: 85px;
+}
+
+.Propertyimages .Upload_property article{}
+
+.Propertyimages .Upload_property article aside{
+    width: 48%;
+    float: left;
+    box-shadow: 0px 2px 10px #ddd;
+    padding: 0 0 15px 0;
+}
+
+.Propertyimages .Upload_property article aside:nth-child(even){
+    float: right;
+}
+
+.Propertyimages .Upload_property article aside figure{
+    height: 130px;
+    overflow: hidden;
+}
+
+.Propertyimages .Upload_property article aside figure img{}
+
+.Propertyimages .Upload_property article aside p{
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #565454;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    padding: 0px 15px;
+}
+ 
+.Buttonnext{
+    text-align: right;
+}
+
+.Buttonnext .Next,
+.Buttonnext .Next2,
+.Buttonnext .Next3,
+.Buttonnext .Next4,
+.Buttonnext .Next5,
+.Buttonnext a,
+.Buttonnext button{
+    background-color: #ed5702;
+    padding: 8px 0px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 125px;
+    text-align: center;
+    float: right;
+    border: none;
+    outline: 0; 
+}
+
+
+
+
+.PropertyAlert{
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    padding: 20px;
+}
+
+.PropertyAlert p{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 26px;
+    color: #856404;
+}
+
+.Manage_Property_Area{
+    padding: 0;
+}
+
+.Manage_Property_Area h1{
+    font-size: 25px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 30px;
+}
+
+.Manage_Property_Area .Manageleft{}
+
+.Manage_Property_Area .Manageleft .ManageList{
+    padding: 30px 0 0 0;
+}
+
+
+.Manage_Property_Area .Manageleft ul.nav-tabs{
+    border: none;
+}
+
+.Manage_Property_Area .Manageleft ul.nav-tabs li{
+    margin: 0 15px 0 0;
+}
+
+.Manage_Property_Area .Manageleft ul.nav-tabs li a{
+    padding: 6px 22px;
+    border: 1px solid #bfbebe;
+    color: #5d5b5b;
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+
+.Manage_Property_Area .Manageleft ul.nav-tabs li a:hover{
+    background-color: #dcdcdc;
+    color: #000;
+    border-color: #dcdcdc;
+}
+
+.Manage_Property_Area .Manageleft ul.nav-tabs li a.active{
+    background-color: #ed5702;
+    border-color: #ed5702;
+    color: #fff;
+}
+
+
+.Managebox{
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0px 1px 6px #ddd;
+    margin: 0 0 30px;
+    border: 1px solid #e2e2e2;
+    display: flex;
+}
+
+.Managebox figure{
+    width: 27%;
+    float: left;
+    margin: 0;
+    position: relative;
+}
+
+.Managebox figure img{}
+
+.Managebox figcaption{
+    width: 53%;
+    float: left;
+    padding: 0px 20px;
+    border-right: 1px solid #ddd;
+}
+
+.Managebox figcaption h2{
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    line-height: 20px;
+    margin: 0 0 10px;
+}
+
+.Managebox figcaption h3{
+    font-size: 19px;
+    color: #ed5702;
+    margin: 0 0 7px;
+}
+
+.Managebox figcaption h3 span{
+    font-weight: 700;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.Managebox figcaption h4{
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #000;
+    line-height: 19px;
+    margin: 0 0 4px;
+}
+
+.Managebox figcaption h5{
+    font-size: 15px;
+    color: #000;
+    margin: 0 0 6px;
+    line-height: 20px;
+}
+
+.Managebox aside{
+    float: left;
+    width: 20%;
+    padding: 15px 10px 0 0;
+    text-align: right;
+}
+
+.Managebox aside ul{
+    text-align: right;
+    margin: 0 0 15px;
+}
+
+.Managebox aside ul li{
+    display: inline-block;
+    margin: 0 0 0px 15px;
+}
+
+.Managebox aside ul li a{
+    color: #4e4d4d;
+    font-size: 17px;
+}
+
+.Managebox aside ul li a:hover{}
+
+.Managebox aside h5{
+    margin: 0;
+    font-size: 14px;
+    color: #000;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.ServiceDetails .Service_Head{
+    margin: 15px 0 20px;
+}
+
+.ServiceDetails .Service_Head .PostProperty{
+    margin: 0px;
+}
+
+.ServiceDetails .Service_Head h2{
+    font-weight: 700;
+    color: #000;
+    font-size: 28px;
+    line-height: 22px;
+    margin: 0 0 12px;
+}
+
+.ServiceDetails .Service_Head h3{
+    font-size: 20px;
+    color: #ed5702;
+    font-weight: 700;
+}
+
+.ServiceDetails .Service_Head h4{
+    font-size: 16px;
+}
+
+.ServiceDetails .Service_Head h4 span{
+    color: #000;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.ServiceDetails .Service_Describe,
+.ServiceDetails .Service_Location{
+    margin: 0 0 20px;
+}
+
+.ServiceDetails .Service_Describe h4,
+.ServiceDetails .Service_Location h4{
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 6px;
+}
+
+.ServiceDetails .Service_Describe p,
+.ServiceDetails .Service_Location p{
+    color: #666;
+    font-weight: 400;
+    line-height: 26px;
+    margin: 0 0 10px;
+}
+
+.ServiceDetails .Service_Button{
+    text-align: center;
+}
+
+.ServiceDetails .Service_Button a{
+    background-color: transparent;
+    padding: 10px 0px;
+    display: inline-block;
+    border-radius: 50px;
+    color: #ed5702;
+    text-transform: capitalize;
+    border: 2px solid #ed5702;
+    margin: 0 3px;
+    font-size: 15px;
+    width: 25%;
+}
+
+.ServiceDetails .Service_Button a:hover{
+    background-color: #ed5702;
+    color: #fff;
+}
+
+.ServiceDetails .Service_Button a:last-child{
+    background-color: #ed5702;
+    color: #fff;
+}
+
+.ServiceDetails .Service_Button a:last-child:hover{
+    background-color: #fff;
+    color: #ed5702;
+}
+
+.ServiceDetails .Service_Listing{}
+
+.ServiceDetails .Service_Listing h4{
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 10px;
+}
+
+.ServiceDetails .Service_Listing ul{}
+
+.ServiceDetails .Service_Listing ul li{}
+
+.ServiceDetails .Service_Listing ul li {
+    color: #666;
+    font-weight: 600;
+    line-height: 18px;
+    margin: 0;
+    display: block;
+    padding: 10px 15px;
+    background-color: #ececec;
+}
+
+.ServiceDetails .Service_Listing ul li:nth-child(odd) {
+    background-color: #e2e2e2;
+}
+
+.ProfileArea{}
+
+.ProfileArea .Profileinfo{}
+
+.ProfileArea .Profileinfo figure{
+    position: relative;
+}
+
+.ProfileArea .Profileinfo figure a{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 15px;
+}
+
+.ProfileArea .Profileinfo figure img{
+    width: 100%
+}
+
+.ProfileArea .Profileinfo figcaption{}
+
+.ProfileArea .Profileinfo figcaption h4{
+    font-size: 14px;
+    color: #636363;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+.ProfileArea .Profileinfo figcaption h4 span{
+    color: #000;
+    font-weight: 700;
+    text-transform: capitalize;
+} 
+
+.ProfileArea form{
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: 25px;
+    border: 1px solid #e4e3e3;
+}
+
+.ProfileArea form h3{
+    text-transform: capitalize;
+    color: #000;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.ProfileArea form p{
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #676767;
+}
+
+.ProfileArea form .form-group{}
+
+.ProfileArea form .form-group label {
+    font-weight: 600;
+    color: #000;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+.ProfileArea form .form-group .form-control{
+    margin: 0;
+    padding: 5px 15px
+}
+
+.ProfileArea form .form-group textarea.form-control{
+    height: auto;
+}
+
+.ProfileArea form .form-group .form-control:disabled{
+    background-color: #e9ecef !important;
+    color: #737373;
+}
+
+.ProfileArea form button{
+    color: #fff;
+    border: 2px solid #ed5702;
+    padding: 7px 20px;
+    display: inline-block;
+    font-weight: 500;
+    border-radius: 0px;
+    background-color: #ed5702;
+    margin: 10px 0 0 0;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.ProfileArea form button:hover{
+    background-color: #fff;
+    color: #ed5702;
+}
+
+
+.PropertyBox figcaption ul li span {
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 0;
+    color: #ed5702;
+    display: block;
+    text-align: center;
+}
+
+.property-thumb a.Faviorites{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #bfbfbf;
+    border-radius: 50%;
+    line-height: 30px;
+}
+
+.property-thumb a.Faviorites:hover,
+.property-thumb a.Faviorites.active{
+    background-color: #ed5702;
+    color: #fff;
+}
+
+.property-thumb img{
+    height: 100%;
+}
+
+
+
+
+.SliderArea{}
+
+.SliderArea #Slider{}
+
+.SliderArea #Slider .carousel-item{
+    padding: 180px 0;
+    text-align: center;
+}
+
+.SliderArea #Slider .carousel-item h2{
+    text-align: center;
+    color: #fff;
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 0;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    background-color: #a2a2a2;
+    line-height: 1;
+    display: inline-block;
+}
+
+.SliderArea #Slider a.carousel-control-prev,
+.SliderArea #Slider a.carousel-control-next{
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 50%;
+    line-height: 36px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    background-color: #ed5702;
+    font-size: 13px;
+    opacity: 1;
+    margin: 0 40px;
+}
+
+.SliderArea #Slider a.carousel-control-prev .carousel-control-prev-icon,
+.SliderArea #Slider a.carousel-control-next .carousel-control-next-icon{
+    width: 15px;
+    height: 15px;
+}
+
+
+.PropertyArea{
+    background: #d6cccc;
+    padding: 50px 0;
+}
+
+.PropertyArea .PropertyHead{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.PropertyArea .PropertyHead h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #323232;
+    font-weight: 600;
+}
+
+.PropertyArea .PropertyHead p{
+    color: #656060;
+    font-size: 14px;
+    margin-bottom: 0;
+    font-style: italic;
+} 
+
+.PropertyArea .PropertyBody .FeatureBox{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+} 
+
+.PropertyArea .PropertyBody .FeatureBox h5{
+    margin-bottom: 60px;
+    color: #7d7d7d;
+}
+
+.PropertyArea .PropertyBody .center .FeatureBox{
+    -webkit-transform: scale(1);
+    transform: scale(1);}
+
+.PropertyArea .PropertyBody .center .FeatureBox h5{
+    color: #000;
+}
+
+.PropertyArea .owl-dots{ display: none; } 
+
+.PropertyArea .PropertyBody .owl-nav .owl-prev,
+.PropertyArea .PropertyBody .owl-nav .owl-next{
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    color: #ffffff;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    background-color: #ed5702;
+    outline: 0;
+    border: none;
+}
+
+.PropertyArea .PropertyBody .owl-nav .owl-prev{
+    left: -20px;
+}
+
+.PropertyArea .PropertyBody .owl-nav .owl-next{
+    right: -20px;
+}
+
+.PropertyArea .PropertyBody .owl-nav .owl-prev span,
+.PropertyArea .PropertyBody .owl-nav .owl-next span{
+    font-size: 35px;
+    line-height: 20px;
+    height: 30px;
+}
+
+.TestimonialArea .carousel-item{
+    transform: scale(0.95);
+    opacity: 1;
+}
+ 
+
+.carousel,
+.carousel-inner { 
+    outline: 0 !important;
+}
+
+
+
+div#List .property-content {
+    width: 70%;
+    padding: 15px 35px 0;
+}
+
+#List .location{
+    min-height: auto;
+    -webkit-line-clamp: 1;
+    -moz-line-clamp: 1;
+}
+
+
+#List .property-content ul{
+    padding: 0px 0 10px 0px;
+}
+
+#List .property-content ul li{
+    margin: 0 0 1px;
+    text-transform: capitalize;
+    color: #989898;
+    font-size: 14px;
+}
+
+#List .property-content ul li span{
+    color: #585858;
+    font-weight: 600;
+    width: 230px;
+    display: inline-block;
+    position: relative;
+}
+
+#List .property-content ul li span:after{
+    content: ':';
+    position: absolute;
+    right: 15px;
+}
+
+.AddMore{
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    color: #ed5702;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+button.AddMore:focus{
+    outline: 0;
+    box-shadow: none;
+}
+
+
+
+
+
+.ModalBox #Report{z-index:99999}
+.ModalBox #Report .modal-header h4{margin:0;font-size:23px;text-transform:capitalize;color:#000}
+.ModalBox #Report .modal-header a{float:right;font-size:1.5rem;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.5}
+.ModalBox #Report .modal-body{padding:25px 20px 25px 20px}
+.ModalBox #Report .modal-body form .form-group{margin:0}
+.ModalBox #Report .modal-body form .form-group textarea.form-control{height:auto;padding:10px 15px 0}
+.ModalBox #Report .modal-body form button{position:relative;z-index:1;min-width:170px;height:50px;color:#fff;font-size:18px;font-weight:600;border-radius:0;line-height:50px;padding:0 30px;text-transform:uppercase;background-color:#ec5702;border:none;cursor:pointer;outline:0}
+ 
+#Successful{z-index:99999}
+#Successful .modal-content{text-align:center;border-radius:10px;box-shadow:none;border:none;padding:30px 0}
+#Successful .modal-content span{width:60px;height:60px;display:inline-block;background-color:#ed5702;font-size:30px;border-radius:50%;color:#fff;line-height:60px;margin:0 0 20px 0}
+#Successful .modal-content h4{color:#000;font-weight:600;font-size:20px;width:80%;margin:0 auto 20px}
+#Successful .modal-content a{background-color:#ed5702;padding:10px 30px;display:inline-block;border-radius:50px;color:#fff;text-transform:capitalize;border:2px solid #ed5702}
+#Successful .modal-content a:hover{background-color:transparent;color:#ed5702}
+
+#Delete{z-index:99999}
+#Delete .modal-dialog{max-width:400px;margin:100px auto 0}
+#Delete .modal-dialog .modal-content{text-align:center;border-radius:10px;box-shadow:none;border:none;padding:30px 30px}
+#Delete .modal-dialog .modal-content h4{color:#000;font-weight:600;font-size:19px;width:100%;margin:0 auto 20px;line-height:29px}
+#Delete .modal-dialog .modal-content a{background-color:transparent;padding:8px 0;display:inline-block;border-radius:50px;color:#ed5702;text-transform:capitalize;border:2px solid #ed5702;width:100px;margin:0 3px}
+#Delete .modal-dialog .modal-content a:hover{background-color:#ed5702;color:#fff}
+#Delete .modal-dialog .modal-content a:last-child{background-color:#ed5702;color:#fff}
+#Delete .modal-dialog .modal-content a:last-child:hover{background-color:#fff;color:#ed5702}
+a.ModalClose {
+    float: right;
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    color: #000;
+    top: 0;
+}
+
+
+.Service-Listing .property-thumb{
+    height: 250px;
+}
+
+.Service-Listing .property-thumb img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+ul.pagination li{
+    margin: 0 0 0 10px;
+}
+
+ul.pagination li button.page-link{
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    font-size: 25px;
+}
+agm-map {
+    height: 300px;
+  }
+
+
+.sold{
+    background-color: #f2884a;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 7px 30px;
+    border-radius: 6px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.propertysold{
+    background-color: #ec5a35;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    margin-bottom: 0;
+    line-height: 1;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    text-transform: capitalize;
+}
+
+.BookingArea{
+    padding: 60px 0;
+}
+
+.BookingArea .BookLeft{}
+
+.BookingArea .BookLeft h2{
+    font-size: 28px;
+    color: #383838;
+    font-weight: 700;
+    position: relative;
+    line-height: 24px;
+    margin: 0 0 30px 0;
+    letter-spacing: -0.5px;
+}
+
+.BookingArea .BookLeft article{}
+
+.BookingArea .BookLeft article form{
+    margin: 30px 0 0 0;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.BookingArea .BookLeft article form h3{
+    font-size: 28px;
+    color: #383838;
+    font-weight: 700;
+    position: relative;
+    line-height: 24px;
+    margin: 0 0 25px 0;
+    letter-spacing: -0.5px;
+}
+
+.BookingArea .BookLeft article form .form-group{
+    margin: 0 0 24px;
+}
+
+.BookingArea .BookLeft article form .form-group label{
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.BookingArea .BookLeft article form .form-group .form-control{
+    margin: 0;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #f5f5f5;
+}
+
+.BookingArea .BookLeft article form button{
+    color: #fff;
+    border: 2px solid #ed5702;
+    padding: 6px 25px;
+    display: inline-block;
+    font-weight: 500;
+    border-radius: 0px;
+    background-color: #ed5702;
+    margin: 10px 0 0 0;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.BookingArea .BookLeft article form button:hover{
+    background-color: #fff;
+    color: #ed5702;
+}
+
+ 
+
+.BookingArea .BookRight h2{
+    font-size: 28px;
+    color: #383838;
+    font-weight: 700;
+    position: relative;
+    line-height: 24px;
+    margin: 0 0 30px 0;
+    letter-spacing: -0.5px;
+
+}
+
+.BookingArea .BookRight aside{}
+
+.BookingArea .BookRight aside figure{
+    margin: 0;
+}
+
+.BookingArea .BookRight aside figure img{}
+
+.BookingArea .BookRight aside figcaption{
+    padding: 21px;
+    background-color: #efeded;
+    border: 1px solid #c7c7c7;
+    border-top: none;
+}
+
+.BookingArea .BookRight aside figcaption h3{
+    font-weight: 700;
+    color: #000;
+    font-size: 25px;
+}
+
+.BookingArea .BookRight aside figcaption h4{
+    font-size: 14px;
+    line-height: 23px;
+}
+
+.BookingArea .BookRight aside figcaption h5{
+    margin: 0;
+    color: #fe7003;
+    font-size: 18px;
+}
+
+.BookingArea .BookRight aside figcaption h5 span{
+    font-weight: 800;
+}
+
+
+
+
+
+
+.ModalBox #MarkedModal,
+.ModalBox #DateModal{
+    z-index: 999999;
+}
+
+.ModalBox #MarkedModal .modal-dialog,
+.ModalBox #DateModal .modal-dialog{
+    max-width: 450px; 
+    margin: 70px auto 0;
+}  
+
+.ModalBox #MarkedModal .modal-dialog .modal-content .modal-body,
+.ModalBox #DateModal .modal-dialog .modal-content .modal-body {
+    padding: 25px;
+}
+
+.ModalBox #MarkedModal .modal-dialog .modal-content .modal-body h3,
+.ModalBox #DateModal .modal-dialog .modal-content .modal-body h3 {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 5px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.ModalBox #MarkedModal .modal-dialog .modal-content .modal-body p {
+    font-size: 16px;
+    font-family: "Roboto";
+    color: #777;
+    text-align: left;
+    font-weight: 400;
+    line-height: 25px;
+    margin: 0;
+}
+
+.ModalBox #MarkedModal .modal-dialog .modal-content .modal-body h4 {
+    margin: 15px 0 0 0;
+    text-align: right;
+}
+
+.ModalBox #MarkedModal .modal-dialog .modal-content .modal-body h4 a {
+    text-transform: capitalize;
+    margin: 0 0 0 30px;
+    font-size: 17px;
+    color: #49a0d5;
+    font-weight: 400;
+    transition: 0.5s all ease-in-out;
+}
+
+.ModalBox #MarkedModal .modal-dialog .modal-content .modal-body h4 a:hover {
+    color: #000;
+} 
+.ModalBox #blockModal,
+.ModalBox #DateModal{
+    z-index: 999999;
+}
+
+.ModalBox #blockModal .modal-dialog,
+.ModalBox #DateModal .modal-dialog{
+    max-width: 450px; 
+    margin: 70px auto 0;
+}  
+
+.ModalBox #blockModal .modal-dialog .modal-content .modal-body,
+.ModalBox #DateModal .modal-dialog .modal-content .modal-body {
+    padding: 25px;
+}
+
+.ModalBox #blockModal .modal-dialog .modal-content .modal-body h3,
+.ModalBox #DateModal .modal-dialog .modal-content .modal-body h3 {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0 0 5px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.ModalBox #blockModal .modal-dialog .modal-content .modal-body p,
+.ModalBox #deleteModal .modal-dialog .modal-content .modal-body p {
+    font-size: 16px;
+    font-family: "Roboto";
+    color: #777;
+    text-align: left;
+    font-weight: 400;
+    line-height: 25px;
+    margin: 0;
+}
+
+.ModalBox #blockModal .modal-dialog .modal-content .modal-body h4,
+.ModalBox #deleteModal .modal-dialog .modal-content .modal-body h4 {
+    margin: 15px 0 0 0;
+    text-align: right;
+}
+
+.ModalBox #blockModal .modal-dialog .modal-content .modal-body h4 a,
+.ModalBox #deleteModal .modal-dialog .modal-content .modal-body h4 a {
+    text-transform: capitalize;
+    margin: 0 0 0 30px;
+    font-size: 17px;
+    color: #49a0d5;
+    font-weight: 400;
+    transition: 0.5s all ease-in-out;
+}
+
+.ModalBox #blockModal .modal-dialog .modal-content .modal-body h4 a:hover,
+.ModalBox #deleteModal .modal-dialog .modal-content .modal-body h4 a:hover {
+    color: #000;
+} 
+
+.ModalBox #DateModal .modal-dialog .modal-content .modal-body form button{
+    position: relative;
+    z-index: 1;
+    min-width: 170px;
+    height: 45px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #ed5702;
+    border-radius: 0;
+    line-height: 40px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    border: 2px solid #ed5702; 
+    cursor: pointer;
+    float: right;
+    outline: 0;
+}
+
+.ModalBox #DateModal .modal-dialog .modal-content .modal-body form button:hover{
+    background-color: transparent;
+    color: #ed5702;
+}
+
+.ModalBox #DateModal .modal-dialog .modal-content .modal-body .form-control{
+    margin: 0;
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+
+.CloseModal{
+    position: absolute;
+    top: -13px;
+    right: -13px;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #000 !important;
+    font-size: 15px !important;
+    border-radius: 50%;
+}
+
+
+.single-featured-property .property-content h6{
+    margin: 13px 0 0 0;
+    font-size: 14px;
+    color: #545454;
+}
+
+.single-featured-property .property-content h6 span{
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

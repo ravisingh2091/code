@@ -1,0 +1,18 @@
+div#tab2 .property-thumb {
+    width: 38%;
+    float: left;
+}
+
+div#tab2 .property-content {
+    width: 70%;
+}
+
+div#tab2 .single-featured-property.mb-50 {
+    width: 100%;
+    float: left;
+    display: flex;
+}
+
+div#myTabContent {
+    margin-top: 40px;
+}

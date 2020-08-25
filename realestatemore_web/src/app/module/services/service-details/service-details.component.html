@@ -1,0 +1,172 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''"> {{'Home' | translate}} <i class="fa fa-angle-right"></i></a>
+                        {{'Services Details' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="listings-content-wrapper section-padding-100 ServiceDetails">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" [attr.data-slide-to]="i" class="active"
+                            *ngFor="let image of propertyDetail?.imagesFile;let i = index"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item {{i==0 ? 'active' : ''}}"
+                            *ngFor="let image of propertyDetail?.imagesFile;let i = index">
+                            <img src="{{image.image}}" alt="Los Angeles" width="1100" height="500">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+                <div class="Service_Head">
+                    <div class="Sevicetitle">
+                        <h2>{{propertyDetail?.category}} </h2>
+                        <div class="serviceRight">
+                            <a class="Faviorites {{propertyDetail?.likedStatus =='yes' ? 'active' :''}}"
+                                href="javascript:void(0);" #fab (click)="faviorite(propertyDetail,fab)">
+                                <i class="fa fa-heart"></i>
+                            </a>
+                            <a *ngIf="userId" href="javascript:void(0);" title="report" data-toggle="modal"
+                                data-target="#Report">
+                                <i class="fa fa-info" aria-hidden="true"></i>
+                            </a>
+
+                            <span #like class="Like {{propertyDetail?.socialLikedStatus =='yes' ? 'active' :''}} ">
+                                <a href="javascript:void(0);" (click)="likeService(propertyDetail,like)"><i
+                                        class="fa fa-thumbs-up"></i></a>
+                                <strong>{{propertyDetail?.socialCount}}</strong>
+                            </span>
+
+                        </div>
+                    </div>
+
+
+                    <h3>{{propertyDetail?.subCategory}}</h3>
+                    <h4><span>{{'Working Hours' | translate}} : </span> {{propertyDetail?.selectTime}}</h4>
+                    <div class="PostProperty">
+                        <ul class="Share">
+                            <li>{{'Share The Profile' | translate}} :</li>
+                            <li><a href="#" title="Google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="#" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="Service_Describe">
+                    <h4>{{'Description' | translate}}</h4>
+                    <p>{{propertyDetail?.description}}</p>
+                </div>
+
+                <div class="Service_Location">
+                    <h4>{{'Location' | translate}}</h4>
+                    <p>{{propertyDetail?.address}}</p>
+                    <agm-map [latitude]="propertyDetail?.location?.coordinates[0]"
+                        [longitude]="propertyDetail?.location?.coordinates[1]" [zoom]="12">
+                        <agm-marker [latitude]="propertyDetail?.location?.coordinates[0]"
+                            [longitude]="propertyDetail?.location?.coordinates[1]">
+                        </agm-marker>
+                    </agm-map>
+                </div>
+
+                <div class="Service_Button">
+                    <!-- <a href="#"><i class="fa fa-phone" aria-hidden="true"></i> call</a> -->
+                    <a [routerLink]="['/chat']"><i class="fa fa-comments" aria-hidden="true"></i>
+                        {{'Messages' | translate}}</a>
+                </div>
+
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="Service_Listing">
+                    <h4>{{'Service Listing' | translate}}</h4>
+                    <ul>
+                        <li *ngFor="let item of propertyDetail?.services?.split(',')">{{item}}</li>
+                    </ul>
+                </div>
+
+                <div class="contact-realtor-wrapper">
+                    <div class="realtor-info">
+                        <img src="{{propertyDetail?.userId?.profileImage}}" alt="">
+                        <div class="realtor---info">
+                            <h2>{{propertyDetail?.userId?.fullName}}</h2>
+                            <!-- <p>Realstate</p> -->
+                            <h5>{{propertyDetail?.userId?.city}}</h5>
+                            <h5><a [routerLink]="['/properties', 'owner-property']">{{'Total Properties' | translate}}
+                                    ({{propertyDetail?.totalProperty}})</a></h5>
+                            <h5><a [routerLink]="'/chat'">Send Messages</a></h5>
+                            <h6><img src="assets/img/icons/phone-call.png" alt="">
+                                {{propertyDetail?.userId?.countryCode}}-{{propertyDetail?.userId?.mobileNumber}}</h6>
+                            <h6><img src="assets/img/icons/envelope.png" alt=""> {{propertyDetail?.userId?.email}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row">
+                <div class="col-12">
+                    <div class="listings-maps mt-30">
+                        
+                    </div>
+                </div>
+            </div> -->
+    </div>
+</section>
+
+<div class="ModalBox">
+    <div class="modal" id="Report">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>{{'Report' | translate}} </h4>
+                    <a href="#" data-dismiss="modal" #closeModel>&times;</a>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="reportForm" (ngSubmit)="reportSubmit()">
+                        <div class="form-group">
+                            <select class="form-control" formControlName="reason">
+                                <option value="">Select Reason</option>
+                                <option>Inappropriate profile picture</option>
+                                <option>Inappropriate content</option>
+                                <option>Seems like a fake profile</option>
+                                <option>Seems like a fake Ad</option>
+                                <option>Other</option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="reportForm.controls['reason'].invalid && 
+                            (formSubmited || reportForm.controls['reason'].dirty)">
+                                Please provide valid Reason </p>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" formControlName="details" class="form-control"
+                                placeholder="Enter Details"></textarea>
+                            <p style="color: #FF0000" *ngIf="reportForm.controls['details'].invalid && 
+                                (formSubmited || reportForm.controls['details'].dirty)">
+                                Please provide valid Details </p>
+                        </div>
+                        <button>{{'Submit' | translate}}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+.FavoritesArea .FavoritesList table td.Thumb a{
+    height: 150px;
+}
+
+.FavoritesArea .FavoritesList table td.Thumb a img{
+    height: 100%;
+    width: 100%;
+}

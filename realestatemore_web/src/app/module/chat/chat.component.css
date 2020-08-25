@@ -1,0 +1,107 @@
+
+.ChatArea .ChatBoxx .ChatProfile{
+    position: relative;
+    padding: 20px 10px 20px 60px;
+    border-bottom: 1px solid #b3b3b3;
+    margin: 0;
+    cursor: pointer;
+    background-color: #efefef;
+}
+
+.ChatArea .ChatBoxx .ChatProfile figure{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 7px;
+}
+
+.ChatArea .ChatBoxx .ChatProfile h5 {
+    font-weight: 500;
+    color: #000;
+    font-size: 16px;
+    margin: 0 0 2px 0;
+    line-height: 20px;
+    position: relative;
+    padding: 0 60px 0 0;
+    font-family: Roboto;
+}
+
+.SideToggle{
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}  
+
+span#Slide {
+    width: 20px;
+    display: block;
+    text-align: center;
+}
+
+.SideToggle ul{
+    position: absolute;
+    background-color: #fff;
+    z-index: 9;
+    right: 0;
+    min-width: 170px;
+    border: 1px solid #dedede;
+    box-shadow: 0px 7px 10px #ddd;
+    display: none
+} 
+
+.SideToggle ul li a{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 15px;
+    color: #000;
+}
+
+.SideToggle ul li a:hover{
+    background-color: #ed5702;
+    color: #fff;
+}
+
+#DateModal ul.SelectDate {
+    margin: 0 0 10px;
+}
+
+#DateModal ul.SelectDate li {
+    text-align: center;
+    border-radius: 30px;
+    background: #ed5702;
+    color: white;
+    padding: 8px 21px;
+    display: inline-block;
+    margin: 0 10px 13px 0;
+    position: relative;
+    font-size: 15px;
+}
+
+#DateModal ul.SelectDate li:nth-child(3n) {
+    margin: 0 0px 13px 0;
+}
+
+#DateModal ul.SelectDate li span {
+    position: absolute;
+    top: -8px;
+    right: 0;
+    background-color: #fff;
+    font-size: 10px;
+    color: #ec5a35;
+    border: 1px solid #ec5a35;
+    width: 20px;
+    border-radius: 15px;
+    height: 20px;
+    line-height: 17px;
+    cursor: pointer;
+}
+
+
+.SideToggle:hover ul{
+    display: block;
+}

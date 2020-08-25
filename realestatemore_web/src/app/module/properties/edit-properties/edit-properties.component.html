@@ -1,0 +1,47 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''">
+                            {{'Home' | translate}} <i class="fa fa-angle-right"></i>
+                        </a>
+                        {{'Edit Properties' | translate}}
+
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="AddpropertyArea">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h1> {{'Property Infomation' | translate}}</h1>
+                    <div class="AddpropertyBody">
+                        <div class="tab-content">
+                            <app-buy-edit *ngIf="type=='buy'" [propertyId]="propertyId">
+                            </app-buy-edit>
+                            <app-rent-edit *ngIf="type=='rentevent' || type=='rent'" [propertyId]="propertyId">
+                            </app-rent-edit>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="PropertyAlert">
+                        <p> {{'Need a proper description about the property. So that client can easily understand about the property.' | translate}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

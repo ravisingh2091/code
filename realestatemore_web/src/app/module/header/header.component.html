@@ -1,0 +1,85 @@
+<header class="header-area">
+    <div class="main-header-area" id="stickyHeader">
+        <div class="classy-nav-container breakpoint-off">
+            <nav class="classy-navbar justify-content-between" id="southNav">
+                <a class="nav-brand" [routerLink]="''"><img src="./assets/img/Real-Estate-logo.png" alt=""></a>
+                <div class="classy-navbar-toggler">
+                    <span class="navbarToggler"><span></span><span></span><span></span></span>
+                </div>
+                <div class="classy-menu">
+                    <div class="classycloseIcon">
+                        <div class="cross-wrap">
+                            <span class="top"></span>
+                            <span class="bottom"></span>
+                        </div>
+                    </div>
+                    <div class="classynav">
+                        <ul>
+                            <li><a href="javascript:void(0)" (click)="changeLang('en')"> English </a></li>
+                            <li><a href="javascript:void(0)" (click)="changeLang('ar')"> عربى </a></li>
+                            <li><a [routerLink]="''"> {{'Home' | translate}} </a></li>
+                            <li><a [routerLink]="'/map'"> {{'Map' | translate}} </a> </li>
+                            <li class="nav-item dropdown">
+                                <a href="javascript:void(0)" class="nav-link dropdown-toggle"
+                                    data-toggle="dropdown">{{'Listing' | translate}}</a>
+                                <div class="dropdown-menu">
+                                    <a [routerLink]="['/properties' , 'properties-listing']"
+                                        class="dropdown-item">{{'Properties Listing' | translate}} </a>
+                                    <a [routerLink]="['/services' , 'services-listing']" class="dropdown-item">
+                                        {{'Services Listing' | translate}} </a>
+                                </div>
+                            </li>
+
+                            <span *ngIf="!headerProvider.current.user_id">
+                                <li><a [routerLink]="['/user' , 'sign-in']"> {{'Login' | translate}}</a></li>
+                                <li><a [routerLink]="['/user' , 'sign-up']">{{'Sign Up' | translate}}</a></li>
+                            </span>
+                            <span *ngIf="headerProvider.current.user_id">
+                                <li>
+                                    <a [routerLink]="['/user' , 'my-booking']">
+                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="'/notification'">
+                                        <i class="fa fa-bell" aria-hidden="true"></i>
+                                        <span>{{notificationCount}}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="'/favorites'">
+                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                        <span>{{servicesLists}}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="'/chat'">
+                                        <i class="fa fa-comments" aria-hidden="true"></i>
+                                        <span>{{userCount}}</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a [routerLink]="['user', 'profile']">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </span>
+                        </ul>
+
+                        <!-- Search Form -->
+                        <div class="south-search-form">
+                            <form action="#" method="post">
+                                <input type="search" name="search" id="search" placeholder="Search Anything ...">
+                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+
+                        <!-- Search Button -->
+                        <!-- <a class="searchbtn"><i class="fa" aria-hidden="true"></i></a> -->
+                    </div>
+                    <!-- Nav End -->
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

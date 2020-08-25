@@ -1,0 +1,408 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''">{{'Home' | translate}} <i class="fa fa-angle-right"></i></a>
+                        {{'Property Details' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="listings-content-wrapper section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" [attr.data-slide-to]="i" class="active"
+                            *ngFor="let image of propertyDetail?.imagesFile;let i = index"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item {{i==0 ? 'active' : ''}}"
+                            *ngFor="let image of propertyDetail?.imagesFile;let i = index">
+                            <img src="{{image.image}}" alt="Los Angeles" width="1100" height="500">
+                        </div>
+
+                        <span class="sold">{{'Sold' | translate}}</span>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <div class="listings-content">
+
+                    <div class="PostProperty">
+                        <h2>{{propertyDetail?.title}}
+                            <span>
+                                <a class="Faviorites {{propertyDetail?.likedStatus =='yes' ? 'active' :''}}"
+                                    href="javascript:void(0);" #fab (click)=faviorite(propertyDetail,fab)>
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                                <a *ngIf="userId" href="JavaScript:Void(0);" title="report" data-toggle="modal"
+                                    data-target="#Report">
+                                    <i class="fa fa-info" aria-hidden="true"></i>
+                                </a>
+                                <a href="javascript:void(0)"
+                                    *ngIf="propertyDetail?.Type =='rentevent' && userId !=propertyDetail?.userId?._id"
+                                    (click)="propertyBooked(propertyDetail)" title="Book" class="Book">
+                                    {{'Book An Event' | translate}}
+                                </a>
+                            </span>
+                        </h2>
+                        <h5 *ngIf="propertyDetail?.Type =='buy'"> {{'Property For Buy' | translate}}</h5>
+                        <h5 *ngIf="propertyDetail?.Type =='rent'">{{'Property For Rent' | translate}}</h5>
+                        <h5 *ngIf="propertyDetail?.Type =='rentevent'">{{'Rent For Event' | translate}}</h5>
+                        <h6>
+                            <span>Ad Id :- </span> {{propertyDetail?.additionalId}}
+                        </h6>
+                        <h6>
+                            <span>{{'Posted Date' | translate}} :- </span>
+                            {{propertyDetail?.createdAt|date: 'dd/MM/yyyy'}}
+                        </h6>
+                        <h6>
+                            <span>{{'Updated Date' | translate}} :- </span>
+                            {{propertyDetail?.updatedAt|date: 'dd/MM/yyyy'}}
+                        </h6>
+                        <h6>
+                            <span>{{'Viewed Times' | translate}}:- </span>
+                            {{propertyDetail?.counter}}
+                        </h6>
+                        <h3>
+                            <span>{{'Total Price' | translate}} : </span>
+                            {{'SAR' | translate}} {{propertyDetail?.totalPrice}}
+                            <span *ngIf="propertyDetail?.Type =='rentevent'">{{propertyDetail?.priceBasedOn}}</span>
+                            <span *ngIf="propertyDetail?.Type =='rent'">{{propertyDetail?.rentTime}}</span>
+                        </h3>
+                        <h4><img src="assets/img/icons/location.png" alt="">{{propertyDetail?.address}}</h4>
+                        <p>{{propertyDetail?.description}}</p>
+
+                        <ul class="Share">
+                            <li>{{'Share The Property' | translate}} :</li>
+                            <li>
+                                <share-button button="facebook" theme="circles-dark">
+                                </share-button>
+                            </li>
+                            <li>
+                                <share-button button="twitter" theme="circles-dark">
+                                </share-button>
+                            </li>
+                            <!-- <li>
+                                <share-button button="pinterest" theme="circles-dark">
+                                </share-button>
+                            </li> -->
+                            <!-- <li>
+                                <share-button button="google" theme="circles-dark">
+                                </share-button>
+                            </li> -->
+                            <li>
+                                <share-button button="linkedin" theme="circles-dark">
+                                </share-button>
+                            </li>
+
+                        </ul>
+
+
+                    </div>
+
+                    <div class="PostDeails">
+
+                        <h4>{{'Property Details' | translate}} </h4>
+                        <ul *ngIf="propertyDetail?.Type !='rentevent'">
+                            <li>
+                                <span>{{'Size M2' | translate}}</span> {{propertyDetail?.sizem2}}
+                            </li>
+                            <li>
+                                <span>{{'Bedrooms' | translate}}</span> {{propertyDetail?.bedrooms}}
+                            </li>
+
+                            <li *ngIf="propertyDetail?.livingRooms">
+                                <span>{{'Living Rooms' | translate}}</span>
+                                {{propertyDetail?.livingRooms}}
+                            </li>
+                            <li>
+                                <span>{{'Bathrooms' | translate}}</span>{{propertyDetail?.bathrooms}}
+                            </li>
+                            <li>
+                                <span>{{'Kitchen' | translate}}</span> {{propertyDetail?.kitchens}}
+                            </li>
+                            <li>
+                                <span>{{'Floor' | translate}}</span> {{propertyDetail?.floor}}
+                            </li>
+                            <li>
+                                <span>{{'Built In Size' | translate}}</span> {{propertyDetail?.builtSize}}
+                                {{propertyDetail?.builtSizeUnit}}
+                            </li>
+                            <li>
+                                <span>{{'Plot Size' | translate}}</span> {{propertyDetail?.plotSize}}
+                                {{propertyDetail?.plotSizeUnit}}
+                            </li>
+                            <li>
+                                <span>{{'Year Built' | translate}}</span> {{propertyDetail?.yearBuilt}}
+                            </li>
+                            <li>
+                                <span>{{'Street View' | translate}}</span> {{propertyDetail?.streetView}}
+                            </li>
+                            <li>
+                                <span>{{'Street View' | translate}}Street width</span>
+                                {{propertyDetail?.streetWidth}}
+                                {{propertyDetail?.streetWidthUnit}}
+                            </li>
+                            <li>
+                                <span>{{'Purpose' | translate}}</span> {{propertyDetail?.purpose}}
+                            </li>
+                        </ul>
+                        <ul>
+                            <li *ngIf="propertyDetail?.Type !='rentevent' && propertyDetail?.Type !='rent' ">
+                                <span>{{'Price Per Meter' | translate}}</span>
+                                {{propertyDetail?.pricePerMeter}}
+                            </li>
+                            <li>
+                                <span>{{'Measure Length X Width' | translate}}
+                                    Width</span>{{propertyDetail?.width}}
+                                {{propertyDetail?.widthUnit}} X {{propertyDetail?.length}}
+                                {{propertyDetail?.lengthUnit}}
+                            </li>
+                            <li *ngIf="propertyDetail?.noOfOfficeOrSize">
+                                <span>{{'No. Of Office' | translate}}</span>
+                                {{propertyDetail?.noOfOfficeOrSize}}
+                            </li>
+                            <li *ngIf="propertyDetail?.noOfStores">
+                                <span>{{'No. Of Stores' | translate}}</span> {{propertyDetail?.noOfStores}}
+                            </li>
+                            <li *ngIf="propertyDetail?.noOfpools">
+                                <span>{{'No Of Pools' | translate}}</span> {{propertyDetail?.noOfpools}}
+                            </li>
+
+                            <li *ngIf="propertyDetail?.hallSize">
+                                <span>{{'Hall Size' | translate}}</span> {{propertyDetail?.hallSize}} Sq.
+                                Meter
+                            </li>
+                            <li *ngIf="propertyDetail?.nearSevices">
+                                <span>{{'Near By Services' | translate}}</span>
+                                {{propertyDetail?.nearSevices}}
+                            </li>
+                            <li *ngIf="propertyDetail?.priceWithBuffet">
+                                <span>{{'Price With Buffet' | translate}}</span>
+                                {{propertyDetail?.priceWithBuffet}}
+                            </li>
+                            <li *ngIf="propertyDetail?.priceWithoutBuffet">
+                                <span>{{'Price Without Buffet' | translate}}</span>
+                                {{propertyDetail?.priceWithoutBuffet}}
+                            </li>
+                            <li *ngIf="propertyDetail?.noOfChairs">
+                                <span>{{'No. Of Chairs' | translate}}</span> {{propertyDetail?.noOfChairs}}
+                            </li>
+                            <li *ngIf="propertyDetail?.noOfTables">
+                                <span>{{'No. Of Tables' | translate}}</span> {{propertyDetail?.noOfTables}}
+                            </li>
+
+                        </ul>
+
+                        <h4>{{'Extra' | translate}}</h4>
+
+                        <ul>
+                            <li *ngIf="propertyDetail?.balcony">
+                                <span>{{'Balcony' | translate}}</span> {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.parking">
+                                <span>{{'Parking' | translate}}</span> {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.modularKitchen">
+                                <span>{{'Modular Kitchen' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.garden">
+                                <span>{{'Garden' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.lift">
+                                <span>{{'Lift' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.duplex">
+                                <span>{{'Duplex' | translate}}</span>{{'Available' | translate}}
+
+                            </li>
+                            <li *ngIf="propertyDetail?.airConditioner">
+                                <span>{{'A/C' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.bbq">
+                                <span>{{'BBQ' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.footballArea">
+                                <span>{{'Football Area' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.greenArea">
+                                <span>{{'Green Area' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.volleyBall">
+                                <span>{{'Volley Ball' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.playGround">
+                                <span>{{'Play Ground' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.wifi">
+                                <span>{{'Wifi' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.soundSystems">
+                                <span>{{'Sound System' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.kosha">
+                                <span>{{'Kosha' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.projector">
+                                <span>{{'Projector' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.speakers">
+                                <span>{{'Speakers' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.microPhone">
+                                <span>{{'Micro Phone' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.guestHouse">
+                                <span>{{'Guest House' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.furnished">
+                                <span>{{'Furnished' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                            <li *ngIf="propertyDetail?.insurance">
+                                <span>{{'Insurance' | translate}}</span>
+                                {{'Available' | translate}}
+                            </li>
+                        </ul>
+
+                        <h4
+                            *ngIf="propertyDetail?.indoor && propertyDetail?.outdoor && propertyDetail?.furnish && propertyDetail?.parkingOption && propertyDetail?.views">
+                            {{'Specification' | translate}} </h4>
+                        <ul class="Specfi">
+                            <li *ngIf="propertyDetail?.indoor">
+                                <span class="Specficate">{{'Indoor' | translate}}</span>
+                                {{propertyDetail?.indoor}}
+                            </li>
+                            <li *ngIf="propertyDetail?.outdoor">
+                                <span class="Specficate">{{'Outdoor' | translate}}</span>
+                                {{propertyDetail?.outdoor}}
+                            </li>
+                            <li *ngIf="propertyDetail?.furnish">
+                                <span class="Specficate">{{'Furnishing' | translate}}</span>
+                                {{propertyDetail?.furnish}}
+                            </li>
+                            <li *ngIf="propertyDetail?.parkingOption">
+                                <span class="Specficate">{{'Parking' | translate}}</span>
+                                {{propertyDetail?.parkingOption}}
+                            </li>
+                            <li *ngIf="propertyDetail?.views">
+                                <span class="Specficate">{{'View' | translate}}</span> {{propertyDetail?.views}}
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="contact-realtor-wrapper">
+                    <div class="realtor-info">
+                        <img src="{{propertyDetail?.userId?.profileImage}}" alt="">
+                        <div class="realtor---info">
+                            <h2>{{propertyDetail?.userId?.fullName}}</h2>
+                            <h5>{{propertyDetail?.userId?.city}}</h5>
+                            <h5><a [routerLink]="['/properties', 'owner-property',propertyDetail?.userId?._id]">{{'Total Properties' | translate}}
+                                    ({{propertyDetail?.totalProperty}})</a></h5>
+                            <h5>
+                                <a href="javascript:void(0)"
+                                    (click)="sendMessage(propertyDetail?.userId?._id,propertyDetail?._id,propertyDetail?.Type)">{{'Send Messages' | translate}}</a>
+                            </h5>
+                            <h6><img src="assets/img/icons/phone-call.png" alt="">
+                                {{propertyDetail?.userId?.countryCode}}-{{propertyDetail?.userId?.mobileNumber}}</h6>
+                            <h6><img src="assets/img/icons/envelope.png" alt=""> {{propertyDetail?.userId?.email}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="listings-maps mt-30">
+                    <agm-map [latitude]="propertyDetail?.location?.coordinates[1]"
+                        [longitude]="propertyDetail?.location?.coordinates[0]" [zoom]="8">
+                        <agm-marker [latitude]="propertyDetail?.location?.coordinates[1]"
+                            [longitude]="propertyDetail?.location?.coordinates[0]">
+                        </agm-marker>
+                    </agm-map>
+                    <!-- <div id="googleMap"></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="ModalBox">
+    <div class="modal" id="Report">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>{{'Report' | translate}} </h4>
+                    <a href="#" data-dismiss="modal" #closeModel>&times;</a>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="reportForm" (ngSubmit)="reportSubmit()">
+                        <div class="form-group">
+                            <select class="form-control" formControlName="reason">
+                                <option value="">Select Reason</option>
+                                <option>Inappropriate profile picture</option>
+                                <option>Inappropriate content</option>
+                                <option>Seems like a fake profile</option>
+                                <option>Seems like a fake Ad</option>
+                                <option>Other</option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="reportForm.controls['reason'].invalid && 
+                            (formSubmited || reportForm.controls['reason'].dirty)">
+                                Please provide valid Reason </p>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" formControlName="details" class="form-control"
+                                placeholder="Enter Details"></textarea>
+                            <p style="color: #FF0000" *ngIf="reportForm.controls['details'].invalid && 
+                                (formSubmited || reportForm.controls['details'].dirty)">
+                                Please provide valid Details </p>
+                        </div>
+                        <button>{{'Submit' | translate}}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

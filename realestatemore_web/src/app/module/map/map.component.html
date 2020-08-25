@@ -1,0 +1,124 @@
+<section class="breadcumb-area bg-img"
+    style="background-image: url(assets/img/bg-img/hero1.jpg); height: 400px; padding: 0;">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''">
+                            {{'Home' | translate}} <i class="fa fa-angle-right"></i>
+                        </a>{{'Map Listing' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="MaplistArea">
+        <div class="FilterArea">
+            <div class="container">
+                <div class="FilterTabs">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" (click)="servicesListing('all')"
+                                href="#AllFilter">{{'All' | translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#BuyFilter"
+                                (click)="servicesListing('buy')">{{'Buy' | translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#RentFilter"
+                                (click)="servicesListing('rent')">{{'Rent' | translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#EventFilter"
+                                (click)="servicesListing('rentevent')">{{'Rent for Event' | translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#InteriorFilter"
+                                (click)="servicesListing('archInterior')">{{'Architecture & Interior' | translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#SalesFilter"
+                                (click)="servicesListing('afterSales')">{{'After Sales Services' | translate}}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="FilterBar">
+                    <app-search [filterBy]="filterBy" (formSubmit)="searchSubmit($event)"></app-search>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="MaplistArea MapView">
+        <div class="container">
+            <div class="MapListing">
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home">
+                        <div class="Mapside">
+                            <agm-map #gm [latitude]="lat" [longitude]="lng" (mapClick)="mapClickCheck($event)"
+                                [fullscreenControl]='true' [mapTypeControl]='true' [mapTypeId]="'hybrid'">
+                                <agm-marker *ngFor="let servicesList of servicesLists;let i =index"
+                                    [latitude]="servicesList.latitude" [longitude]="servicesList.longitude"
+                                    [label]="servicesList.label" [title]="servicesList.label"
+                                    [iconUrl]="servicesList.icon" [zIndex]='i+1'
+                                    (markerClick)="closeLastWindow(gm,infoWindow)">
+                                    <agm-info-window [disableAutoPan]="true" #infoWindow>
+                                        <div class="PropertyBox">
+                                            <figure>
+                                                <a>
+                                                    <img
+                                                        src="{{servicesList.imagesFile.length >0 ? servicesList.imagesFile[0].image  : 'assets/img/Real-Estate.png'}}">
+                                                </a>
+                                            </figure>
+                                            <figcaption>
+                                                <h5><a>{{servicesList.title}}</a></h5>
+                                                <h4>{{servicesList.category}}</h4>
+                                                <p>{{servicesList.address}}</p>
+
+                                            </figcaption>
+                                            <ol class="Share">
+                                                <li>
+                                                    <a class="Faviorites {{servicesList.likedStatus =='yes' ? 'active' :''}}"
+                                                        href="javascript:void(0);" #fab
+                                                        (click)=faviorite(servicesList,fab)>
+                                                        <i class="fa fa-heart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <share-button button="facebook" theme="circles-dark"></share-button>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)"
+                                                        (click)="sendMessage(servicesList?.userId,servicesList?._id,servicesList?.Type)">
+                                                        <i class="fa fa-comments" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </agm-info-window>
+                                </agm-marker>
+
+
+                            </agm-map>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

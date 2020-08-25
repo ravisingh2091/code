@@ -1,0 +1,161 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">
+                        <a [routerLink]="''">
+                            {{'Home' | translate}} <i class="fa fa-angle-right"></i>
+                        </a> {{'Manage Posted Properties' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="UserArea">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <app-side-menu></app-side-menu>
+                </div>
+
+                <div class="col-sm-9">
+
+                    <div class="Manage_Property_Area">
+                        <h1>{{'Manage Posted Properties' | translate}}</h1>
+                        <div class="Manageleft">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" (click)="toggleStatus('active')" data-toggle="tab"
+                                        href="#Active">{{'Active' | translate}}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " (click)="toggleStatus('inactive')" data-toggle="tab"
+                                        href="#In-Active">{{'In Active' | translate}}</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="Active">
+                                    <div class="ManageList">
+                                        <div class="Managebox" *ngFor="let propertyList of propertyLists;let i =index">
+                                            <figure>
+
+                                                <img src="{{propertyList.imagesFile.length >0 ? propertyList.imagesFile[0].image  : 'assets/img/Real-Estate.png'}}"
+                                                    alt="">
+                                            </figure>
+                                            <figcaption>
+                                                <h2>{{propertyList.title}}</h2>
+                                                <h3 *ngIf="propertyList.Type!='rentevent'">
+                                                    <span>{{'Price' | translate}} : </span>
+                                                    {{'SAR' | translate}}
+                                                    {{propertyList.totalPrice}}
+                                                </h3>
+                                                <h4>{{propertyList.category}}</h4>
+                                                <h5>{{propertyList.plotSize}} {{propertyList.plotSizeUnit}}</h5>
+                                                <h5 *ngIf="propertyList?.pricePerMeter">
+                                                    {{propertyList?.pricePerMeter}}/mtr.</h5>
+                                            </figcaption>
+                                            <aside>
+                                                <ul>
+                                                    <li>
+                                                        <a
+                                                            [routerLink]="['/properties' , 'edit-property',propertyList.Type,propertyList._id]">
+                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)"
+                                                            (click)="deleteProperty(propertyList,i)">
+                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li *ngIf="propertyList.Type=='buy'">
+                                                        <a href="javascript:void(0)" title="Mark as sold"
+                                                            (click)="markAsBooked(propertyList._id)"
+                                                            *ngIf="!propertyList?.booked">
+                                                            <i class="fa fa-check-square-o" aria-hidden="true"> </i>
+                                                        </a>
+                                                        <a href="javascript:void(0)" title="Mark as sold"
+                                                            *ngIf="propertyList?.booked">
+                                                            <i class="fa fa-square-o" aria-hidden="true"> </i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <h5>{{'Updated Date' | translate}}
+                                                    {{propertyList.updatedAt | date:'dd-MM-yyyy'}}</h5>
+                                            </aside>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div *ngIf="propertyLists.length ==0">
+                                            {{'No Data Found' | translate}}
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="In-Active">
+                                    <div class="ManageList">
+                                        <div class="Managebox" *ngFor="let propertyList of propertyLists;let i =index">
+                                            <figure>
+                                                <img src="{{propertyList?.imagesFile[0]?.image}}" alt=""
+                                                    *ngIf="propertyList?.imagesFile.length">
+                                            </figure>
+                                            <figcaption>
+                                                <h2>{{propertyList.title}}</h2>
+                                                <h3 *ngIf="propertyList.Type!='rentevent'">
+                                                    <span>{{'Price' | translate}} : </span>
+                                                    {{'SAR' | translate}}
+                                                    {{propertyList.totalPrice}}
+                                                </h3>
+                                                <h4>{{propertyList.category}}</h4>
+                                                <h5>{{propertyList.plotSize}} {{propertyList.plotSizeUnit}}</h5>
+                                                <h5 *ngIf="propertyList?.pricePerMeter">
+                                                    {{propertyList?.pricePerMeter}}/mtr.</h5>
+                                            </figcaption>
+                                            <aside>
+                                                <ul>
+                                                    <li>
+                                                        <a
+                                                            [routerLink]="['/properties' , 'edit-property',propertyList.Type,propertyList._id]">
+                                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)"
+                                                            (click)="deleteProperty(propertyList,i)">
+                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li *ngIf="propertyList.Type=='buy'">
+                                                        <a href="javascript:void(0)" title="Mark as sold"
+                                                            (click)="markAsBooked(propertyList._id)">
+                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <h5>{{'Updated Date' | translate}}
+                                                    {{propertyList.updatedAt | date:'dd-mm-yyyy'}}</h5>
+                                            </aside>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div *ngIf="propertyLists.length ==0">
+                                            {{'No Data Found' | translate}}
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

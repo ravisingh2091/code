@@ -1,0 +1,149 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title"> <a [routerLink]="''"> {{'Home' | translate}} <i
+                                class="fa fa-angle-right"></i></a>{{'Login' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="south-contact-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="contact-heading">
+                    <h6>{{'Login Info' | translate}}</h6>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-5">
+                <div class="content-sidebar">
+                    <img src="assets/img/bg-img/hero1.jpg">
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7">
+                <div class="contact-form">
+                    <p style="color: #FF0000;text-align: center">{{errorMessage}}</p>
+                    <p style="color:forestgreen;text-align: center">{{passwordChangeMessage}}</p>
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                        <div class="form-group"><i class="fa fa-user"></i>
+
+                            <div class="PhoneNuber">
+                                <div class="dropdown">
+                                    <span>{{selectedCountory}}</span>
+                                    <div class="dropdown-content">
+                                        <p *ngFor="let item of CountryProvider.countryList()"
+                                            (click)="onSelectCode(item.dial_code)">{{item.name}} ({{item.dial_code}})
+                                        </p>
+                                    </div>
+                                </div>
+                                <input id="phone" name="phone" type="tel" maxlength="10" placeholder="Phone No."
+                                    formControlName="phone_no">
+                                <div class="clear"></div>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="loginForm.controls['phone_no'].invalid && 
+                            (formSubmited || loginForm.controls['phone_no'].dirty)">
+                                Please provide valid Phone Number </p>
+                        </div>
+                        <div class="form-group"><i class="fa fa-key"></i>
+                            <input type="password" class="form-control" name="password" id="contact-password"
+                                placeholder="Your password" formControlName="password">
+                            <p style="color: #FF0000" *ngIf="loginForm.controls['password'].invalid && 
+                            (formSubmited || loginForm.controls['password'].dirty)">
+                                Please provide valid Password </p>
+                        </div>
+                        <a data-toggle="modal" data-target="#exampleModal">
+                            {{'Forgot Password' | translate}}
+                        </a>
+                        <button type="submit" class="btn south-btn">
+                            {{'Login' | translate}}
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    {{'Enter Your OTP' | translate}}
+                </h5>
+
+                <span class="ModalClose" data-dismiss="modal">&times;</span>
+            </div>
+            <p style="color: #FF0000;text-align: center">{{errorOtpMessage}}</p>
+            <div class="modal-body Forgotpassword">
+                <div id="phoneNumberId" *ngIf="mobileScreen">
+                    <div class="form-group">
+                        <div class="PhoneNuber">
+                            <i class="fa fa-key"></i>
+                            <div class="dropdown">
+                                <span>{{selectedCountory}}</span>
+                                <div class="dropdown-content">
+                                    <p *ngFor="let item of CountryProvider.countryList()"
+                                        (click)="onSelectCode(item.dial_code)">{{item.name}} ({{item.dial_code}})</p>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" [(ngModel)]="phoneNumber"
+                                placeholder="Enter Your Phone Nuber">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="login-recaptcha-container"></div>
+                        <button class="btn south-btn" (click)="sendOtpToUser()"
+                            [disabled]="sendOtpScreen">{{'Send OTP' | translate}}</button>
+                    </div>
+                </div>
+
+                <div *ngIf="sendOtpScreen">
+                    <div class="form-group">
+                        <div class="PhoneNuber">
+                            <i class="fa fa-key"></i>
+                            <input type="text" class="form-control" [(ngModel)]="verificationCode"
+                                placeholder="Enter Your OTP">
+                        </div>
+                    </div>
+                    <button (click)="verifyOTPCode()" class="btn south-btn">
+                        {{'Verify OTP' | translate}}
+                    </button>
+                </div>
+                <div *ngIf="confirmPassword">
+                    <p style="color: #FF0000">{{passwordErrorMessage}}</p>
+                    <div class="form-group">
+                        <div class="PhoneNuber">
+                            <i class="fa fa-key"></i>
+                            <input type="password" class="form-control" [(ngModel)]="change_password"
+                                placeholder="Password">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="PhoneNuber">
+                            <i class="fa fa-key"></i>
+                            <input type="password" class="form-control" [(ngModel)]="change_confirm_password"
+                                placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <button class="btn south-btn" (click)="changePassword()"> {{'Submit' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

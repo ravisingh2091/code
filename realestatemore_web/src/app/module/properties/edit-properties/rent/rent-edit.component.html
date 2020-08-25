@@ -1,0 +1,1728 @@
+<div class="AddpropertyForm">
+
+    <form [formGroup]="postPropForm" (ngSubmit)="onSubmit()">
+        <div>
+            <div class="Basic_infomation">
+                <h4>{{'1. Basic Information' | translate}} :</h4>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Property Title' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <input type="text" class="form-control" placeholder="Property Title"
+                                formControlName="title">
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['title'].invalid && 
+                                        (formSubmited || postPropForm.controls['title'].dirty)">
+                                Please provide valid Title </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Available For Booking' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="available_for_booking"
+                                (change)="forBooking($event)">
+                                <option>No</option>
+                                <option>Yes</option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['available_for_booking'].invalid && 
+                                    (formSubmited || postPropForm.controls['available_for_booking'].dirty)">
+                                Please provide valid Available For Booking </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Select Catagories' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="categories">
+                                <option value="">Select Catagories</option>
+                                <option *ngFor="let categoryList of categoryLists" value="{{categoryList.name}}">
+                                    {{categoryList.name}}
+                                </option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['categories'].invalid && 
+                                    (formSubmited || postPropForm.controls['categories'].dirty)">
+                                Please provide valid Categories </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Select Status' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="status">
+                                <option value="">Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['status'].invalid && 
+                                (formSubmited || postPropForm.controls['status'].dirty)">
+                                Please provide valid Status </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Purpose' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="purpose">
+                                <option value="">Select Purpose</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="residental">Residental</option>
+                                <option value="both">Both</option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['purpose'].invalid && 
+                                    (formSubmited || postPropForm.controls['purpose'].dirty)">
+                                Please provide valid Purpose </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Available For' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="available_for">
+                                <option value="">Available For</option>
+                                <option value="family">Family</option>
+                                <option value="single">Single</option>
+                                <option value="both">Both</option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['available_for'].invalid && 
+                                    (formSubmited || postPropForm.controls['available_for'].dirty)">
+                                Please provide valid Available For </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Bedrooms' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="bedrooms">
+                                <option value="">Bedrooms</option>
+                                <option *ngFor="let number of numberList">
+                                    {{number}}
+                                </option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['bedrooms'].invalid && 
+                                    (formSubmited || postPropForm.controls['bedrooms'].dirty)">
+                                Please provide valid Bedrooms </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group"
+                    *ngIf="postPropForm.controls['categories'].value == 'House' || postPropForm.controls['categories'].value == 'Villa' || postPropForm.controls['categories'].value == 'Apartment' || postPropForm.controls['categories'].value == 'Villa roof'  || postPropForm.controls['categories'].value == 'Floor' || postPropForm.controls['categories'].value == 'Duplex isolated' || postPropForm.controls['categories'].value == 'Duplex non-isolated' || postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                    <div class="row">
+                        <label class="col-sm-3">{{'No. Of Living Room' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="no_of_living_room">
+                                <option value="">No. of Living Room</option>
+                                <option *ngFor="let number of numberList" value="{{number}}">
+                                    {{number}}
+                                </option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['no_of_living_room'].invalid && 
+                                (formSubmited || postPropForm.controls['no_of_living_room'].dirty)">
+                                Please provide valid No. of Living Room </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Bathrooms' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+
+                            <select class="form-control" formControlName="bathrooms">
+                                <option value="">Bathrooms</option>
+                                <option *ngFor="let number of numberList">
+                                    {{number}}
+                                </option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['bathrooms'].invalid && 
+                                    (formSubmited || postPropForm.controls['bathrooms'].dirty)">
+                                Please provide valid Bathrooms </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Kitchen' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="kitchens">
+                                <option value="">Kitchen</option>
+                                <option *ngFor="let number of numberList">
+                                    {{number}}
+                                </option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['kitchens'].invalid && 
+                                    (formSubmited || postPropForm.controls['kitchens'].dirty)">
+                                Please provide valid Kitchens </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Floor' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="floors">
+                                <option value="">Floor</option>
+                                <option *ngFor="let number of numberList">
+                                    {{number}}
+                                </option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['floors'].invalid && 
+                                    (formSubmited || postPropForm.controls['floors'].dirty)">
+                                Please provide valid Floors </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Formtoggle">
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Plot Size' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <input type="text" formControlName="plot_size" class="form-control"
+                                        placeholder="Plot size">
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['plot_size'].invalid && 
+                                                (formSubmited || postPropForm.controls['plot_size'].dirty)">
+                                        Please provide valid Plot Size </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <select class="form-control" formControlName="plot_size_in">
+                                        <option>Sq. Meter</option>
+                                        <option>Sq. CM</option>
+                                        <option>Sq. Inch</option>
+                                        <option>Sq. Feet</option>
+                                        <option>Sq. Yard</option>
+                                    </select>
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['plot_size_in'].invalid && 
+                                            (formSubmited || postPropForm.controls['plot_size_in'].dirty)">
+                                        Please provide valid Plot Size In </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Built In Size' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <input type="text" class="form-control" placeholder="Built size"
+                                        formControlName="built_size">
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['built_size'].invalid && 
+                                                (formSubmited || postPropForm.controls['built_size'].dirty)">
+                                        Please provide valid Built Size </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <select class="form-control" formControlName="built_size_in">
+                                        <option>Sq. Meter</option>
+                                        <option>Sq. CM</option>
+                                        <option>Sq. Inch</option>
+                                        <option>Sq. Feet</option>
+                                        <option>Sq. Yard</option>
+                                    </select>
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['built_size_in'].invalid && 
+                                            (formSubmited || postPropForm.controls['built_size_in'].dirty)">
+                                        Please provide valid Built Size In </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Length' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <input type="text" class="form-control" placeholder="input size"
+                                        formControlName="length_size">
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['length_size'].invalid && 
+                                            (formSubmited || postPropForm.controls['length_size'].dirty)">
+                                        Please provide valid Length Size </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <select class="form-control" formControlName="length_in">
+                                        <option>Meter</option>
+                                        <option>CM</option>
+                                        <option>Inch</option>
+                                        <option>Feet</option>
+                                        <option>Yard</option>
+                                    </select>
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['length_in'].invalid && 
+                                        (formSubmited || postPropForm.controls['length_in'].dirty)">
+                                        Please provide valid Length In </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Width' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <input type="text" class="form-control" placeholder="input size"
+                                        formControlName="width_size">
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['width_size'].invalid && 
+                                        (formSubmited || postPropForm.controls['width_size'].dirty)">
+                                        Please provide valid Width </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <select class="form-control" formControlName="width_size_in">
+                                        <option>Meter</option>
+                                        <option>CM</option>
+                                        <option>Inch</option>
+                                        <option>Feet</option>
+                                        <option>Yard</option>
+                                    </select>
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['width_size_in'].invalid && 
+                                        (formSubmited || postPropForm.controls['width_size_in'].dirty)">
+                                        Please provide valid Width Size In </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Description' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <input type="text" class="form-control" placeholder="Description"
+                                formControlName="description">
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['description'].invalid && 
+                                        (formSubmited || postPropForm.controls['description'].dirty)">
+                                Please provide valid Width </p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Select Year Built' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="built_year">
+                                <option value="">Select year Built</option>
+                                <option *ngFor="let item of yearList">
+                                    {{item}}
+                                </option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['built_year'].invalid && 
+                            (formSubmited || postPropForm.controls['built_year'].dirty)">
+                                Please provide valid Built Year </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Street View' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <select class="form-control" formControlName="street_view">
+                                <option value="">Street view</option>
+                                <option>Not Defined</option>
+                                <option>North</option>
+                                <option>South</option>
+                                <option>East</option>
+                                <option>West</option>
+                                <option>North-East</option>
+                                <option>North-West</option>
+                                <option>South-West</option>
+                                <option>South-East</option>
+                                <option>3 Streets</option>
+                                <option>4 Streets</option>
+                            </select>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['street_view'].invalid && 
+                                    (formSubmited || postPropForm.controls['street_view'].dirty)">
+                                Please provide valid Street View </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Street Width' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <input type="text" class="form-control" placeholder="input size"
+                                        formControlName="street_width">
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['street_width'].invalid && 
+                                            (formSubmited || postPropForm.controls['street_width'].dirty)">
+                                        Please provide valid Street Width </p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                    <select class="form-control" formControlName="street_width_in">
+                                        <option>Meter</option>
+                                        <option>CM</option>
+                                        <option>Inch</option>
+                                        <option>Feet</option>
+                                        <option>Yard</option>
+                                    </select>
+                                    <p style="color: #FF0000" *ngIf="postPropForm.controls['street_width_in'].invalid && 
+                                        (formSubmited || postPropForm.controls['street_width_in'].dirty)">
+                                        Please provide valid Street Width In </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div *ngIf="showForm >= 2">
+            <h4>{{'2. Extra' | translate}}</h4>
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Select No. Of Appartment' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon" style="height: 37px;"><i class="fa fa-info-circle"></i></span>
+                        <select class="form-control" formControlName="appartment">
+                            <option value="">Appartment</option>
+                            <option *ngFor="let number of numberList">
+                                {{number}}
+                            </option>
+                        </select>
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['appartment'].invalid && 
+                                    (formSubmited || postPropForm.controls['appartment'].dirty)">
+                            Please provide valid Appartments</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Select No. Of Showroom' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon" style="height: 37px;"><i class="fa fa-info-circle"></i></span>
+                        <select class="form-control" formControlName="no_of_showroom">
+                            <option value="">showroom</option>
+                            <option *ngFor="let number of numberList">
+                                {{number}}
+                            </option>
+                        </select>
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['no_of_showroom'].invalid && 
+                                    (formSubmited || postPropForm.controls['no_of_showroom'].dirty)">
+                            Please provide valid No Of Showroom </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Building'">
+                <div class="row">
+                    <label class="col-sm-3">{{'No. Of Office' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon" style="height: 37px;"><i class="fa fa-info-circle"></i></span>
+                        <select class="form-control" formControlName="no_of_office">
+                            <option value="">Office</option>
+                            <option *ngFor="let number of numberList">
+                                {{number}}
+                            </option>
+                        </select>
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['no_of_office'].invalid && 
+                                    (formSubmited || postPropForm.controls['no_of_office'].dirty)">
+                            Please provide valid No Of Office </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Building'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Number Of Stores In The Ground Floor' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon" style="height: 37px;"><i class="fa fa-info-circle"></i></span>
+                        <select class="form-control" formControlName="no_of_stores">
+                            <option value="">Stores</option>
+                            <option *ngFor="let number of numberList">
+                                {{number}}
+                            </option>
+                        </select>
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['no_of_stores'].invalid && 
+                                    (formSubmited || postPropForm.controls['no_of_stores'].dirty)">
+                            Please provide valid Number of Stores in the Ground Floor </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Number of Pool' | translate}}:</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon" style="height: 37px;"><i class="fa fa-info-circle"></i></span>
+                        <select class="form-control" formControlName="no_of_pool">
+                            <option value="">Pool</option>
+                            <option *ngFor="let number of numberList">
+                                {{number}}
+                            </option>
+                        </select>
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['no_of_pool'].invalid && 
+                                    (formSubmited || postPropForm.controls['no_of_pool'].dirty)">
+                            Please provide valid Number of Pool </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Building'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Near By Services' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon" style="height: 37px;"><i class="fa fa-info-circle"></i></span>
+                        <input class="form-control" formControlName="near_by_services" placeholder="Near by Services">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['near_by_services'].invalid && 
+                                    (formSubmited || postPropForm.controls['near_by_services'].dirty)">
+                            Please provide valid Near by Services </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Balcony' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="balcony" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="balcony" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['balcony'].invalid && 
+                                    (formSubmited || postPropForm.controls['balcony'].dirty)">
+                                Please provide valid Balcony</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Garden' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="garden" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="garden" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['garden'].invalid && 
+                                    (formSubmited || postPropForm.controls['garden'].dirty)">
+                                Please provide valid Garden</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Parking' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="parking" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="parking" value="false" checked="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['parking'].invalid && 
+                                    (formSubmited || postPropForm.controls['parking'].dirty)">
+                                Please provide valid Parking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Modular Kitchen' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="kitchen" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="kitchen" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['kitchen'].invalid && 
+                                    (formSubmited || postPropForm.controls['kitchen'].dirty)">
+                                Please provide valid Kitchen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"
+                *ngIf="postPropForm.controls['categories'].value == 'Villa' || postPropForm.controls['categories'].value == 'Apartment' || postPropForm.controls['categories'].value == 'Villa roof'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Lift' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="lift" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="lift" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['lift'].invalid && 
+                                (formSubmited || postPropForm.controls['lift'].dirty)">
+                                Please provide valid Lift</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"
+                *ngIf="postPropForm.controls['categories'].value == 'Villa' || postPropForm.controls['categories'].value == 'Apartment' || postPropForm.controls['categories'].value == 'Floor' || postPropForm.controls['categories'].value == 'Duplex isolated' || postPropForm.controls['categories'].value == 'Duplex non-isolated'">
+                <div class="row">
+                    <label class="col-sm-3">{{'A/C' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="ac" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="ac" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['ac'].invalid && 
+                            (formSubmited || postPropForm.controls['ac'].dirty)">
+                                Please provide valid A/C</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"
+                *ngIf="postPropForm.controls['categories'].value == 'House' || postPropForm.controls['categories'].value == 'Villa' || postPropForm.controls['categories'].value == 'Apartment' || postPropForm.controls['categories'].value == 'Villa roof' || postPropForm.controls['categories'].value == 'Floor' || postPropForm.controls['categories'].value == 'Duplex isolated' || postPropForm.controls['categories'].value == 'Duplex non-isolated' || postPropForm.controls['categories'].value == 'Room'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Furnished' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="Furnished" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="Furnished" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['Furnished'].invalid && 
+                            (formSubmited || postPropForm.controls['Furnished'].dirty)">
+                                Please provide valid Furnished</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Villa'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Duplex' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="duplex" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="duplex" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['duplex'].invalid && 
+                                (formSubmited || postPropForm.controls['duplex'].dirty)">
+                                Please provide valid Duplex</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"
+                *ngIf="postPropForm.controls['categories'].value == 'Villa' || postPropForm.controls['categories'].value == 'Floor'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Garage' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="Garage" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="Garage" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['Garage'].invalid && 
+                                (formSubmited || postPropForm.controls['Garage'].dirty)">
+                                Please provide valid Garage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Office'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Bathroom For Men' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="BathroomforMen" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="BathroomforMen" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['BathroomforMen'].invalid && 
+                                    (formSubmited || postPropForm.controls['BathroomforMen'].dirty)">
+                                Please provide valid Bathroom for Men</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Office'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Bathroom For Lady' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="BathroomforLady" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="BathroomforLady" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['BathroomforLady'].invalid && 
+                                    (formSubmited || postPropForm.controls['BathroomforLady'].dirty)">
+                                Please provide valid Bathroom for Lady</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Avaliable Am' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="avaliableAm" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="avaliableAm" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['avaliableAm'].invalid && 
+                                    (formSubmited || postPropForm.controls['avaliableAm'].dirty)">
+                                Please provide valid avaliable Am</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Avaliable Pm' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="avaliablePm" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="avaliablePm" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['avaliablePm'].invalid && 
+                                    (formSubmited || postPropForm.controls['avaliablePm'].dirty)">
+                                Please provide valid avaliable Pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Wedding hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Kosha' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="kosha" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="kosha" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['kosha'].invalid && 
+                                    (formSubmited || postPropForm.controls['kosha'].dirty)">
+                                Please provide valid Kosha</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Wedding hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Sound System' | translate}}
+                        :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="sound_system" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="sound_system" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['sound_system'].invalid && 
+                                    (formSubmited || postPropForm.controls['sound_system'].dirty)">
+                                Please provide valid Sound System
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"
+                *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha' || postPropForm.controls['categories'].value == 'Wedding hall' || postPropForm.controls['categories'].value == 'Meeting hall' || postPropForm.controls['categories'].value == 'Football area'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Insurance' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="insurance" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="insurance" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['insurance'].invalid && 
+                                    (formSubmited || postPropForm.controls['insurance'].dirty)">
+                                Please provide valid Insurance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'BBQ' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="bbq" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="bbq" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['bbq'].invalid && 
+                                    (formSubmited || postPropForm.controls['bbq'].dirty)">
+                                Please provide valid BBQ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Valleball' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="valleball" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="valleball" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['valleball'].invalid && 
+                                    (formSubmited || postPropForm.controls['valleball'].dirty)">
+                                Please provide valid Valleball</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Football' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="football" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="football" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['football'].invalid && 
+                                    (formSubmited || postPropForm.controls['football'].dirty)">
+                                Please provide valid Football</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Plyground' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="plyground" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="plyground" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['plyground'].invalid && 
+                                    (formSubmited || postPropForm.controls['plyground'].dirty)">
+                                Please provide valid Plyground</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Wifi' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="Wifi" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="Wifi" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['Wifi'].invalid && 
+                                    (formSubmited || postPropForm.controls['Wifi'].dirty)">
+                                Please provide valid Wifi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Resort/Esteraha'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Green Area' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="greenArea" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="greenArea" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['greenArea'].invalid && 
+                                    (formSubmited || postPropForm.controls['greenArea'].dirty)">
+                                Please provide valid GreenArea</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Wedding hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Price With Buffet' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Price with Buffet"
+                            formControlName="price_with_buffet">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['price_with_buffet'].invalid && 
+                                        (formSubmited || postPropForm.controls['price_with_buffet'].dirty)">
+                            Please provide valid Price with Buffet </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Wedding hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Price Without Buffet' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Price without Buffet"
+                            formControlName="price_without_buffet">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['price_without_buffet'].invalid && 
+                                        (formSubmited || postPropForm.controls['price_without_buffet'].dirty)">
+                            Please provide valid Price without Buffet </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Wedding hall' 
+            || postPropForm.controls['categories'].value == 'Meeting hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'No. Of Chairs' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="No. of Chairs"
+                            formControlName="no_of_chairs">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['no_of_chairs'].invalid && 
+                                        (formSubmited || postPropForm.controls['no_of_chairs'].dirty)">
+                            Please provide valid No. of Chairs </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group"
+                *ngIf="postPropForm.controls['categories'].value == 'Wedding hall' || postPropForm.controls['categories'].value == 'Meeting hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'No. Of Tables' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="No. of Tables"
+                            formControlName="no_of_tables">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['no_of_tables'].invalid && 
+                                        (formSubmited || postPropForm.controls['no_of_tables'].dirty)">
+                            Please provide valid No. of Tables </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Meeting hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Projector' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="projector" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="projector" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['projector'].invalid && 
+                                    (formSubmited || postPropForm.controls['projector'].dirty)">
+                                Please provide valid Projector</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Meeting hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Speakers' | translate}}
+                        :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="speakers" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="speakers" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['speakers'].invalid && 
+                                    (formSubmited || postPropForm.controls['speakers'].dirty)">
+                                Please provide valid Speakers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Meeting hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Microphone' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="microphone" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="microphone" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['microphone'].invalid && 
+                                    (formSubmited || postPropForm.controls['microphone'].dirty)">
+                                Please provide valid Microphone</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Meeting hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Guest House' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Available' | translate}}
+                                    <input type="radio" formControlName="guest_house" value="true">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="Radio">{{'Not Available' | translate}}
+                                    <input type="radio" formControlName="guest_house" value="false">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['guest_house'].invalid && 
+                                    (formSubmited || postPropForm.controls['guest_house'].dirty)">
+                                Please provide valid Guest House</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" *ngIf="postPropForm.controls['categories'].value == 'Meeting hall'">
+                <div class="row">
+                    <label class="col-sm-3">{{'Hall Size' | translate}}:</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Hall Size in Sq. Meter"
+                            formControlName="hall_size">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['hall_size'].invalid && 
+                                        (formSubmited || postPropForm.controls['hall_size'].dirty)">
+                            Please provide valid Hall Size</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="showForm >=3">
+            <div class="specification">
+                <h4>3. Add specification</h4>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Indoor' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6"
+                                    *ngFor="let indoor of postPropForm['controls'].indoor['controls']; let i=index;">
+                                    <label class="Checkbox">
+                                        {{indoorData[i]?.text}}
+                                        <input type="checkbox" [formControl]="indoor">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Outdoor' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6"
+                                    *ngFor="let outdoor of postPropForm['controls'].outdoor['controls']; let i=index;">
+                                    <label class="Checkbox">
+                                        {{outdoorData[i]?.text}}
+                                        <input type="checkbox" [formControl]="outdoor">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Furnishing' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6"
+                                    *ngFor="let furnishing of postPropForm['controls'].furnishing['controls']; let i=index;">
+                                    <label class="Checkbox">
+                                        {{furnishingData[i]?.text}}
+                                        <input type="checkbox" [formControl]="furnishing">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Parking' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6"
+                                    *ngFor="let parking of postPropForm['controls'].parkings['controls']; let i=index;">
+                                    <label class="Checkbox">
+                                        {{parkingsData[i]?.text}}
+                                        <input type="checkbox" [formControl]="parking">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'View' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-6"
+                                    *ngFor="let parking of postPropForm['controls'].view['controls']; let i=index;">
+                                    <label class="Checkbox">
+                                        {{parkingsData[i]?.text}}
+                                        <input type="checkbox" [formControl]="parking">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="showForm >= 4">
+            <div class="prices">
+                <h4>{{'4. Add Price' | translate}}
+                </h4>
+                <div class="form-group" *ngIf="rent">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Rent Time' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label class="Radio">{{'Weekly' | translate}}
+                                        <input type="radio" formControlName="rent_time" value="weekly">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label class="Radio">{{'Monthly' | translate}}
+                                        <input type="radio" formControlName="rent_time" value="monthly">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label class="Radio">{{'Yearly' | translate}}
+                                        <input type="radio" formControlName="rent_time" value="yearly">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" *ngIf="rent">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Size M2' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <input type="" class="form-control" placeholder="Enter Size" formControlName="size">
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['size'].invalid && 
+                                    (formSubmited || postPropForm.controls['size'].dirty)">
+                                Please provide valid Size m <sup>2</sup> </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div *ngIf="rentEvent">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-sm-3">{{'Select Date' | translate}} :</label>
+                            <div class="col-12 col-sm-9 col-xl-9">
+                                <figure>
+                                    <rps-post-event-calendar (afterClick)="clickedDate($event)"
+                                        [selectedDate]="postPropForm.value?.selected_date?.split(',')">
+                                    </rps-post-event-calendar>
+                                </figure>
+                                <div class="Selectdate">
+                                    <input type="" class="form-control" placeholder="Selected Date"
+                                        formControlName="selected_date" readonly>
+                                    <p style="color: #FF0000"
+                                        *ngIf="postPropForm.controls['selected_date'].invalid && 
+                                                                (formSubmited || postPropForm.controls['selected_date'].dirty)">
+                                        Please provide valid Select Date </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-sm-3">{{'Special Offer' | translate}} :</label>
+                            <div class="col-12 col-sm-9 col-xl-9">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <label class="Radio">{{'Yes' | translate}}
+                                            <input type="radio" (click)="offerClick(true)"
+                                                formControlName="special_offer" value="true">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label class="Radio">{{'No' | translate}}
+                                            <input type="radio" (click)="offerClick(false)"
+                                                formControlName="special_offer" value="false">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <p style="color: #FF0000" *ngIf="postPropForm.controls['special_offer'].invalid && 
+                                        (formSubmited || postPropForm.controls['special_offer'].dirty)">
+                                    Please provide valid Special Offer </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" *ngIf="offerDate">
+                        <div class="row">
+                            <label class="col-sm-3">{{'Select Offer Date' | translate}} :</label>
+                            <div class="col-12 col-sm-9 col-xl-9">
+                                <figure>
+                                    <!-- <rps-post-event-calendar (afterClick)="clickedDate($event)">
+                                    </rps-post-event-calendar> -->
+                                    <rps-calendar [eventData]="eventData" (availableClick)="avlClick($event)">
+                                    </rps-calendar>
+                                </figure>
+                                <div class="Selectdate">
+                                    <input type="" class="form-control" placeholder="Selected Date"
+                                        formControlName="selected_offer_date" readonly>
+                                    <p style="color: #FF0000"
+                                        *ngIf="postPropForm.controls['selected_offer_date'].invalid && 
+                                                                (formSubmited || postPropForm.controls['selected_offer_date'].dirty)">
+                                        Please provide valid Select Offer Date </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group"
+                    *ngIf="postPropForm.controls['categories'].value == 'Meeting hall' || postPropForm.controls['categories'].value == 'Room' ||postPropForm.controls['categories'].value == 'Football area'">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Price Based On' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label class="Radio">{{'Hourly' | translate}}
+                                        <input type="radio" formControlName="price_based_on" value="Hourly">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label class="Radio">{{'Daily' | translate}}
+                                        <input type="radio" formControlName="price_based_on" value="Daily">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="Radio">{{'Monthly' | translate}}
+                                        <input type="radio" formControlName="price_based_on" value="Monthly">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p style="color: #FF0000" *ngIf="postPropForm.controls['price_based_on'].invalid && 
+                                (formSubmited || postPropForm.controls['price_based_on'].dirty)">
+                                    Please provide valid Price Based On</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Total (SAR)' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                            <input type="" class="form-control" placeholder="Enter price" formControlName="total">
+                            <p style="color: #FF0000" *ngIf="postPropForm.controls['total'].invalid && 
+                                                (formSubmited || postPropForm.controls['total'].dirty)">
+                                Please provide valid Total </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div *ngIf="showForm >=5">
+            <div class="Propertyimages">
+                <h4>{{'5. Add Images' | translate}}</h4>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3">{{'Upload Property Images' | translate}} :</label>
+                        <div class="col-12 col-sm-9 col-xl-9">
+                            <div class="Upload_property">
+                                <div class="identfiy">
+                                    <div class="uploadfile">
+                                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                                        <span class="upload">
+                                            <i class="fa fa-upload" aria-hidden="true"></i>
+                                            {{'Upload Images' | translate}}</span>
+                                        <input type="file" class="form-control" formControlName="upload_file"
+                                            (change)="showModel($event)" accept="image/*">
+                                    </div>
+                                </div>
+                                <article>
+                                    <aside *ngFor="let item of uploadFileUrls;let i = index">
+                                        <figure>
+                                            <img src="{{item}}">
+                                        </figure>
+                                        <p>{{imageCaption[i]}}</p>
+                                    </aside>
+
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="showForm >=6">
+            <h4>{{'6. Add Location' | translate}} </h4>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Add Location By Map' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                            <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+                                (dragEnd)="mapClickCheck($event)">
+                            </agm-marker>
+                        </agm-map>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Province' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Province" formControlName="province">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['province'].invalid && 
+                                (formSubmited || postPropForm.controls['province'].dirty)">
+                            Please provide valid Province </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'City' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="City" formControlName="city">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['city'].invalid && 
+                                (formSubmited || postPropForm.controls['city'].dirty)">
+                            Please provide valid city </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'District' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="District" formControlName="district">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['district'].invalid && 
+                                    (formSubmited || postPropForm.controls['district'].dirty)">
+                            Please provide valid district </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Address' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Address" formControlName="address">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['address'].invalid && 
+                                (formSubmited || postPropForm.controls['address'].dirty)">
+                            Please provide valid address </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Building Name' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Building Name"
+                            formControlName="building_name">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['building_name'].invalid && 
+                                    (formSubmited || postPropForm.controls['building_name'].dirty)">
+                            Please provide valid Building Name </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Additional Number' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Additional Number"
+                            formControlName="additional_number">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['additional_number'].invalid && 
+                                    (formSubmited || postPropForm.controls['additional_number'].dirty)">
+                            Please provide valid Additional Number </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'Street Name' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="Street Name" formControlName="street_name">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['street_name'].invalid && 
+                                    (formSubmited || postPropForm.controls['street_name'].dirty)">
+                            Please provide valid street name </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-3">{{'ZIP Code' | translate}} :</label>
+                    <div class="col-12 col-sm-9 col-xl-9">
+                        <span class="Title-icon"><i class="fa fa-info-circle"></i></span>
+                        <input type="text" class="form-control" placeholder="ZIP Code" formControlName="zip">
+                        <p style="color: #FF0000" *ngIf="postPropForm.controls['zip'].invalid && 
+                                (formSubmited || postPropForm.controls['zip'].dirty)">
+                            Please provide valid zip code </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="showForm >=7">
+            <div class="Payments">
+                <h4>{{'7. Payment Method' | translate}}</h4>
+                <label class="Radio">{{'Debit Card' | translate}}
+                    <input type="radio" formControlName="payment_method" value="Debit Card">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="Radio">{{'Credit Card' | translate}}
+                    <input type="radio" formControlName="payment_method" value="Credit Card">
+                    <span class="checkmark"></span>
+                </label>
+                <p style="color: #FF0000" *ngIf="postPropForm.controls['payment_method'].invalid && 
+                        (formSubmited || postPropForm.controls['payment_method'].dirty)">
+                    Please provide valid Payment Method</p>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+
+        <div class="Buttonnext">
+            <span class="Next" (click)="showForm = showForm + 1"
+                [style.display]="showForm == 7 ? 'none' : 'block'">{{'Next' | translate}}</span>
+            <button [style.display]="showForm == 7 ? 'block' : 'none'">{{'Submit' | translate}}</button>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+</div>
+
+<div class="modal fade" id="imageModel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>{{'Enter The Image Caption' | translate}}</h5>
+                <a href="javascript:void(0)" (click)="closeModel()" class="ModalClose" data-dismiss="modal">&times;</a>
+            </div>
+            <div class="modal-body">
+                <div class="imagescaption">
+                    <figure>
+                        <img src="{{uploadFileUrls[uploadFileUrls.length - 1]}}" alt="">
+                    </figure>
+                    <textarea id="" rows="5" class="form-control" placeholder="Enter the image caption
+                            " [(ngModel)]="caption"></textarea>
+                    <button (click)="selectImages()">{{'Submit' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

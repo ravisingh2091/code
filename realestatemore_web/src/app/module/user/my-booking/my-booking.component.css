@@ -1,0 +1,21 @@
+.VenueBox .Date ol{
+    text-align: center;
+    margin: 5px 0 0 0;
+}
+
+.VenueBox .Date p{
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+}
+
+.VenueBox .Date p span{
+    margin: 0 0 0 30px;
+    border-left: 1px solid #ddd;
+    padding: 0 0 0 25px;
+}
+
+.VenueBox .Date ol li{
+    display: inline-block;
+    margin: 0 10px;
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.idea/
+.env
+logs/
+package-lock.json
+/nbproject
+.vscode/
+coverage/
+.history/
+assets/id_rsa

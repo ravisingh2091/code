@@ -1,0 +1,123 @@
+Update exam_mark_info (mark, status);
+
+update exam_mark (total, exam_status)
+
+if(school_rank_status) {
+
+    update rank's in exam_mark
+
+    if(Is ScheduleTerm Publish) {
+
+        if(Pattern_mark_type === 'GRADE'){
+
+            get grade list 
+
+            find update subject grade
+
+            check student term_status 
+
+            if(FAIL && CHECK SCHOOL GRACE MARK){
+                
+                find update subject grade
+
+                update student term_status 
+
+            } 
+
+
+            Update term_mark_info (mark, status);
+
+            update term_mark (total, term_status)
+
+            update rank's in term_mark
+
+            if (Is ScheduleSection Publish){
+                
+                find update subject grade
+                
+                check student section_status 
+
+                Update section_mark_info (mark, status);
+
+                update section_mark (total, section_status)
+
+                update rank's in section_mark
+
+                ***
+                UPDATE SUPPLEMENTARY MARK
+                TILL SECTION MARK GRADE UPDATED
+                *** 
+
+            } else {
+                
+                ***
+                UPDATE SUPPLEMENTARY MARK
+                TILL TERM MARK GRADE UPDATED
+                *** 
+            }
+
+        } else {
+
+            check student term_status 
+
+            if(FAIL && CHECK SCHOOL GRACE MARK){
+                
+                update student term_status 
+
+            } 
+
+
+            Update term_mark_info (mark, status);
+
+            update term_mark (total, term_status)
+
+            update rank's in term_mark
+
+            if (Is ScheduleSection Publish){
+                                
+                check student section_status 
+
+                Update section_mark_info (mark, status);
+
+                update section_mark (total, section_status)
+
+                update rank's in section_mark
+
+                ***
+                UPDATE SUPPLEMENTARY MARK
+                TILL SECTION MARK UPDATED
+                *** 
+
+            } else {
+                
+                ***
+                UPDATE SUPPLEMENTARY MARK
+                TILL TERM MARK UPDATED
+                *** 
+
+            }
+
+        }
+
+    } else {
+
+        ***
+        UPDATE SUPPLEMENTARY MARK
+        Till exam mark and rank updated
+        *** 
+
+    }
+
+} else {
+
+    if(Is ScheduleTerm Publish) {
+
+    } else {
+
+        return res.json({
+            status: true,
+            message: 'Till exam mark updated'
+        });
+    }
+
+}

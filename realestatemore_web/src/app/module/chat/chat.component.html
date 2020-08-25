@@ -1,0 +1,254 @@
+<section class="breadcumb-area bg-img" style="background-image: url(assets/img/bg-img/hero1.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title"><a [routerLink]="''">{{'Home' | translate}} <i
+                                class="fa fa-angle-right"></i></a> {{'Chat' | translate}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="UserArea">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <app-side-menu></app-side-menu>
+                </div>
+                <audio id="myAudio" style="display: none;">
+                    <source src="assets/eventually.ogg" type="audio/ogg">
+                    <source src="assets/eventually.mp3" type="audio/mpeg">
+                </audio>
+                <div class="col-sm-9">
+                    <div class="ChatArea">
+                        <div class="Chatlist">
+                            <div class="ChatProfile">
+                                <figure>
+                                    <img src="{{userImage}}">
+                                    <span class="green"></span>
+                                </figure>
+                                <h5>{{userName}} <span></span></h5>
+                            </div>
+                            <form>
+                                <input type="text" (keyup)="filterUser($event.target.value)" placeholder="Search">
+                                <span><i class="fa fa-search" aria-hidden="true"></i></span>
+                            </form>
+                            <article>
+                                <!-- <aside class="active"> -->
+                                <aside *ngFor="let item of chatUserList" (click)="userListClick(item)"
+                                    [ngClass]="{'active': item.receiver_id == receiverId}">
+                                    <figure>
+                                        <img src="{{item.profileImage}}">
+                                        <span class="red"></span>
+                                    </figure>
+                                    <h5>{{item.fullName}} <span>{{dataFormate(item.updatedAt)}}</span></h5>
+                                    <p *ngIf="item.lastmessage">
+                                        {{item.lastmessage | slice:0:35}}
+                                        {{item.lastmessage.length>35 ?'...' :''}}
+                                    </p>
+                                </aside>
+                            </article>
+                        </div>
+
+                        <div class="ChatBoxx">
+                            <div class="ChatProfile">
+                                <figure>
+                                    <img src="{{receiverImage}}">
+                                    <span class="green"></span>
+                                </figure>
+                                <h5>{{receiverName}} </h5>
+                                <div class="SideToggle">
+                                    <span id="Slide"><i class="fa fa-ellipsis-v"></i></span>
+                                    <ul>
+                                        <li>
+                                            <a [routerLink]="['/properties/properties-details/',propertyId]"
+                                                target="_blank">
+                                                {{'Property Details' | translate}}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" data-toggle="modal" data-target="#deleteModal">
+                                                {{'Delete' | translate}}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" data-toggle="modal" data-target="#blockModal">
+                                                {{'Block' | translate}}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" data-toggle="modal" data-target="#MarkedModal"
+                                                *ngIf="userId == propetyOwner">
+                                                {{'Mark as Booked' | translate}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="Chatting" #scrollMe>
+                                <!-- <div> -->
+                                <aside *ngFor="let item of chatLists" [ngClass]="{'User': item.sender_id ==userId}">
+                                    <!-- <figure><img src="{{item.sender_id.profileImage}}"></figure> -->
+                                    <figcaption>
+                                        <p>{{item.message}}</p>
+                                    </figcaption>
+                                </aside>
+                                <!-- </div> -->
+                            </div>
+                            <div class="form">
+                                <input type="text" #message placeholder="Type a message"
+                                    (keyup.enter)="sendMessage(message)">
+                                <button (click)=" sendMessage(message)"><i class="fa fa-paper-plane"
+                                        aria-hidden="true"></i></button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="ModalBox">
+    <div class="modal" id="deleteModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="JavaScript:Void(0);" class="CloseModal" data-dismiss="modal">&times;</a>
+                    <p>{{'Do you want to Delete the user' | translate}}</p>
+                    <h4>
+                        <a href="JavaScript:Void(0);" data-dismiss="modal">{{'No' | translate}}</a>
+                        <a href="JavaScript:Void(0);" data-dismiss="modal"
+                            (click)="deleteUser()">{{'Yes' | translate}}</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="blockModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="JavaScript:Void(0);" class="CloseModal" data-dismiss="modal">&times;</a>
+                    <p>{{'Do you want to block the user' | translate}}</p>
+                    <h4>
+                        <a href="JavaScript:Void(0);" data-dismiss="modal">{{'No' | translate}}</a>
+                        <a href="JavaScript:Void(0);" data-dismiss="modal"
+                            (click)="blockUser()">{{'Yes' | translate}}</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="MarkedModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="JavaScript:Void(0);" class="CloseModal" data-dismiss="modal">&times;</a>
+                    <h3>{{'Mark as Booked' | translate}}</h3>
+                    <p>{{'Do you want to Book the property for' | translate}} {{receiverName}}</p>
+                    <h4>
+                        <a href="JavaScript:Void(0);" data-dismiss="modal">{{'No' | translate}}</a>
+                        <a href="JavaScript:Void(0);" data-dismiss="modal"
+                            (click)="markBooked()">{{'Yes' | translate}}</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="DateModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a href="JavaScript:Void(0);" class="CloseModal" data-dismiss="modal">&times;</a>
+                    <h3>{{'Select Date and time' | translate}}</h3>
+                    <p style="color: #FF0000">{{vanueError}}</p>
+                    <form action="">
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label>{{'Select Date' | translate}}</label>
+                                <select name="" class="form-control" (change)="selectBookDate($event.target.value)">
+                                    <option value="">{{'Select Date' | translate}}</option>
+                                    <option *ngFor="let item of propertyDetail?.selectDate" value="{{item.date}}">
+                                        {{item.date}}
+                                        <span *ngIf="item.specialOffer">*</span>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12">
+
+                                <ul class="SelectDate">
+                                    <li *ngFor="let item of selectedDate">
+                                        {{item}}<span (click)="removeDate(item)">x</span>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label>{{'Start Time' | translate}}</label>
+                                <select [(ngModel)]="startTime" name="startTime" class="form-control">
+                                    <option value="">{{'Start Time' | translate}}</option>
+                                    <option
+                                        *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                        value="{{item}}:00">
+                                        {{item}}:00
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                                <label>{{'End Time' | translate}}</label>
+                                <select [(ngModel)]="endTime" name="endTime" class="form-control">
+                                    <option value="">{{'Select Time' | translate}}</option>
+                                    <option
+                                        *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                                        value="{{item}}:00">
+                                        {{item}}:00
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                                <label>{{'Price' | translate}}</label>
+                                <input type="text" [(ngModel)]="price" name="price" class="form-control"
+                                    placeholder="Price">
+                            </div>
+
+                            <div class="col-sm-12">
+                                <button type="button" (click)="bookeVanue()">{{'Submit' | translate}}</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="modal" id="sucErrModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="JavaScript:Void(0);" class="CloseModal" data-dismiss="modal">&times;</a>
+                <p>{{sucErrMessage}}</p>
+                <h4>
+                    <a href="JavaScript:Void(0);" data-dismiss="modal">{{'Close' | translate}}</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>

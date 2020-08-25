@@ -1,0 +1,17 @@
+{
+    "apps": [
+        {
+            "name": "service_inbound-outbound",
+            "script": "dist/index.js",
+            "cwd": "./",
+            "merge_logs": true,
+            "max_restarts": 20,
+            "instances": "max",
+            "max_memory_restart": "1G",
+            "env": {
+                "PORT": 3001,
+                "NODE_ENV": "production"
+            }
+        }
+    ]
+}

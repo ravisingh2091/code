@@ -1,0 +1,213 @@
+<carousel [interval]="myInterval" [noWrap]="noWrapSlides" [noPause]="true" [(activeSlide)]="activeSlideIndex">
+    <slide *ngFor="let image of slider_caption;let i= index">
+        <div class="single-hero-slide bg-img">
+            <img src="{{image.slider_image}}">
+            <div class="hero-caption">
+                <h2 data-animation="fadeInUp" data-delay="100ms">{{image.slider_title | translate}}</h2>
+            </div>
+        </div>
+    </slide>
+</carousel>
+
+<div class="FilterArea">
+    <div class="container">
+        <div class="FilterTabs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" (click)="featuredProperties('all')"
+                        href="#AllFilter">{{'All' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#BuyFilter"
+                        (click)="featuredProperties('buy')">{{'Buy' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#RentFilter"
+                        (click)="featuredProperties('rent')">{{'Rent' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#EventFilter"
+                        (click)="featuredProperties('rentevent')">{{'Rent for Event' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#InteriorFilter"
+                        (click)="featuredProperties('archInterior')">{{'Architecture & Interior' | translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#SalesFilter"
+                        (click)="featuredProperties('afterSales')">{{'After Sales Services' | translate}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="FilterBar">
+            <app-search [filterBy]="filterBy" (formSubmit)="searchSubmit($event)"></app-search>
+        </div>
+    </div>
+</div>
+
+<section class="featured-properties-area section-padding-100-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading wow fadeInUp">
+                    <h2>{{'FEATURED PROPERTIES' | translate}}</h2>
+                    <p>{{'Suspendisse dictum enim sit amet libero malesuada feugiat.' | translate}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Single Featured Property -->
+            <div class="col-12 col-md-6 col-xl-4" *ngFor="let featuredList of featuredLists">
+                <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="600ms">
+                    <!-- Property Thumbnail -->
+                    <div class="property-thumb">
+                        <a href="JavaScript:Void(0);"
+                            class="Faviorites {{featuredList.likedStatus =='yes' ? 'active' :''}}" #fab
+                            (click)=faviorite(featuredList,fab)>
+                            <i class="fa fa-heart"></i>
+                        </a>
+
+                        <a [routerLink]="['/properties/properties-details',featuredList._id]"
+                            *ngIf="featuredList.Type=='buy' || featuredList.Type=='rentevent' || featuredList.Type=='rent'">
+                            <img src="{{featuredList.imagesFile.length >0 ? featuredList.imagesFile[0].image  : 'assets/img/Real-Estate.png'}}"
+                                alt="">
+                        </a>
+                        <a [routerLink]="['/services/services-details',featuredList._id]"
+                            *ngIf="featuredList.Type=='archInterior' || featuredList.Type=='afterSales' ">
+                            <img src="{{featuredList.imagesFile.length >0 ? featuredList.imagesFile[0].image  : 'assets/img/Real-Estate.png'}}"
+                                alt="">
+                        </a>
+                        <div class="tag">
+                            <span *ngIf="featuredList.Type=='buy'">{{'Buy' | translate}}</span>
+                            <span *ngIf="featuredList.Type=='rentevent'">{{'Rent for Event' | translate}}</span>
+                            <span *ngIf="featuredList.Type=='rent'">{{'Rent' | translate}}</span>
+                            <span
+                                *ngIf="featuredList.Type=='archInterior'">{{'Architecture & Interior' | translate}}</span>
+                            <span *ngIf="featuredList.Type=='afterSales'">{{'After Sales Services' | translate}}</span>
+                        </div>
+                        <div class="list-price">
+                            <p>{{'SAR' | translate}} {{featuredList.totalPrice}}</p>
+                        </div>
+                        <div class="propertysold" *ngIf="featuredList.booked">{{'Sold' | translate}}</div>
+                    </div>
+                    <!-- Property Content -->
+                    <div class="property-content">
+                        <h5
+                            *ngIf="featuredList.Type=='buy' || featuredList.Type=='rentevent' || featuredList.Type=='rent'">
+                            <a [routerLink]="['/properties/properties-details',featuredList._id]"
+                                *ngIf="featuredList.Type=='buy' || featuredList.Type=='rentevent' || featuredList.Type=='rent'">
+                                {{featuredList.title}}
+                            </a>
+                        </h5>
+
+                        <h5 *ngIf="featuredList.Type=='archInterior' || featuredList.Type=='afterSales'">
+                            <a [routerLink]="['/services/services-details',featuredList._id]"
+                                *ngIf="featuredList.Type=='archInterior' || featuredList.Type=='afterSales' ">
+                                {{featuredList.cmpName}}
+                            </a>
+                        </h5>
+                        <p class="location"><img src="assets/img/icons/location.png" alt="">
+                            {{featuredList.address}}
+                        </p>
+                        <div
+                            *ngIf="featuredList.Type=='buy' || featuredList.Type=='rentevent' || featuredList.Type=='rent'">
+                            <div class="property-meta-data d-flex align-items-end justify-content-between">
+                                <div class="bathroom">
+                                    <img src="assets/img/icons/bathtub.png" alt="">
+                                    <span>{{featuredList.bathrooms}}</span>
+                                </div>
+                                <div class="garage">
+                                    <img src="assets/img/icons/garage.png" alt="">
+                                    <span>{{featuredList.bedrooms}}</span>
+                                </div>
+                                <div class="space">
+                                    <img src="assets/img/icons/space.png" alt="">
+                                    <span>{{featuredList.plotSize}} {{featuredList.plotSizeUnit}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h6>
+                            <span>{{'Posted Date' | translate}} : </span>{{featuredList.createdAt | date:'dd/MM/yyyy'}}
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group viewall">
+        <!-- <a href="" class="btn south-btn">VIEW ALL</a> -->
+    </div>
+</section>
+
+
+<section class="south-proerty-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading wow fadeInUp" data-wow-delay="250ms">
+                    <h2>{{'LOOKING FOR PROPERTY' | translate}}</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        <br>Lorem Ipsum is simply dummy text </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="TestimonialArea">
+                    <carousel [itemsPerSlide]="3" [noPause]="true" [interval]="myInterval" [noWrap]="noWrapSlides"
+                        [(activeSlide)]="activeSlideIndex">
+                        <slide *ngFor="let image of Property_caption;let i= index">
+                            <div class="single-testimonial-slide text-center">
+                                <div class="testimonial-property-info">
+                                    <img src="{{image.Property_image}}" alt="">
+                                    <h5>{{image.Property_title}}</h5>
+                                </div>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="south-testimonials-area section-padding-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading wow fadeInUp" data-wow-delay="250ms">
+                    <h2>{{'CLIENT TESTIMONIALS' | translate}}</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="testimonials-slides">
+                    <carousel [itemsPerSlide]="3" [noPause]="true" [interval]="myInterval" [noWrap]="noWrapSlides"
+                        [(activeSlide)]="activeSlideIndex">
+                        <slide *ngFor="let image of Testimonial_caption;let i= index">
+                            <div class="single-testimonial-slide text-center">
+                                <h5>{{image.Testimonial_title}}</h5>
+                                <p>{{image.Testimonial_Describe}}</p>
+
+                                <div class="testimonial-author-info">
+                                    <img src="{{image.Testimonial_image}}" alt="">
+                                    <p>{{image.Testimonial_Name}} <span>{{image.Testimonial_Post}}</span></p>
+                                </div>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
