@@ -1,9 +1,0 @@
-version: "2"
-services:
-  app:
-    build:
-      context: ./
-      dockerfile: app.docker
-    container_name: service_inbound-outbound    
-    ports:
-      - "3001:3001"
